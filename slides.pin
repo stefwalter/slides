@@ -1,0 +1,110 @@
+
+Welcome
+
+-----
+
+Cockpit is a Linux admin interface.
+
+------
+Cockpit is a remote interactive Linux admin interface.
+
+------
+
+Why does Cockpit exist?
+
+------
+
+Angry truck
+
+------
+
+Truck analogy
+
+------
+
+Goal 1: Make Linux servers usable by non-expert admins
+
+Goal 2: Make complex Linux features discoverable
+
+# Demo break
+
+------
+
+Unboxing experience
+
+# Cat coming out of the box
+
+------
+
+Cockpit by default
+
+# Demo break
+
+------
+
+Cockpit doesn't own your server
+
+# Needs a better name
+
+------
+
+# Cockpit presentation layer
+
+------
+
+# Demo time
+
+------
+
+Declarative vs. Interactive
+
+------
+
+Cockpit reacts to the server
+
+# Lets you effectively switch between tools
+
+-----
+
+# Demo time
+
+-----
+
+How is babby formed?
+How is Cockpit formed?
+
+# knowyourmeme.com/memes/how-is-babby-formed
+
+-----
+
+# Transport slide
+
+-----
+
+# Demo time
+
+-----
+
+Feather Light
+
+Cockpit has zero footprint, and starts on demand
+Exits when not in use
+
+# Demo time
+
+-----
+
+Pluggable and Modifiable
+
+# Demo time
+
+-----
+
+Embedding Cockpit
+
+Trivial to embed Cockpit
+
+-----
+
+Summary slide
+
