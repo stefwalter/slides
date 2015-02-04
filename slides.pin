@@ -1,38 +1,125 @@
 
-Welcome
+-- [cockpit-logo.png]
+
+# "Welcome."
+
+# "Cockpit is an interactive browser based Linux admin interface. What does it look like? It looks like this:"
+
+# Demo: 
+# Log into Cockpit
+# Show the dashboard, Server Summary and Storage tabs
+
+-- [dashboard-screenshot.png]
+
+# "Hopefully by the end of this talk you'll have a better understanding of how Cockpit works, why it exists, and how you can build stuff with it."
+# "We won't go into every nook and cranny of the Cockpit user interface, because you're big girls and boys and can do that on your own."
+# "This is a more technical talk."
 
 -----
 
-Cockpit is a Linux admin interface.
+Cockpit is a
 
-------
-Cockpit is a remote interactive Linux admin interface.
-
-------
-
-Why does Cockpit exist?
+Linux admin interface.
 
 ------
 
-Angry truck
+Cockpit is a
+remote interactive
+Linux admin interface.
+
+# "Why does Cockpit exist?"
+# "We explained this in our talk here last year ..."
+
+-- [Optimusprimealtmoviemode.jpg]
+
+# Actually this is not about cars it's about trucks
+
+Building your own
+truck^H^H^H^H^Hserver
+
+# Deploying linux servers today is like building your own truck
+
+-- [240365952_50d8e21091_o.jpg]
+
+# You can build powerful purpose built trucks
+
+-- [706204705_2de29819f3_o.jpg]
+
+# Can built truck factories
+
+-- [file141869_1.jpg]
+
+# Can virtualize your servers
+
+-- [1848912010_a1d700953b_o.jpg]
+
+# Build servers that nobody else thinks are a good idea
+
+-- [funny-picture-496594282.jpg]
+
+# Build workhorse servers that can be overloaded
+
+-- [6230429515_57a053c1b1_o.jpg]
+
+# Build fast low-latency servers
+
+-- [1088-funny0152.jpg]
+
+# Or you can build it completely wrong
+
+--
+But but, I just want
+to <span weight="bold" foreground="white">drive</span> it
+
+# But not everyone knows how to build a truck, as we've all seen
+
+-- [0638.servermanager1_75040ADF.png]
+
+# This is what it looks like to "drive" windows server
+
+-- [server-prompt.png]
+
+# This is what it looks like to "drive" linux servers
+
+-- [7490249498_d0a49557d1_o.jpg]
+
+# Which looks like this to people who are not yet intimate with linux
 
 ------
 
-Truck analogy
+• Goal 1:
+Make Linux servers usable by non-expert admins
+
+• Goal 2:
+Make complex Linux features discoverable
+
+# "I just showed you how easy it is to click around and start configuring your server".
+# "We make it trivial to do a basic task like setting the Host name of the machine."
+
+# Demo
+# Show how a non expert can change the host name, and perform mundane task.
+# Click on the server section
+# Click on Host name
+# Change it
+
+# "So that was easy. Trivial ... but you guys already knew how to do that. On to our second goal, make linux features discoverable."
+# "How many of you know off the top of your head how to setup a bonded network interface in linux."
+
+# Demo
+# Show how even an expert (like those in the room) can a Network bond (rather esoteric complex feature).
+# Click on the Networking section
+# Choose 'Add Bond'
+# Click eth5 and eth6
+# Create the bond
+# Click on the bond to set an address
+# Configure the address
 
 ------
 
-Goal 1: Make Linux servers usable by non-expert admins
+--- [8378492528_e88bf7e3a5_k.jpg]
 
-Goal 2: Make complex Linux features discoverable
-
-# Demo break
-
-------
-
-Unboxing experience
-
-# Cat coming out of the box
+# "That's all well and good, but if you have to configure Cockpit, before using it, then we've already lost the game."
+# "Cockpit has to work out of the box"
 
 ------
 
