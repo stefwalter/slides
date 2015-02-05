@@ -87,16 +87,18 @@ to <span weight="bold" foreground="white">drive</span> it
 
 ------
 
-• Goal 1:
-Make Linux servers usable by non-expert admins
+<b>Goal 1</b> Make Linux servers usable by non-expert admins
 
-• Goal 2:
-Make complex Linux features discoverable
+------
+
+<b>Goal 2</b> Make complex Linux features discoverable
 
 # "I just showed you how easy it is to click around and start configuring your server".
 # "We make it trivial to do a basic task like setting the Host name of the machine."
 
-# Demo
+------
+
+# Demo:
 # Show how a non expert can change the host name, and perform mundane task.
 # Click on the server section
 # Click on Host name
@@ -105,7 +107,9 @@ Make complex Linux features discoverable
 # "So that was easy. Trivial ... but you guys already knew how to do that. On to our second goal, make linux features discoverable."
 # "How many of you know off the top of your head how to setup a bonded network interface in linux."
 
-# Demo
+------
+
+# Demo:
 # Show how even an expert (like those in the room) can a Network bond (rather esoteric complex feature).
 # Click on the Networking section
 # Choose 'Add Bond'
@@ -120,40 +124,53 @@ Make complex Linux features discoverable
 
 # "That's all well and good, but if you have to configure Cockpit, before using it, then we've already lost the game."
 # "Cockpit has to work out of the box"
+# "Cockpit is designed so that it can be included by default. We'll talk more about that later ... but let me show you how it just plain works on Fedora 21 Server"
 
-------
+-----
 
-Cockpit by default
-
-# Demo break
+# Demo:
+# Show Fedora 21 Server with Cockpit just running after install
+# Run the snapshot you created above
+# Connect to Cockpit at the static IP address
+# Shutdown through Cockpit, showing we are in fact talking to that virtual machine.
 
 ------
 
 Cockpit doesn't own your server
 
-# Needs a better name
+------
+
+--- [8378492528_e88bf7e3a5_k.jpg]
+
+# "Cockpit doesn't store data or make policy decisions on its own. It just exposes the configuration services and state of the actual server."
 
 ------
 
-# Cockpit presentation layer
+# Demo
+# Show that the user account used to log in is a server account
+# Show how the user is authenticated in a real linux session, as if they were SSH'd in
 
 ------
 
-# Demo time
+Declarative or Interactive
 
-------
-
-Declarative vs. Interactive
+# "Cockpit is interactive, it shows you what's on your machines, and carries out your actions on the machine. In this way it's different from other tools like Spacewalk or Puppet, which contain policy. Those are declarative tools, whereas Cockpit is interactive".
 
 ------
 
 Cockpit reacts to the server
 
-# Lets you effectively switch between tools
+# "Cockpit can't and will be able to do everything. It's vital that Cockpit reacts to changes made by other tools, such as the CLI, management systems, scripts, etc."
 
 -----
 
-# Demo time
+# Demo
+# Show starting a Docker container, and how that updates the display
+# Access the container terminal and actually do stuff through Cockpit
+# Exit the container by typing exit at the terminal
+# Cockpit knows that it exited
+
+# "For example if you wanted to use some feature of Docker that doesn't show up in Cockpit, you can just do that one thing from the terminal, and happily continue to use Cockpit for other Docker stuff."
 
 -----
 
