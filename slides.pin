@@ -5,7 +5,7 @@
 [text-align=center]
 [black]
 
--- [logo.png]
+-- [logo-redhat.png]
 
 # Welcome
 
@@ -16,9 +16,9 @@ Cockpit is a
 # Cockpit is a linux admin interface
 
 ------ [text-align=center]
-Cockpit is a
+Cockpit is the
 <span weight="bold" foreground="white">interactive remote</span>
-Linux admin interface
+RHEL admin interface
 
 # Cockpit is a *remote interactive* admin interface
 # Cockpit runs in a browser and is accessible remotely. Most server
@@ -311,7 +311,7 @@ And we've just begun...
 # We also have several milestones coming up, related to Atomic features,
 # such as OSTree, a simple Kubernetes dashboard (remember goal 2 above), and so on.
 
-----
+---- [redhat-only.png]
 
 <span foreground="white">cockpit-project.org</span>
 
@@ -321,7 +321,7 @@ And we've just begun...
  
  github.com/cockpit-project/cockpit
 
------ [left] [text-align=left]
+----- [left] [text-align=left] [redhat-only.png]
 <span size="x-small">
 Credits:
 Done in pinpoint
