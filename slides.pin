@@ -21,13 +21,16 @@ Cockpit is a
 Linux admin interface
 
 # Cockpit is a *remote interactive* admin interface
-# Cockpit runs in a browser and is accessible remotely. Most server and systems are headless. We'll talk more about the "interactive" aspects later.
+# Cockpit runs in a browser and is accessible remotely. Most server
+# and systems are headless. We'll talk more about the "interactive" aspects later.
 
 -- [screenshot-docker.png]
 
 # It looks like this.
 # We'll be seeing more of Cockpit throughout this talk.
-# We'll look at how Cockpit works in this talk. I want you to feel like you've used it and understand what makes it tick. We'll also look at how you build UI for Cockpit.
+# We'll look at how Cockpit works in this talk. I want you to
+# feel like you've used it and understand what makes it tick.
+# We'll also look at how you build UI for Cockpit.
 
 --
 <span size="xx-large" weight="bold" foreground="white">Why?</span>
@@ -38,10 +41,10 @@ Linux admin interface
 -- [text-align=left] [left]
 <span size="xx-large">Goals:</span>
 
-<span foreground="white"><b>1.</b> Linux <b>usable</b>
+<span foreground="white"><b>1.</b> RHEL <b>usable</b>
          by non-expert admins
 
-<b>2.</b> Complex Linux features
+<b>2.</b> Complex RHEL features
          <b>discoverable</b>
 </span>
 
@@ -53,7 +56,8 @@ Building your own
 truck^H^H^H^H^Hserver
 
 # Deploying linux servers has been like building your own truck
-# We give you a bunch of parts, the motor, lights, wheels etc. and help you learn how to put together a purpose built truck.
+# We give you a bunch of parts, the motor, lights, wheels etc. and
+# help you learn how to put together a purpose built truck.
 
 -- [240365952_50d8e21091_o.jpg]
 
@@ -95,9 +99,11 @@ to <span weight="bold" foreground="white">drive</span> it
 
 -- [server-prompt.png]
 
-# This is what it looks like to "drive" linux servers
-# When you're at a root bash prompt, the possibilities are endless, and the power is limitless.
-# We all have a mental model, where we can imagine how Linux fits together, how the daemons are interacting, and where to look for symptoms of problems.
+# This is what it looks like to "drive" RHEL servers
+# When you're at a root bash prompt, the possibilities are endless, and
+# the power is limitless.
+# We all have a mental model, where we can imagine how Linux fits
+# together, how the daemons are interacting, and where to look for symptoms of problems.
 
 -- [7490249498_d0a49557d1_o.jpg]
 
@@ -105,7 +111,7 @@ to <span weight="bold" foreground="white">drive</span> it
 # But for someone not yet intimate with Linux this is a non-starter.
 
 ------
-<span foreground="white"><b>Goal:</b> Linux <b>usable</b>
+<span foreground="white"><b>Goal:</b> RHEL <b>usable</b>
 by non-expert admins</span>
 
 # So this is the first goal. Make linux usable by non-expert admins.
@@ -114,7 +120,8 @@ by non-expert admins</span>
 
 # Demo: Log into cockpit
 # We all know 10 ways to change the host name.
-# But for someone who is just starting with linux, even this task has a steep learning curve.
+# But for someone who is just starting with linux, even this task has a
+# steep learning curve.
 # Cockpit makes it easy.
 # Show how a non expert can change the host name, and perform mundane task.
 # Click on the server section
@@ -122,16 +129,20 @@ by non-expert admins</span>
 # Change it
  
 ------
-<span foreground="white"><b>Goal:</b> Complex Linux features
+<span foreground="white"><b>Goal:</b> Complex RHEL features
 <b>discoverable</b></span>
 
-# So that was easy. Trivial ... but you guys already knew how to do that. On to our second goal, make linux features discoverable.
+# So that was easy. Trivial ... but you guys already knew how to do that.
+# On to our second goal, make linux features discoverable.
 
 ------
 
 # Demo:
 # We're going to greate a bonded network interface.
-# How would you normally do this. You'd read some blogs, decide between opposing opinions, maybe download some tools, check that they're available for your version of Linux, read some manual pages, and finally assemble a command to execute, etc.
+# How would you normally do this. You'd read some blogs, decide between
+# opposing opinions, maybe download some tools, check that they're available
+# for your version of Linux, read some manual pages, and finally assemble a
+# command to execute, etc.
 # That's a big investment of time.
 # Here's how you do it with Cockpit.
 # Click on the Networking section
@@ -151,7 +162,8 @@ by non-expert admins</span>
 # First of all Cockpit has to be running out of the box.
 # If you have to configure Cockpit, before using it, then we've already lost the game.
 # It's our aim to build Cockpit in such a way that it's usable out of the box on Linux systems.
-# Cockpit is designed so that it can be included by default. We'll talk more about that later ... but let me show you how it just plain works on Fedora 21 Server
+# Cockpit is designed so that it can be included by default. We'll talk more about
+# that later ... but let me show you how it just plain works on Fedora 21 Server
 
 -----
 
@@ -164,7 +176,8 @@ by non-expert admins</span>
 ------
 Cockpit <span foreground="white" weight="bold">doesn't take over</span> your machine
 
-# Cockpit doesn't store data or make policy decisions on its own. It just exposes the configuration services and state of the actual server.
+# Cockpit doesn't store data or make policy decisions on its own. It just
+# exposes the configuration services and state of the actual server.
 # Parts of the server like systemd, NetworkManager, and so on own the state of the server.
 # We just interact with those services.
 # In fact we don't even have our own user accounts or access policy.
@@ -181,7 +194,8 @@ Cockpit <span foreground="white" weight="bold">doesn't take over</span> your mac
 Cockpit <span foreground="white">reacts to the server</span>
 
 # Cockpit can't and will be able to do everything.
-# You must be able to use Cockpit at the same time as the terminal, scripts, and larger management systems.
+# You must be able to use Cockpit at the same time as the terminal, scripts,
+# and larger management systems.
 # It's vital that Cockpit reacts to changes made by other tools.
 
 -----
@@ -205,10 +219,12 @@ How is <span foreground="white" weight="bold">Cockpit</span> formed?
 
 # Transport slide
 # The Cockpit web app running in your browser contains all the UI logic
-# cockpit-ws serves the Cockpit to your browser, and lets the web app connect back through a WebSocket.
+# cockpit-ws serves the Cockpit to your browser, and lets the web app connect
+# back through a WebSocket.
 # Cockpit sends command messages to the system through the WebSocket
 # cockpit-bridge is launches as the user on login, and processes those messages.
-# When connecting out to other systems, we simply launch cockpit-bridge on the other system via ssh.
+# When connecting out to other systems, we simply launch cockpit-bridge on the
+# other system via ssh.
 
 -----
 <span foreground="white">Zero</span> footprint
@@ -230,7 +246,8 @@ How is <span foreground="white" weight="bold">Cockpit</span> formed?
 
 Pluggable and Modifiable
 
-# Cockpit is being built from components. Each of which can be delivered separately, and can be used as a plugin mechanism.
+# Cockpit is being built from components. Each of which can be delivered
+# separately, and can be used as a plugin mechanism.
 
 -----
 
@@ -241,29 +258,39 @@ Pluggable and Modifiable
 ------
 These are <span foreground="white" weight="bold">RHEL</span> features
 
-# So again remember that Cockpit is just a thin UI layer on top of the features that teams like the systemd team, the NetworkManager team, and others have been developing.
-# Cockpit on its own really tries to avoid implementing its own sub-systems on the server. We just make those services and features discoverable.
+# So again remember that Cockpit is just a thin UI layer on top of the features
+# that teams like the systemd team, the NetworkManager team, and others have been developing.
+# Cockpit on its own really tries to avoid implementing its own sub-systems
+# on the server. We just make those services and features discoverable.
 
 ------
 Write <span foreground="white" weight="bold">DBus services</span> for your feature
 
-# If you have a component or feature in RHEL, make a DBus service. For local API, nothing comes close to DBus as far as the capabilities it gives you.
-# Cockpit uses DBus heavily to build it's interface, including reacting to server changes, introspecting object models, and lots more.
+# If you have a component or feature in RHEL, make a DBus service. For
+# local API, nothing comes close to DBus as far as the capabilities it gives you.
+# Cockpit uses DBus heavily to build it's interface, including
+# reacting to server changes, introspecting object models, and lots more.
 
 ------
 
 Declarative != Interactive
 
-# "Cockpit is interactive, it shows you what's on your machines, and carries out your actions on the machine. In this way it's different from other tools like Spacewalk or Puppet, which contain policy. Those are declarative tools, whereas Cockpit is interactive".
+# "Cockpit is interactive, it shows you what's on your machines, and carries
+# out your actions on the machine. In this way it's different from other
+# tools like Satellite or CloudForms, which contain policy. Those are
+# declarative tools, whereas Cockpit is interactive".
 
 -----
 
 Embedding Cockpit
 
 # Trivial to embed Cockpit
-# Each of the components that you saw during our plugin work earlier, can be embedded elsewhere. 
-# Sometimes even in a declarative configuration management system, you want to have a few interactive tasks. These are perfect places to embed Cockpit.
-# When used to gether with single sign on, and patternfly, you can get a seamless experience.
+# Each of the components that you saw during our plugin work earlier,
+# can be embedded elsewhere. 
+# Sometimes even in a declarative configuration management system,
+# you want to have a few interactive tasks. These are perfect places to embed Cockpit.
+# When used to gether with single sign on, and patternfly, you can get
+# a seamless experience.
 
 -----
 
@@ -274,13 +301,15 @@ Embedding Cockpit
 -----
 Cockpit is <span foreground="white">not a product</span>
 
-# In it's release versions Cockpit doesn't say "Cockpit". It says RHEL Atomic Host or Red Hat Enterprise Linux, or Fedora Server, or whatever.
+# In it's release versions Cockpit doesn't say "Cockpit". It says RHEL
+# Atomic Host or Red Hat Enterprise Linux, or Fedora Server, or whatever.
 
 -----
 And we've just begun...
 
 # Everything I've talked about above is real, you can use it now. 
-# We also have several milestones coming up, related to Atomic features, such as OSTree, a simple Kubernetes dashboard (remember goal 2 above), and so on.
+# We also have several milestones coming up, related to Atomic features,
+# such as OSTree, a simple Kubernetes dashboard (remember goal 2 above), and so on.
 
 ----
 
