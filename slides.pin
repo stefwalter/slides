@@ -263,6 +263,11 @@ These are <span foreground="white" weight="bold">RHEL</span> features
 # Cockpit on its own really tries to avoid implementing its own sub-systems
 # on the server. We just make those services and features discoverable.
 
+------ [rhel-layers.png]
+
+# If you imagine RHEL as a three tier application, Cockpit would be just
+# the presentation layer.
+
 ------
 Write <span foreground="white" weight="bold">DBus services</span> for your feature
 
