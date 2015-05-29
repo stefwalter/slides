@@ -19,12 +19,12 @@ host_names() {
 setup_host() (
 	cd ./stage
 	find . -type f | tar -T - -cf - | ssh $1 '
-		mkdir -p /var/lib/cockpit &&
-		sudo mount -o remount,rw /usr &&
+		mkdir -p /var/lib/cockpit;
+		systemctl enable kubelet kube-proxy docker && systemctl
+		sudo mount -o remount,rw /usr;
 		sudo tar --no-overwrite-dir --no-same-owner --unlink-first -xvf - -C / &&
 		sudo reboot
 	'
-
 )
 
 hosts="$(host_names)"
@@ -35,10 +35,11 @@ set -x
 sudo cp hosts /etc/hosts
 
 rm -rf ./stage
-mkdir -p ./stage/etc/ssh ./stage/var/lib/cockpit ./stage/usr/share/pixmaps
+mkdir -p ./stage/etc/ssh ./stage/etc/kubernetes ./stage/var/lib/cockpit ./stage/usr/share/pixmaps
 cp hosts ./stage/etc
 cp os-release ./stage/etc
 cp system-logo-white.png ./stage/usr/share/pixmaps
+cp config proxy kubelet ./stage/etc/kubernetes
 ssh-keyscan $hosts > ./stage/etc/ssh/known_hosts
 cp ./stage/etc/ssh/known_hosts ./stage/var/lib/cockpit/known_hosts
 
