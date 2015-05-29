@@ -1,0 +1,7 @@
+127.0.0.1               localhost.localdomain localhost
+::1             localhost6.localdomain6 localhost6
+
+192.168.124.118		node-1.rha
+192.168.124.16		node-2.rha
+192.168.124.71		node-3.rha
+
