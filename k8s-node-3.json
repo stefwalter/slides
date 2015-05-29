@@ -1,0 +1,16 @@
+{
+  "kind": "Node",
+  "apiVersion": "v1beta3",
+  "metadata": {
+    "name": "node-3.rha"
+  },
+  "spec": {
+    "externalID": "node-3.rha"
+  },
+  "status": {
+    "capacity": {
+      "cpu": "3",
+      "memory": "1Gi"
+    }
+  }
+}

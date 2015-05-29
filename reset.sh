@@ -1,6 +1,26 @@
 #!/bin/sh
 
-KUBECTL='kubectl --server=https://node-1.rha'
+HOSTS="$(sed -nr 's/.*\s([a-z0-9.-]+)$/\1/p' /etc/hosts | grep -v localhost)"
+cd $(dirname $0)
 
-$(KUBELET) delete node node-2.rha
-$(KUBELET) delete node node-3.rha
+set -x
+
+SCRIPT="
+set -ex
+systemctl stop etcd kube-apiserver kube-scheduler kube-controller-manager kubelet kube-proxy
+rm -rf /var/lib/etcd/*
+docker ps -qa | xargs -n 1 docker rm -f
+"
+
+for HOST in $HOSTS; do
+	echo "$SCRIPT" | ssh $HOST sudo sh -s
+done
+
+
+# Reinitialize the master
+for HOST in $HOSTS; do
+	ssh $HOST sudo systemctl start etcd kube-apiserver kubelet kube-proxy
+	sleep 1
+	kubectl --server=http://$HOST:8080 create -f node.json
+	break
+done
