@@ -19,8 +19,9 @@ done
 
 # Reinitialize the master
 for HOST in $HOSTS; do
-	ssh $HOST sudo systemctl start etcd kube-apiserver kubelet kube-proxy
+	ssh $HOST sudo systemctl start etcd kube-apiserver
 	sleep 1
 	kubectl --server=http://$HOST:8080 create -f node.json
+	curl -L http://$HOST:2379/v2/keys/coreos.com/network/config -XPUT --data-urlencode value@flannel-config.json
 	break
 done

@@ -4,7 +4,7 @@ setup_host() (
 	cd ./stage
 	find . -type f | tar -T - -cf - | ssh $1 '
 		mkdir -p /var/lib/cockpit;
-		sudo systemctl enable kubelet kube-proxy docker;
+		sudo systemctl enable kubelet kube-proxy docker flanneld;
 		sudo mount -o remount,rw /usr;
 		sudo tar --no-overwrite-dir --no-same-owner --unlink-first -xvf - -C / &&
 		sudo reboot
@@ -21,10 +21,11 @@ sudo route add -net 10.254.0.0/16 gw node-1.rha
 cp -v k8s-*.json ~/Desktop
 
 rm -rf ./stage
-mkdir -p ./stage/etc/ssh ./stage/etc/selinux ./stage/etc/kubernetes ./stage/var/lib/cockpit ./stage/usr/share/pixmaps
+mkdir -p ./stage/etc/ssh ./stage/etc/selinux ./stage/etc/sysconfig ./stage/etc/kubernetes ./stage/var/lib/cockpit ./stage/usr/share/pixmaps
 cp hosts ./stage/etc
 cp os-release ./stage/etc
 cp selinux ./stage/etc/selinux/config
+cp flanneld ./stage/etc/sysconfig/
 cp system-logo-white.png ./stage/usr/share/pixmaps
 cp config proxy kubelet ./stage/etc/kubernetes
 ssh-keyscan $hosts > ./stage/etc/ssh/known_hosts
