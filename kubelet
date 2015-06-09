@@ -14,5 +14,5 @@ KUBELET_ADDRESS="--address=0.0.0.0"
 KUBELET_API_SERVER="--api_servers=http://node-1.rha:8080"
 
 # Add your own!
-KUBELET_ARGS=""
+KUBELET_ARGS="--cluster_dns=18.0.10.3 --cluster_domain=cluster.local"
 

@@ -1,0 +1,142 @@
+{
+    "kind": "List",
+    "apiVersion": "v1beta3",
+    "items": [
+
+
+{
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta3",
+  "metadata": {
+    "name": "kube-dns",
+    "namespace": "default",
+    "selfLink": "/api/v1beta3/namespaces/default/replicationcontrollers/kube-dns",
+    "uid": "ec67c231-0eaf-11e5-8aa6-525400398fe5",
+    "resourceVersion": "391",
+    "creationTimestamp": "2015-06-09T14:00:45Z",
+    "labels": {
+      "k8s-app": "kube-dns",
+      "kubernetes.io/cluster-service": "true"
+    }
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "k8s-app": "kube-dns"
+    },
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "k8s-app": "kube-dns",
+          "kubernetes.io/cluster-service": "true",
+          "name": "kube-dns"
+        }
+      },
+      "spec": {
+        "volumes": null,
+        "containers": [
+          {
+            "name": "etcd",
+            "image": "quay.io/coreos/etcd:v2.0.3",
+            "args": [
+              "-listen-client-urls=http://0.0.0.0:2379,http://0.0.0.0:4001",
+              "-initial-cluster-token=skydns-etcd",
+              "-advertise-client-urls=http://127.0.0.1:4001"
+            ],
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent",
+            "capabilities": {},
+            "securityContext": {
+              "capabilities": {},
+              "privileged": false
+            }
+          },
+          {
+            "name": "kube2sky",
+            "image": "kubernetes/kube2sky:1.1",
+            "args": [
+              "-domain=cluster.local"
+            ],
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent",
+            "capabilities": {},
+            "securityContext": {
+              "capabilities": {},
+              "privileged": false
+            }
+          },
+          {
+            "name": "skydns",
+            "image": "kubernetes/skydns:2015-03-11-001",
+            "args": [
+              "-machines=http://localhost:4001",
+              "-addr=0.0.0.0:53",
+              "-domain=cluster.local."
+            ],
+            "ports": [
+              {
+                "name": "dns",
+                "containerPort": 53,
+                "protocol": "UDP"
+              }
+            ],
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent",
+            "capabilities": {},
+            "securityContext": {
+              "capabilities": {},
+              "privileged": false
+            }
+          }
+        ],
+        "restartPolicy": "Always",
+        "dnsPolicy": "Default"
+      }
+    }
+  },
+  "status": {
+    "replicas": 1
+  }
+}
+
+
+,
+
+
+{
+  "kind": "Service",
+  "apiVersion": "v1beta3",
+  "metadata": {
+    "name": "kube-dns",
+    "namespace": "default",
+    "selfLink": "/api/v1beta3/namespaces/default/services/kube-dns",
+    "uid": "d804a04b-0ea2-11e5-8634-525400398fe5",
+    "resourceVersion": "2992",
+    "creationTimestamp": "2015-06-09T12:27:07Z",
+    "labels": {
+      "k8s-app": "kube-dns",
+      "kubernetes.io/cluster-service": "true"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "name": "",
+        "protocol": "UDP",
+        "port": 53,
+        "targetPort": 53
+      }
+    ],
+    "selector": {
+      "k8s-app": "kube-dns"
+    },
+    "portalIP": "18.0.10.3",
+    "sessionAffinity": "None"
+  },
+  "status": {}
+}
+]}

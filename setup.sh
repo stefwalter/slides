@@ -17,7 +17,7 @@ cd $(dirname $0)
 set -x
 
 sudo cp hosts /etc/hosts
-sudo route add -net 10.254.0.0/16 gw node-1.rha
+sudo route add -net 18.0.0.0/16 gw node-1.rha
 cp -v k8s-*.json ~/Desktop
 
 rm -rf ./stage
@@ -27,7 +27,7 @@ cp os-release ./stage/etc
 cp selinux ./stage/etc/selinux/config
 cp flanneld ./stage/etc/sysconfig/
 cp system-logo-white.png ./stage/usr/share/pixmaps
-cp config proxy kubelet ./stage/etc/kubernetes
+cp apiserver config proxy kubelet ./stage/etc/kubernetes
 ssh-keyscan $hosts > ./stage/etc/ssh/known_hosts
 cp ./stage/etc/ssh/known_hosts ./stage/var/lib/cockpit/known_hosts
 

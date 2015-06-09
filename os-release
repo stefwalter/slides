@@ -1,4 +1,4 @@
-NAME="Red Hat Enterprise Linux Atomic Host"
+NAME="Red Hat Atomic"
 VERSION="7.1"
 ID="rhel"
 ID_LIKE="fedora"
