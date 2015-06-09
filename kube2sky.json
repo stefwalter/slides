@@ -3,17 +3,11 @@
     "apiVersion": "v1beta3",
     "items": [
 
-
 {
   "kind": "ReplicationController",
   "apiVersion": "v1beta3",
   "metadata": {
     "name": "kube-dns",
-    "namespace": "default",
-    "selfLink": "/api/v1beta3/namespaces/default/replicationcontrollers/kube-dns",
-    "uid": "ec67c231-0eaf-11e5-8aa6-525400398fe5",
-    "resourceVersion": "391",
-    "creationTimestamp": "2015-06-09T14:00:45Z",
     "labels": {
       "k8s-app": "kube-dns",
       "kubernetes.io/cluster-service": "true"
@@ -112,11 +106,6 @@
   "apiVersion": "v1beta3",
   "metadata": {
     "name": "kube-dns",
-    "namespace": "default",
-    "selfLink": "/api/v1beta3/namespaces/default/services/kube-dns",
-    "uid": "d804a04b-0ea2-11e5-8634-525400398fe5",
-    "resourceVersion": "2992",
-    "creationTimestamp": "2015-06-09T12:27:07Z",
     "labels": {
       "k8s-app": "kube-dns",
       "kubernetes.io/cluster-service": "true"
