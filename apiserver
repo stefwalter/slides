@@ -24,4 +24,4 @@ KUBE_SERVICE_ADDRESSES="--portal_net=18.0.10.0/24"
 KUBE_ADMISSION_CONTROL="--admission_control=NamespaceAutoProvision,LimitRanger,SecurityContextDeny,ResourceQuota"
 
 # Add your own!
-KUBE_API_ARGS="--runtime_config=api/v1beta3"
+KUBE_API_ARGS="--runtime_config=api/v1"
