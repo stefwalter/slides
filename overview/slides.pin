@@ -118,8 +118,6 @@ to <span weight="bold" foreground="white">drive</span> it
 # Click on the bond to set an address
 # Configure the address
 
-------
-
 --- [8378492528_e88bf7e3a5_k.jpg]
 
 # "That's all well and good, but if you have to configure Cockpit, before using it, then we've already lost the game."
@@ -137,12 +135,6 @@ to <span weight="bold" foreground="white">drive</span> it
 ------
 
 Cockpit doesn't own your server
-
-------
-
---- [8378492528_e88bf7e3a5_k.jpg]
-
-# "Cockpit doesn't store data or make policy decisions on its own. It just exposes the configuration services and state of the actual server."
 
 ------
 
