@@ -1,0 +1,35 @@
+#!/usr/bin/env pinpoint
+
+[font=Overpass 60px]
+[text-color=gray]
+[text-align=center]
+[black]
+
+-- [logo.png]
+
+Goals
+
+
+Where are we today
+
+
+What are the obstacles?
+
+ * Dependency, Footprint
+ * Memory, Overhead
+ * Ports open
+ * Zero configuration
+ * Making it actually work.
+
+----
+Dependencies
+
+----
+Ports open
+Connecting to other machines.
+
+----
+Making it actually work.
+System APIs.
+Testing
+First class distros
