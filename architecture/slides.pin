@@ -225,29 +225,78 @@ IMAGE:
 # the users code is running.
 
 ---
-
 Plugabbility
+
+# One of teh things you typically expect of a login session is the ability to run different
+# tools or applications. A login session is not a kiosk. On your desktop you can run various
+# applications, and usually install and remove them ... and when you login via SSH it's a
+# similar story you can add or even build tools to run.
+
+# Cockpit is componentized and pluggable the same way. Each section you see here is really
+# running as a separate browser based application ... loosely coupled. They often come
+# in different subpackages (RPMs) and are installable and removable.
 
 VIDEO: pluggable
 
+# In fact it's easy to build your own bits of UI that interact with your custom admin scripts
+# or other tooling. Here's the full text of such a tool, and here is it running.
+
 SLIDE: full module
+
+# And as you seen before Cockpit can host terminal based applications
+VIDEO: terminal running mc
+
+# You can even do some pretty wild things like running GTK apps. This is broadway, and
+# these apps are really running in the browser. GTK supports HTML5 based rendering, and
+# Cockpit provides the login session and authentication to wrap it all together.
+# This is just an example, but I hope it proves my point.
+VIDEO: GTK broadway
 
 ----
 Embeddable
 
+# XXXX Maybe drop this session
+
+# Each of those components are also embeddable in other web based applications. Here's an
+# example.
+
 VIDEO: embedding
 
 ----
-
 Connecting between multiple servers
 
+# One of the cooler things about Cockpit is that it can connect out to other servers via
+# SSH ... even if those servers are not accessible to the browser. They may be behind a
+# firewall and you may have a bastion host ... or simply don't want to open up the additional
+# TCP port to allow the browser to connect to Cockpit.
+
+VIDEO: Adding a server
+
+# Cockpit connects out to those servers via ssh, using password, key based auth and others
+
 IMAGE: full architecture
+
+# The same cockpit-bridge is launched as it was earlier ... but in this case it's launched
+# over SSH, which starts the session as the appropriate user, and we talk to the bridge
+# over standard in and standard out as before.
 
 ----
 
 Declarative vs. Interactive
 
 SLIDE: text
+
+# Now obviously you don't want to do this with thousands of servers. And that's where I
+# want to highlight the difference between declarative and interactive configuration.
+#
+# With declarative configuration you define the state you want, and then say "Mkae it so"
+# or "make 10 of these" and the management system executes your wishes. That's what you
+# want with thousands of servers.
+#
+# Interactive is a different use case, where you troubleshoot interactively, maybe do
+# some configuration interactively and so on. Sometimes the use cases overlap, where you
+# might want to interactively troubleshoot a server that Puppet or Satetelite has
+# deployed in a declarative manner.
 
 ----
 How to join ... contribute
@@ -262,6 +311,8 @@ SLIDE: text
 ----
 
 Credits
+
+SLIDE: text
 
 # Where
 
