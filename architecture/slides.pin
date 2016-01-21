@@ -1,0 +1,268 @@
+#!/usr/bin/env pinpoint
+
+[font=Overpass 60px]
+[text-color=gray]
+[text-align=center]
+[black]
+
+-- [logo.png]
+
+# INTRO
+
+# Welcome, this talk is about Cockpit.
+# Going to show you how it works, and what makes it special.
+# I imagine some of you have heard about Cockpit before
+# But in case you haven't I'll do a quick overview.
+
+----- [text-align=center]
+Cockpit is a
+<span weight="bold" foreground="white">Linux admin interface</span>
+
+# Cockpit is a linux admin interface
+
+----- [text-align=center]
+Cockpit is a <span weight="bold" foreground="white">remote interactive</span>
+Linux admin interface
+
+# Cockpit is a *remote interactive* admin interface
+# Cockpit runs in a browser and is accessible remotely. Most server and systems are headless.
+# It's interactive, you perform admin tastks interactively, troubleshoot, configure and so on.
+
+---
+Looks like this
+
+IMAGE: Cockpit
+
+---
+SLIDE: 
+?? Mention zero footprint here
+
+---- [text-align=left] [left]
+<span size="xx-large">Goals:</span>
+
+<span foreground="white"><b>1.</b> Linux <b>usable</b>
+         by non-expert admins
+
+<b>2.</b> Complex Linux features
+         <b>discoverable</b>
+</span>
+
+----
+VIDEO: hostname
+
+----
+# Show second goal again
+
+SLIDE: 
+
+----
+VIDEO: network bond
+
+---
+# Now I could show you Cockpit all day ... there's so many cool features
+# configuring storage, starting services, docker containers, looking through logs
+# But what I'm really excited is about how Cockpit works
+# And it's in the title of the talk ... cockpit is a Linux session
+
+# Now Linux session is a bit of a vague term ... but I'm talking about this in
+# the sense of an X11 login session or an SSH login session.
+
+# Cockpit is a login session that runs in your browser.
+
+# Most of Cockpit is written in javascript, and that javascript code is running
+# in a logged in linux session, both from a security perspective, from XXXXX
+
+----
+APIs
+
+SLIDE:
+
+# A linux system, especially modern Linux has many APIs for configuring aspects
+# of the system.
+#
+# Some of the APIs are obvious, DBus apis or REST apis. systemd is a good example
+# It has a DBus API for doing all sorts of stuff. The hostname changes previously
+# was implemented by calling the systemd hostnamed API.
+
+# Other APIs aren't so obvious, accessing them may involve spawning a process, or
+# reading a file such as the ones in /proc
+
+----
+VIDEO: Dbus
+
+# Here's an example of the hostnamed call we made earlier. I'm typing javascript
+# code directly in the interactive console on my browser here. If you have
+# Cockpit running on your system try this.
+
+# It's trivial to interact with the APIs, easier even than if you were on the
+# system itself ... but that's the point ... we are on the system ... logged
+# into the system ... and the javascript code here is running as part of
+# the login session.
+
+# This is what got me excited about Cockpit. Now when I started hacking on it
+# it couldn't do all of this stuff ... but the very idea that there was code
+# in the browser interacting directly with the system cutting through the usual
+# layers of crap ... and really makes building admin tools fun again.
+
+---
+Spawning a process
+
+VIDEO: spawning
+# Let me show you another example. Spawning a process. Here's a single line of
+# code that spaws a process in the Cockpit session. I'm spawning ping.
+
+# Do you notice how the output streams back ... and we can react to it in real
+# time.
+
+---
+SLIDE: ????
+# Now I could show you more and more about this, reading files, monitoring them
+# connecting to sockets, doing REST requests ... but lets move on.
+
+---
+Architecture
+
+# So how does all this work?
+
+SLIDE:
+
+---
+Bridge
+
+IMAGE: Updated
+
+# Well if you're logged into Cockpit and look closely ... you'll notice there's 
+# a process called cockpit-bridge
+
+# cockpit-bridge doesn't know anything about configuring a system
+# it knows how to process messages. The bridge receives messages on its standard
+# in ... and produces messages on its stdout. A message might be about invoking
+# a dbus method, or spawing a process or reading a file
+
+# and it produces messages with the results asynchronously ... The javascript code
+# running in the browser reacts to those messages and can carry out the actions
+# it needs to.
+
+----
+Web Service
+
+IMAGE: Updated
+
+# Now obviously the browser cannot talk directly with the bridge on standard in
+# and standard out.
+
+# Enter the WebSocket ... The cockpit-ws process makes a WebSocket available for
+# the browser to talk to ... and any messages passed over the WebSocket are
+# passed to the bridge and vice versa.
+
+----
+HTTP
+
+# One last piece ... how does the javascript code that comprises Cockpit get to the
+# browser? Well iva HTTP, cockpit-ws has a small web server that loads Cockpit into
+# the browser once you're logged in.
+
+IMAGE: Updated
+
+---
+Authentication and Identity
+
+SLIDE:
+
+# Now you may be wondering about security ... this all sounds pretty wild ... 
+# browsers authenticating with the system.
+
+# Lets start with authentication
+
+# A key component of a login session is its identity ... who are you logged in as
+# When you log in via ssh ... sshd authenticates you in the sshd process and then starts
+# the shell with a specific uid and gid
+
+# When your browser first connects to Cockpit it won't just let you open the WebSocket
+# launch the bridge and start passing messages to access the system APIs ... it requires
+# that you log in first.
+
+VIDEO: login
+
+# The user name and password that you type here is passed into the PAM stack, which
+# checks auth ... then access ... whether you're allowed to log in ... creates a pam
+# session, including SELinux session, logind session ... and then launches the bridge
+# inside that cockpit-bridge
+
+# Here's the terminal we have inside of Cockpit. You can see what the session looks like
+# and that we're logged in as a specific user.
+
+VIDEO: terminal whoami
+
+# So that's why I can stand here and say "the javascript code is part of the login session"
+# Everything the code does to the system goes through the bridge ... and the bridge can
+# only perform those operations as the logged in user. So the javascript code really is
+# running *AS* the logged in user.
+
+# When Cockpit needs to do something with evelevated privileges ... it uses sudo or polkit
+# depending on the scenario ... and that only succeeds if the system allowed you to perform
+# that operation.xxxxxxx
+
+----
+Content-Security-Policy
+
+SLIDE:
+
+# Now if you're running javascript *AS* the logged in user ... you want to be damn sure
+# that only the code that was intended to run gets run ... and that nobody can sneak
+# code in via MITM or XSS or request forgeries
+
+# Nowadays browsers have this thing called Content Security Policy ... which if you're not
+# familiar with it is sorta like SELinux for browser content.
+
+IMAGE:
+
+# You can tell the browser to refuse to execute code from any other source than the server.
+# If you have an onclick attribute or eval of some string ... or an inline script tag
+# it's just not going to run.
+
+# So we can really underscore the concept that the code is running as the user and only
+# the users code is running.
+
+---
+
+Plugabbility
+
+VIDEO: pluggable
+
+SLIDE: full module
+
+----
+Embeddable
+
+VIDEO: embedding
+
+----
+
+Connecting between multiple servers
+
+IMAGE: full architecture
+
+----
+
+Declarative vs. Interactive
+
+SLIDE: text
+
+----
+How to join ... contribute
+
+SLIDE: text
+
+# Code
+# Mention cockpit distro talk
+# Mention maintainers, testing
+# 
+
+----
+
+Credits
+
+# Where
+
+
