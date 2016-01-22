@@ -260,7 +260,7 @@ These are <span foreground="white" weight="bold">Linux</span> features
 ------
 Write <span foreground="white" weight="bold">DBus services</span> for your feature
 
-# If you have a component or feature in RHEL, make a DBus service. For
+# If you have a component or feature in Linux, make a DBus service. For
 # local API, nothing comes close to DBus as far as the capabilities it gives you.
 # Cockpit uses DBus heavily to build it's interface, including
 # reacting to server changes, introspecting object models, and lots more.

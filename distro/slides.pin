@@ -7,19 +7,61 @@
 
 -- [logo.png]
 
-Goals
+# INTRO
+
+# Yesterday we talked about How Cockpit was put together
+# Today i want to talk more about the project's Goals and what
+# we've done to accomplish them.
+
+# For those who attended the talk yesterday ... bear with me
+# while I review a few things.
+
+----- [text-align=center]
+Cockpit is a
+<span weight="bold" foreground="white">Linux admin interface</span>
+
+# Cockpit is a linux admin interface
+
+----- [text-align=center]
+Cockpit is a <span weight="bold" foreground="white">remote interactive</span>
+Linux admin interface
+
+# Cockpit is a *remote interactive* admin interface
+# Cockpit runs in a browser and is accessible remotely. Most server and systems are headless.
+# It's interactive, you perform admin tastks interactively, troubleshoot, configure and so on.
+
+---
+Looks like this
+
+IMAGE: Cockpit
+
+---- [text-align=left] [left]
+<span size="xx-large">Goals:</span>
+
+<span foreground="white"><b>1.</b> Linux <b>usable</b>
+         by non-expert admins
+
+<b>2.</b> Complex Linux features
+         <b>discoverable</b>
+</span>
+
+--- [8378492528_e88bf7e3a5_k.jpg]
+
+Running out of the box
+
+---
+But but but!
 
 
-Where are we today
-
-
-What are the obstacles?
+---
+What are the obstacles:
 
  * Dependency, Footprint
  * Memory, Overhead
  * Ports open
  * Zero configuration
- * Making it actually work.
+ * Doesn't take over the machine. define the machine xxxx
+ * Testing and combinatorial complexity.
 
 ----
 Dependencies
@@ -30,6 +72,10 @@ Connecting to other machines.
 
 ----
 Making it actually work.
+
 System APIs.
 Testing
 First class distros
+
+Talk about distributed testing
+
