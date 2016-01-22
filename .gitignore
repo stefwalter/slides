@@ -2,3 +2,4 @@
 *.swo
 /*.ogv
 /*.gif
+.goutputstream*
