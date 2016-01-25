@@ -1,0 +1,11 @@
+proxy = cockpit.dbus("org.freedesktop.hostname1").proxy()
+proxy.KernelRelease
+proxy.KernelVersion
+proxy.PrettyHostname
+proxy.SetHostname("Marmalade", true)
+
+
+
+zz = cockpit.spawn(["ping", "8.8.8.8"])
+zz.close()
+
