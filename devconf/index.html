@@ -136,15 +136,24 @@
 	</section>
 
 	<section>
-		<h2><strong>Cockpit</strong> and <strong>Atomic</strong></h2>
-	</section>
-
-	<section>
-		Mooo!
+		<h2>Mooo!</h2>
 		<aside class="notes">
 			<ul>
 				<li>Talk about not shooting cattle</li>
+				<li>Troubleshooting</li>
+				<li>Using Cockpit with cloud operating systems.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h2><strong>Cockpit</strong> and <strong>Atomic</strong></h2>
+		<aside class="notes">
+			<ul>
+				<li>Parts of Cockpit are included in Atomic.</li>
 				<li>Cockpit is not listening on port 9090 on Atomic</li>
+				<li>Another one of the things we worked on this year was
+					making Cockpit work better with cloud instances.</li>
 			</ul>
 		</aside>
 	</section>
@@ -154,30 +163,27 @@
 		IMAGE: Connecting to other hosts
 		<ul>
 			<ul>So how do you access it? Over SSH</ul>
+			<ul>cockpit-bridge is spawned over SSH in a real SSH session.</ul>
 		</ul>
 	</section>
 
 	<section>
+		VIDEO: Demo of this happening
 		<aside class="notes">
-			Using Cockpit with cloud operating systems.
-
-			Another one of the things we worked on this year was making Cockpit
-			work better with cloud instances.
-
-			Parts of Cockpit are included in Atomic?
-
-			Key authentication.
-			Browsers don't do key auth. It would be awesome if they did.
-
-			Cockpit
-
-			There's more ideas in this area. We could make a container like Peter
-			was talking about earlier, with SSH keys. 
+			<li>Browsers don't do key auth. It would be awesome if they did.</li>
+			<li>Key authentication.</li>
+			<li>SSH agent</li>
+			<li>There's more ideas in this area. We could make a container like Peter
+				was talking about earlier, with SSH keys.</li>
 		</aside>
 	</section>
 
 	<section>
-		Combinatorial Explosion
+		<!-- TODO: Summarize the above? -->
+	</section>
+
+	<section>
+		<h2><em>Combinatorial Explosion</em></h2>
 		<aside class="notes">
 			<ul>
 				<li>Cockpit talks to tons APIs, from systemd, ssh-agent, file formats, etc.</li>
@@ -282,26 +288,26 @@
 	</section>
 
 	<section>
-		<h2>Continuous Delivery</h2>
+		<h2><em>Continuous Delivery</em></h2>
 		<aside class="notes">
 			<li>50 releases of Cockpit this year, most of them stable.</li>
 		</aside>
 	</section>
 
 	<section>
-		<h2>Sign a tag &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; Becomes a releases</h2>
+		<h2><em>Sign a tag</em> &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <em>Becomes a release</em></h2>
 	</section>
 
 	<section>
-		<ul style="text-align: left">
-			<li>Tarballs</li>
-			<li>Koji scratch build</li>
-			<li>Fedora commit</li>
-			<li>Koji build</li>
-			<li>COPR builds</li>
-			<li>Debian packaging</li>
-			<li>Docker Hub containers</li>
-			<li>Upload documentation</li>
+		<ul style="text-align: left; font-size: 1.4em;">
+			<li><em>Tarballs</em></li>
+			<li><em>Koji</em> scratch build</li>
+			<li><em>Fedora</em> commit</li>
+			<li><em>Koji</em> build</li>
+			<li><em>COPR</em> builds</li>
+			<li><em>Debian</em> packaging</li>
+			<li><em>Docker Hub</em> containers</li>
+			<li><em>Upload documentation</em></li>
 		</ul>
 	</section>
 
@@ -316,9 +322,6 @@
 		<h2><strong>cockpit-project.org</strong></h2>
 		<p><tt>#cockpit on Freenode</tt></p>
 		<p><tt>github.com/cockpit-project/cockpit</tt></p>
-	</section>
-
-	<section>
 	</section>
 </div>
 </div>
