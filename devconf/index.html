@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+	name="viewport">
+<link rel="stylesheet" href="slides.css">
+<script src="reveal/lib/js/head.min.js"></script>
+
+<title>Cockpit: A Linux Session in your Browser</title>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+	<!-- INTRO -->
+	<section>
+		<img src="logo.png">
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<h2>Cockpit is a<br>
+			<strong>Linux admin interface</strong></h2>
+	</section>
+
+	<section>
+		<h2>Cockpit is a<br>
+			<strong>remote interactive</strong><br>
+			Linux admin interface</h2>
+		<aside class="notes">
+			Cockpit is a *remote interactive* admin interface
+			Cockpit runs in a browser and is accessible remotely. Most
+			server and systems are headless. It's interactive, you perform
+			admin tastks interactively, troubleshoot, configure and so on.
+		</aside>
+	</section>
+
+	<section>
+		<img src="cockpit-system.png">
+		<!-- TODO: Perhaps have a video with slides of Cockpit here -->
+		<aside class="notes">
+			Looks like this
+		</aside>
+	</section>
+
+	<section>
+		<h2><strong>Zero footprint</strong></h2>
+		<!-- TODO: Should we really have this slide? -->
+	</section>
+
+	<section style="text-align: left;">
+		<h1>Goals:</h1>
+		<h2>
+			<em><strong>1.</strong> Linux <strong>usable</strong><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				by non-expert admins</em><br>
+			<br>
+			<em><strong>2.</strong> Complex Linux features<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<strong>discoverable</strong></em>
+		</h2>
+	</section>
+
+	<section>
+		<!-- TODO: Slides from Peter -->
+		...
+	</section>
+
+	<section>
+		<!-- TODO: Slides from Dominik -->
+		...
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		Mooo!
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		Cockpit and Atomic
+		<aside class="notes">
+			<ul>
+				<li>Talk about not shooting cattle</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		xxxx
+	</section>
+
+	<section>
+		<aside class="notes">
+			Using Cockpit with cloud operating systems.
+
+			Another one of the things we worked on this year was making Cockpit
+			work better with cloud instances.
+
+			Parts of Cockpit are included in Atomic?
+
+			Key authentication.
+			Browsers don't do key auth. It would be awesome if they did.
+
+			Cockpit
+
+			There's more ideas in this area. We could make a container like Peter
+			was talking about earlier, with SSH keys. 
+		</aside>
+	</section>
+
+	<section>
+		Real World CI CD
+	</section>
+
+	<section>
+		Kabooom!
+		<li>Cockpit talks to tons APIs, from systemd, ssh-agent, file formats, etc.</li>
+		<li>Combinatorial explosion</li>
+		<li>The would grind to a halt, if we didn't test.</li>
+	</section>
+
+	<section>
+		The code XXX in each PR boots hundreds
+		of times before it merges.
+		<li>Not just talking about unit testing, we have a couple thousand of those.</li>
+		<li>Each PR is booted hundreds of times before, merging it into git master.</li>
+	</section>
+
+	<section>
+		Real operating systems:
+		Fedora, RHEL, Atomic, Debian
+		<li>Real operating systems, Fedora, RHEL, Atomic, Debian</li>
+	</section>
+
+	<section>
+		Real browsers:
+		Firefox, Chrome
+	</section>
+
+	<section>
+		10000 testing instances == Thursday
+	</section>
+
+	<section>
+		<li>Testing is distributed and can scale up and down.</li>
+		<li>You can run it on your laptop and contribute.</li>
+		<li>Fedora Project has donated some instances.</li>
+		<li>Other random machines we found.</li>
+	</section>
+
+	<section>
+		Staged in Docker images.
+	</section>
+
+	<section>
+		Yo Dawg
+	</section>
+
+	<section>
+		Packaging -> Upstream
+		<li>Packaging is upstream.</li>
+	</section>
+
+	<section>
+		QE tests run upstream
+		<li>QE testing is upstream.</li>
+	</section>
+
+	<section>
+		<li>Continuous Integration == Upstream</li>
+		<li>I'd be lying if I said this was easy. Constant care and feeding</li>
+		<li>Everyone will probably find bugs, and say our tests suck.</li>
+	</section>
+
+	<section>
+		Continuous Delivery
+		<li>50 releases of Cockpit this year, most of them stable.</li>
+	</section>
+
+	<section>
+		Sign a tag
+		<li>Fedora, commit, scratch build, COPR, Docker hub,
+			documentation, tarballs, Debian packaging.</li>
+	</section>
+
+	<section>
+		The real magic of continous happens before you merge.
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<aside class="notes">
+		</aside>
+	</section>
+
+</div>
+</div>
+
+<script src="reveal/js/reveal.js"></script>
+<script src="slides.js"></script>
+
+</body>
+</html>
