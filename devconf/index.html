@@ -207,6 +207,11 @@
 	</section>
 
 	<section>
+		<p>Test VMs are run in Docker containers</p>
+		<img src="yo-dawg.png" style="display: block; position: absolute;">
+	</section>
+
+	<section>
 		<img src="01-initial.png">
 		<aside class="notes">
 			<ul>
@@ -235,16 +240,12 @@
 	</section>
 
 	<section>
-		<p>Test VMs run in Docker containers</p>
-	</section>
-
-	<section>
-		<h2>Yo Dawg</h2>
-	</section>
-
-	<section>
-		Packaging -> Upstream
-		<li>Packaging is upstream.</li>
+		<h2>Packaging &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <strong>Upstream</strong></h2>
+		<aside class="notes">
+			<ul>
+				<li>Packaging is upstream.</li>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
@@ -257,15 +258,21 @@
 	</section>
 
 	<section>
-		Packaging -> Upstream
-		QE testing is upstream.
+		<h2>Packaging &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <strong>Upstream</strong></br>
+		QE Testing &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <strong>Upstream</strong></h2>
+		<aside class="notes">
+			<ul>
+				<li>Packaging -> Upstream</li>
+				<li>QE testing is upstream.</li>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
-		Packaging -> Upstream
-		QE testing is upstream.
-		----------------------------
-		Continuous Integration -> Upstream
+		<!-- TODO: Fix the spacing mess -->
+		<h2>Packaging &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <strong>Upstream</strong></br>
+		QE Testing &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <strong>Upstream</strong></h2>
+		<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CI  &nbsp;&nbsp;=&nbsp;&nbsp; <strong>Upstream</strong></h2>
 		<aside class="notes">
 			<ul>
 				<li>I'd be lying if I said this was easy. Constant care and feeding</li>
@@ -275,18 +282,32 @@
 	</section>
 
 	<section>
-		Continuous Delivery
-		<li>50 releases of Cockpit this year, most of them stable.</li>
+		<h2>Continuous Delivery</h2>
+		<aside class="notes">
+			<li>50 releases of Cockpit this year, most of them stable.</li>
+		</aside>
 	</section>
 
 	<section>
-		Sign a tag ... Downstream Releases
-		<li>Fedora, commit, scratch build, COPR, Docker hub,
-			documentation, tarballs, Debian packaging.</li>
+		<h2>Sign a tag &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; Becomes a releases</h2>
 	</section>
 
 	<section>
-		The real magic of continous happens before you merge.
+		<ul style="text-align: left">
+			<li>Tarballs</li>
+			<li>Koji scratch build</li>
+			<li>Fedora commit</li>
+			<li>Koji build</li>
+			<li>COPR builds</li>
+			<li>Debian packaging</li>
+			<li>Docker Hub containers</li>
+			<li>Upload documentation</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>The real magic of continous<br>
+		happens <strong>before you merge</strong></h2>
 		<aside class="notes">
 		</aside>
 	</section>
