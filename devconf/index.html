@@ -136,17 +136,17 @@
 	</section>
 
 	<section>
-		Mooo!
-		<aside class="notes">
-		</aside>
-	</section>
-
-	<section>
 		Cockpit and Atomic
 		<aside class="notes">
 			<ul>
 				<li>Talk about not shooting cattle</li>
 			</ul>
+		</aside>
+	</section>
+
+	<section>
+		Mooo!
+		<aside class="notes">
 		</aside>
 	</section>
 
@@ -174,51 +174,72 @@
 	</section>
 
 	<section>
-		Real World CI CD
+		Combinatorial Explosion
+		<aside class="notes">
+			<ul>
+				<li>Cockpit talks to tons APIs, from systemd, ssh-agent, file formats, etc.</li>
+				<li>Combinatorial explosion</li>
+				<li>The would grind to a halt, if we didn't test.</li>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
-		Kabooom!
-		<li>Cockpit talks to tons APIs, from systemd, ssh-agent, file formats, etc.</li>
-		<li>Combinatorial explosion</li>
-		<li>The would grind to a halt, if we didn't test.</li>
-	</section>
-
-	<section>
+		<img src="ci-tasks.png">
+		<aside class="notes">
+			<ul>
+				 <li>Real operating systems: Fedora, RHEL, Atomic, Debian</li>
+				 <li>Real browsers: Firefox, Chrome</li>
 		The code XXX in each PR boots hundreds
 		of times before it merges.
-		<li>Not just talking about unit testing, we have a couple thousand of those.</li>
-		<li>Each PR is booted hundreds of times before, merging it into git master.</li>
+				<li>Not just talking about unit testing, we have a couple thousand of those.</li>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
-		Real operating systems:
-		Fedora, RHEL, Atomic, Debian
-		<li>Real operating systems, Fedora, RHEL, Atomic, Debian</li>
+		<h2><strong>10,000</strong> testing instances a day</h2>
+		<aside class="notes">
+			<ul>
+				<li>On busy days we can have up to 10,000 testing instances.</li>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
-		Real browsers:
-		Firefox, Chrome
+		<img src="01-initial.png">
+		<aside class="notes">
+			<ul>
+				<li>Testing is distributed and can scale up and down.</li>
+				<li>You can run it on your laptop and contribute.</li>
+				<li>Fedora Project has donated some instances.</li>
+				<li>Other random machines we found.</li>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
-		10000 testing instances == Thursday
+		<img src="02-tasks.png">
 	</section>
 
 	<section>
-		<li>Testing is distributed and can scale up and down.</li>
-		<li>You can run it on your laptop and contribute.</li>
-		<li>Fedora Project has donated some instances.</li>
-		<li>Other random machines we found.</li>
+		<img src="03-logs.png">
 	</section>
 
 	<section>
-		Staged in Docker images.
+		<img src="04-status.png">
 	</section>
 
 	<section>
-		Yo Dawg
+		<img src="06-images.png">
+	</section>
+
+	<section>
+		<p>Test VMs run in Docker containers</p>
+	</section>
+
+	<section>
+		<h2>Yo Dawg</h2>
 	</section>
 
 	<section>
@@ -227,14 +248,30 @@
 	</section>
 
 	<section>
-		QE tests run upstream
-		<li>QE testing is upstream.</li>
+		<img src="qe-tasks.png">
+		<aside class="notes">
+			<ul>
+				<li>QE testing is upstream.</li>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
-		<li>Continuous Integration == Upstream</li>
-		<li>I'd be lying if I said this was easy. Constant care and feeding</li>
-		<li>Everyone will probably find bugs, and say our tests suck.</li>
+		Packaging -> Upstream
+		QE testing is upstream.
+	</section>
+
+	<section>
+		Packaging -> Upstream
+		QE testing is upstream.
+		----------------------------
+		Continuous Integration -> Upstream
+		<aside class="notes">
+			<ul>
+				<li>I'd be lying if I said this was easy. Constant care and feeding</li>
+				<li>Everyone will probably find bugs, and say our tests suck.</li>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
@@ -243,64 +280,13 @@
 	</section>
 
 	<section>
-		Sign a tag
+		Sign a tag ... Downstream Releases
 		<li>Fedora, commit, scratch build, COPR, Docker hub,
 			documentation, tarballs, Debian packaging.</li>
 	</section>
 
 	<section>
 		The real magic of continous happens before you merge.
-	</section>
-
-	<section>
-		<aside class="notes">
-		</aside>
-	</section>
-
-	<section>
-		<aside class="notes">
-		</aside>
-	</section>
-
-	<section>
-	</section>
-
-	<section>
-		<aside class="notes">
-		</aside>
-	</section>
-
-	<section>
-		<aside class="notes">
-		</aside>
-	</section>
-
-	<section>
-		<aside class="notes">
-		</aside>
-	</section>
-
-	<section>
-		<aside class="notes">
-		</aside>
-	</section>
-
-	<section>
-		<aside class="notes">
-		</aside>
-	</section>
-
-	<section>
-		<aside class="notes">
-		</aside>
-	</section>
-
-	<section>
-		<aside class="notes">
-		</aside>
-	</section>
-
-	<section>
 		<aside class="notes">
 		</aside>
 	</section>
