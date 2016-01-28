@@ -202,8 +202,7 @@
 		</aside>
 	</section>
 
-	<section>
-		SLIDE:
+	<section data-background="transport-02.png">
 		<!-- TODO: -->
 		<aside class="notes">
 			<ul>
@@ -225,7 +224,7 @@
 		</aside>
 	</section>
 
-	<section>
+	<section data-background="transport-03.png">
 		<!-- TODO: -->
 		Web Service
 		<aside class="notes">
@@ -241,7 +240,7 @@
 		</aside>
 	</section>
 
-	<section>
+	<section data-background="transport-04.png">
 		<!-- TODO: -->
 		HTTP
 			IMAGE: Updated
@@ -409,25 +408,30 @@
 		</aside>
 	</section>
 
-	<section data-background-video="multiple-hosts.webm">
-		<!-- TODO: -->
+	<section>
+		<h2>Running Cockpit over SSH</h2>
 		<aside class="notes">
 			<ul>
+				<li>Now often you don't want to make servers directly accessible to
+				a browser on port 9090. That's the way Cockpit normally works.
 				<li>One of the cooler things about Cockpit is that it can connect out
 				to other servers via SSH ... even if those servers are not accessible
 				to the browser. They may be behind a firewall and you may have a
 				bastion host ... or simply don't want to open up the additional
 				TCP port to allow the browser to connect to Cockpit.</li>
 
+	</section>
+	<section data-background-video="multiple-hosts.webm">
+		<aside class="notes">
+			<ul>
 				<li>Cockpit connects out to those servers via ssh, using password, 
-				based auth and others</li>
+				key based auth and others</li>
 			</ul>
 		</aside>
 	</section>
 
-	<section>
+	<section data-background="transport-multi.png">
 		<!-- TODO: -->
-		IMAGE: full architecture
 		<aside class="notes">
 			<ul>
 				<li>The same cockpit-bridge is launched as it was earlier ... but in
