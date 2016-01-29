@@ -11,8 +11,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="960"
-   height="720"
+   width="10.5in"
+   height="7.25in"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -27,21 +27,22 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="450.26415"
-     inkscape:cy="300.33313"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="920.98564"
+     inkscape:cy="130.1668"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1600"
-     inkscape:window-height="836"
-     inkscape:window-x="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="1680"
      inkscape:window-y="27"
-     inkscape:window-maximized="0"
+     inkscape:window-maximized="1"
      showguides="false"
      inkscape:guide-bbox="true"
      inkscape:connector-spacing="100"
-     inkscape:snap-nodes="false">
+     inkscape:snap-nodes="false"
+     units="in">
     <sodipodi:guide
        orientation="1,0"
        position="24.999999,243.49999"
@@ -61,6 +62,18 @@
   </sodipodi:namedview>
   <defs
      id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4495">
+      <stop
+         style="stop-color:#0d5359;stop-opacity:0.20392157"
+         offset="0"
+         id="stop4497" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0"
+         offset="1"
+         id="stop4499" />
+    </linearGradient>
     <linearGradient
        inkscape:collect="always"
        id="linearGradient7380">
@@ -284,6 +297,15 @@
        x2="449.28363"
        y2="564.7395"
        gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4495"
+       id="linearGradient4507"
+       x1="450.23822"
+       y1="719.26312"
+       x2="440.99197"
+       y2="577.13464"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <metadata
      id="metadata7">
@@ -301,7 +323,8 @@
      inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="base-single-host"
-     style="display:none">
+     style="display:inline"
+     transform="translate(0,-67.499996)">
     <rect
        ry="5.999999"
        rx="6.0000005"
@@ -314,10 +337,11 @@
        transform="translate(0,-332.36218)" />
   </g>
   <g
-     style="display:inline"
+     style="display:none"
      inkscape:label="base-multi-host"
      id="g7477"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     transform="translate(0,-67.499996)">
     <rect
        style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#ac9393;fill-opacity:0.2745098;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
        id="rect7479"
@@ -332,7 +356,8 @@
      inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="base"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(0,-67.499996)">
     <rect
        transform="translate(0,-332.36218)"
        ry="5.999999"
@@ -527,8 +552,8 @@
      inkscape:label="single-host"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-332.36218)"
-     style="display:none">
+     transform="translate(0,-399.86218)"
+     style="display:inline">
     <g
        id="g9722"
        transform="translate(-8.4159991,-3.6943631)" />
@@ -765,12 +790,6 @@
        rx="19.445436"
        ry="18.738329" />
     <path
-       id="path6432"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 460.58997,574.97784 618.98189,720.64183 M 428.07168,574.97784 167.85638,720.64183"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc" />
-    <path
        style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:0.41800005;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#127a84;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:7;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
        d="m 660.81447,778.29575 c -206.30101,0.91827 -406.94938,-0.79431 -585.90627,0 l 0.06783,89.44466 c 206.29765,-0.91825 406.94257,0.7943 585.89659,0 l -0.0576,-89.44466 z"
        id="path6506"
@@ -881,12 +900,25 @@
          y="907.71625"
          id="tspan4223"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Overpass;-inkscape-font-specification:'Overpass Bold'" /></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 449,571.61218 7.25,27.5"
+       id="path4411"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       d="M 638.98189,728.64183 C 619.54703,724.71078 482.7611,617.08588 460.58997,559.97784 l -32.51829,0 C 406.70205,619.82072 190.83301,693.1009 93.85638,728.64183 Z"
+       style="fill:url(#linearGradient4507);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4413" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="multi-host"
-     style="display:inline">
+     style="display:none"
+     transform="translate(0,-67.499996)">
     <g
        style="display:inline"
        id="g8274"
