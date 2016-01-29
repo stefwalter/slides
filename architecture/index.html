@@ -157,6 +157,7 @@
 				that there was code in the browser interacting directly with the system
 				cutting through the usual layers of crap ... and really makes building
 				admin tools fun again.</li>
+            </ul>
 		</aside>
 	</section>
 
@@ -413,18 +414,19 @@
 		<aside class="notes">
 			<ul>
 				<li>Now often you don't want to make servers directly accessible to
-				a browser on port 9090. That's the way Cockpit normally works.
+                    a browser on port 9090. That's the way Cockpit normally works.</li>
 				<li>One of the cooler things about Cockpit is that it can connect out
 				to other servers via SSH ... even if those servers are not accessible
 				to the browser. They may be behind a firewall and you may have a
 				bastion host ... or simply don't want to open up the additional
 				TCP port to allow the browser to connect to Cockpit.</li>
-
+            </ul>
+        </aside>
 	</section>
 	<section data-background-video="multiple-hosts.webm">
 		<aside class="notes">
 			<ul>
-				<li>Cockpit connects out to those servers via ssh, using password, 
+				<li>Cockpit connects out to those servers via ssh, using password,
 				key based auth and others</li>
 			</ul>
 		</aside>
