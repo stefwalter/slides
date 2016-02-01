@@ -11,15 +11,15 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="10.5in"
-   height="7.25in"
+   width="960"
+   height="720"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="transport-protocol.svg"
-   inkscape:export-filename="/data/src/cockpit-slides/architecture/transport-multi.png"
-   inkscape:export-xdpi="180"
-   inkscape:export-ydpi="180">
+   inkscape:export-filename="/data/src/cockpit-slides/devconf/multi-host-ssh.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -28,8 +28,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.70710678"
-     inkscape:cx="920.98564"
-     inkscape:cy="130.1668"
+     inkscape:cx="674.91248"
+     inkscape:cy="297.044"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -42,7 +42,7 @@
      inkscape:guide-bbox="true"
      inkscape:connector-spacing="100"
      inkscape:snap-nodes="false"
-     units="in">
+     units="px">
     <sodipodi:guide
        orientation="1,0"
        position="24.999999,243.49999"
@@ -315,7 +315,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -323,8 +323,8 @@
      inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="base-single-host"
-     style="display:inline"
-     transform="translate(0,-67.499996)">
+     style="display:none"
+     transform="translate(0,4e-6)">
     <rect
        ry="5.999999"
        rx="6.0000005"
@@ -337,11 +337,11 @@
        transform="translate(0,-332.36218)" />
   </g>
   <g
-     style="display:none"
+     style="display:inline"
      inkscape:label="base-multi-host"
      id="g7477"
      inkscape:groupmode="layer"
-     transform="translate(0,-67.499996)">
+     transform="translate(0,4e-6)">
     <rect
        style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#ac9393;fill-opacity:0.2745098;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
        id="rect7479"
@@ -357,7 +357,7 @@
      id="layer5"
      inkscape:label="base"
      style="display:inline"
-     transform="translate(0,-67.499996)">
+     transform="translate(0,4e-6)">
     <rect
        transform="translate(0,-332.36218)"
        ry="5.999999"
@@ -552,8 +552,8 @@
      inkscape:label="single-host"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-399.86218)"
-     style="display:inline">
+     transform="translate(0,-332.36218)"
+     style="display:none">
     <g
        id="g9722"
        transform="translate(-8.4159991,-3.6943631)" />
@@ -917,8 +917,8 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="multi-host"
-     style="display:none"
-     transform="translate(0,-67.499996)">
+     style="display:inline"
+     transform="translate(0,4e-6)">
     <g
        style="display:inline"
        id="g8274"

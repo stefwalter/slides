@@ -32,24 +32,31 @@
 			<strong>remote interactive</strong><br>
 			Linux admin interface</h2>
 		<aside class="notes">
-			Cockpit is a *remote interactive* admin interface
-			Cockpit runs in a browser and is accessible remotely. Most
-			server and systems are headless. It's interactive, you perform
-			admin tastks interactively, troubleshoot, configure and so on.
+			<ul>
+				<li>Cockpit is a *remote interactive* admin interface</li>
+				<li>Cockpit runs in a browser and is accessible remotely. Most
+				server and systems are headless. It's interactive, you perform
+				admin tastks interactively, troubleshoot, configure and so on.</li>
 		</aside>
 	</section>
 
 	<section>
 		<img src="cockpit-system.png">
-		<!-- TODO: Perhaps have a video with slides of Cockpit here -->
 		<aside class="notes">
-			Looks like this
+			<ul>
+				<li>Looks like this, but you've probably seen it already.</li>
+			</ul>
 		</aside>
 	</section>
 
 	<section>
 		<h2><strong>Zero footprint</strong></h2>
-		<!-- TODO: Should we really have this slide? -->
+		<aside class="notes">
+			<ul>
+				<li>No phat NodeJS or PHP server side deps.</li>
+				<li>Starts on demand, exits when not in use.</li>
+			</ul>
+		</aside>
 	</section>
 
 	<section style="text-align: left;">
@@ -160,16 +167,16 @@
 	</section>
 
 	<section>
-		<!-- TODO: Image here -->
-		IMAGE: Connecting to other hosts
-		<ul>
-			<ul>So how do you access it? Over SSH</ul>
-			<ul>cockpit-bridge is spawned over SSH in a real SSH session.</ul>
-		</ul>
+		<img src="multi-host-ssh.png">
+		<aside class="notes">
+			<ul>
+				<ul>So how do you access it? Over SSH</ul>
+				<ul>cockpit-bridge is spawned over SSH in a real SSH session.</ul>
+			</ul>
+		</aside>
 	</section>
 
-	<section>
-		VIDEO: Demo of this happening
+	<section data-background-video="multi-host-ssh.webm">
 		<aside class="notes">
 			<li>Browsers don't do key auth. It would be awesome if they did.</li>
 			<li>Key authentication.</li>
@@ -177,10 +184,6 @@
 			<li>There's more ideas in this area. We could make a container like Peter
 				was talking about earlier, with SSH keys.</li>
 		</aside>
-	</section>
-
-	<section>
-		<!-- TODO: Summarize the above? -->
 	</section>
 
 	<section>
@@ -269,7 +272,7 @@
 		QE Testing &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <strong>Upstream</strong></h2>
 		<aside class="notes">
 			<ul>
-				<li>Packaging -> Upstream</li>
+				<li>Packaging is Upstream, when it needs to be testable.</li>
 				<li>QE testing is upstream.</li>
 			</ul>
 		</aside>
