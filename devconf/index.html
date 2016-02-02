@@ -163,7 +163,7 @@
 
     <section data-background-video="kube-features.webm">
 		<aside class="notes">
-            <p>Alright lets take a look at the UI itself. We try to focus on common administrative tasks. Let's start by uploading a simple service. This is a pretty useless mock service that does nothing but say hello. Once deployed we can see details about our objects.</p>
+            <p>Alright lets take a look at the UI itself. Let's start by uploading a simple service. This is a pretty useless mock service that does nothing but say hello. Once deployed we can see details about our objects.</p>
 
             <p>Pods are what kubernetes schedules and manages. A pods is one or more containers. We can inspect our pods, see details about the container it contains, follow the logs and even execute commands.</p>
 
@@ -228,11 +228,10 @@
         <h2><strong>Not there yet...</strong></h2>
 		<aside class="notes">
 		    <ul>
-		    <li>
-            While this mostly works, it isn't as smooth as it could be. There are quite a few issues we've run into and several things we'd like to change upstream in kubernetes/openshift to improve the usability.</li>
-            <li>I won't get into all of them now but a couple i wanted to highlight</li>
-                <li>Discoverable external urls: Right now to make OAuth work we have to manually specify what the public urls for our service and the kubeapi master are. Kuberenetes already knowns the master URL so we really shouldn't have to specify that again, but more that that it would be ideal if there was a way to communicate better about external domains / addresses using the downward API so we don't have to specify those manually.</li>
-                <li>Better authentication defaults: On openshift origin, the default is to accept any username/password combo. While our container will run with that, it's probably not a good idea to keep it like that in most cases. On kubernetes the api is open by default, our container will refuse to log a user into an open api. So right now to use this with a standard kubernetes install you need to use basic auth. There's been some talk upstream about bringing in some of openshift's OAuth code into kubernetes. That would help make this more usable out of the box.</li>
+		    <li>While this mostly works, it isn't as smooth as it could be. There aren't a lot of integrated UIs successfully delivering in this way. Openshift's webconsole doesn't run as a pod, and while it's registry sort of does, it requires some non-standard integration to get it going.</li>
+            <li>I won't get into all the details now but I did want to highlight a couple</li>
+            <li>Discoverable external urls: Right now to make OAuth work we have to manually specify what the public urls for our UI service and the kubernetes api master are. Kuberenetes already knows the master URL so we really shouldn't have to specify that again, but more that that it would be ideal if there was a way to communicate better about external domains / addresses so we don't have to repeat ourselfs and specify those manually.</li>
+            <li>Better authentication defaults: On openshift origin, the default is to accept any username/password combo. While our container will run with that, it's probably not a good idea to actually deploy anything like that. There is a cool orign PR by Stef to allow system users to authenticate with the kuberenete API, that might make a good default. On kubernetes the api is open by default, our container will refuse to log a user into an open api. So right now to use this with a standard kubernetes install you need to use basic auth. There's been some talk upstream about bringing in some of openshift's OAuth code into kubernetes. That would help make this more usable out of the box.</li>
             </ul>
 		</aside>
     </section>
