@@ -51,15 +51,15 @@
 	</section>
 
 	<section style="text-align: left;">
-		<h1>Goals:</h1>
+		<h2><strong>Goals:</strong></h2>
 		<h2>
-			<em><strong>1.</strong> Linux <strong>usable</strong><br>
+			<strong>1. Linux usable</strong><br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				by non-expert admins</em><br>
+				by non-expert admins<br>
 			<br>
-			<em><strong>2.</strong> Complex Linux features<br>
+			<strong>2.</strong> Complex Linux <strong>features<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<strong>discoverable</strong></em>
+				discoverable</strong>
 		</h2>
 	</section>
 
@@ -73,7 +73,7 @@
 		</aside>
 	</section>
 
-    <section>
+    <section data-background-color="white">
 		<h1>OSTree</h1>
 		<aside class="notes">
 			<p>Software updates on Atomic Hosts</p>
@@ -108,14 +108,14 @@
 		</aside>
     </section>
 
-    <section>
+    <section data-background-color="white">
         <img src="upgrade-non-idempotent.png">
 		<aside class="notes">
 			The rpm-ostree command was not idempotent. It wasn't possible to be sure exactly what changes you were deploying depending on when the repo you are pulling from got updated. This could be a problem for multiple machines trying to upgrade in sync or in the case of cokcpit on a single machine we couldn't be sure that the exact changes that are displaying to the user is in fact what will be deployed.
 		</aside>
     </section>
 
-    <section>
+    <section data-background-color="white">
         <img src="deploy-idempotent.png">
 		<aside class="notes">
 			The solution was to add a new verb deploy that would allow you target a
@@ -143,14 +143,14 @@
 		</aside>
     </section>
 
-    <section>
+    <section data-background-color="white">
         <img src="multiple-os.png">
 		<aside class="notes">
 			RPM OSTree supports having multiple OSes side by side and switching between them. Cockpit needs to surface this
 		</aside>
     </section>
 
-    <section>
+    <section data-background-color="white">
 		<h1>Containers</h1>
 		<aside class="notes">
 			<ul>
@@ -331,7 +331,7 @@
 		</aside>
     </section>
 
-    	<section>
+    	<section data-background-color="white">
         	<h1>Tuned</h1>
 		<aside class="notes">
         		<ul style="margin-left: 50px; text-align: left" class="fragment">
@@ -346,7 +346,7 @@
 		</aside>
 	</section>
 
-	<section>
+	<section data-background-color="white">
 		<h1>SELinux</h1>
 		<aside class="notes">
 			<ul>
@@ -360,7 +360,8 @@
 		<aside class="notes">
 		</aside>
 	</section>
-	<section>
+
+	<section data-background-color="white">
 		<h1>Atomic</h1>
 	</section>
 
@@ -379,7 +380,7 @@
 		</aside>
 	</section>
 
-	<section>
+	<section data-background-color="white">
 		<img src="multi-host-ssh.png">
 		<aside class="notes">
 			<ul>
@@ -399,8 +400,8 @@
 		</aside>
 	</section>
 
-	<section>
-		<h1>Continuous</h1>
+	<section data-background-color="white">
+		<h1>Continuous<br>Integration</h1>
 	</section>
 
 	<section>
@@ -414,7 +415,7 @@
 		</aside>
 	</section>
 
-	<section>
+	<section data-background-color="white">
 		<img src="ci-tasks.png">
 		<aside class="notes">
 			<ul>
@@ -428,7 +429,7 @@
 	</section>
 
 	<section>
-		<h2><strong>10,000</strong> testing instances a day</h2>
+		<h2><strong>10,000</strong> testing<br>instances a day</h2>
 		<aside class="notes">
 			<ul>
 				<li>On busy days we can have up to 10,000 testing instances.</li>
@@ -472,7 +473,7 @@
 		</aside>
 	</section>
 
-	<section>
+	<section data-background-color="white">
 		<img src="qe-tasks.png">
 		<aside class="notes">
 			<ul>
@@ -505,15 +506,15 @@
 		</aside>
 	</section>
 
-	<section>
-		<h2><em>Continuous Delivery</em></h2>
+	<section data-background-color="white">
+		<h1>Continuous Delivery</h1>
 		<aside class="notes">
 			<li>50 releases of Cockpit this year, most of them stable.</li>
 		</aside>
 	</section>
 
 	<section>
-		<h2><em>Sign a tag</em> &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <em>Becomes a release</em></h2>
+		<h3><em>Sign a tag</em> &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <em>Becomes a release</em></h3>
 	</section>
 
 	<section>
@@ -530,14 +531,16 @@
 	</section>
 
 	<section>
-		<h2>The real magic of continous<br>
-		happens <strong>before you merge</strong></h2>
+		<h3>The real magic of continous<br>
+		happens <strong>before you merge</strong></h3>
 		<aside class="notes">
 		</aside>
 	</section>
 
 	<section>
-		<h2><strong>cockpit-project.org</strong></h2>
+		<h2><strong>Questions?
+			<br><br>
+			cockpit-project.org</strong></h2>
 		<p><tt>#cockpit on Freenode</tt></p>
 		<p><tt>github.com/cockpit-project/cockpit</tt></p>
 	</section>
