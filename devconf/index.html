@@ -83,87 +83,73 @@
     <section data-background-video="ostree-upgrade.webm">
 		<aside class="notes">
 			Atomic uses rpm-ostree to create ostree repositories out of RPMs. Cockpit
-			shows you the currently installed RPMs as well as gives you option to rollback
-			to a previously state. We can also check for new versions, see what packages will
-			be changed and deploy those changes.
+			shows you the what's currently installed as well as gives you option to rollback to a previous state. We can also check for new versions, see what packages will
+			be changed and deploy those changes. Updates are always atomic so if the operation
+			is canceled or interrupted in anyway the running system is not effected.
 		</aside>
     </section>
 
     <section data-background-video="ostree-upgrade-part-2.webm">
-    </section>
-
-    <section>
-		<h2><strong>Issues</strong></h2>
 		<aside class="notes">
-			Working on this UI surfaced a few issues with rpm-ostree that needed
-			to be fixed in order to make this UI possible.
+			Skipping ahead the host will reboot into the new version. You can reconnect and see that the upgrade is complete.
 		</aside>
     </section>
 
+
     <section>
-        <h2>Multi-User safety</h2>
-        <p class="fragment">DBUS Api and OSTree locking</p>
+		<h2><strong>Fixing RPM OSTree</strong></h2>
+
 		<aside class="notes">
-			The rpm-ostree command was not safe for multiple users. Users couldn't know what others were doing on the system and could end up with a corrupted system if certain actions were performed at the same time. A DBUS library rpm-ostree  to manage ostree a DBUS API that made it possible to provide information on the status of the system as well as ostree level locking to prevent potentionaly corrupting actions. These changes made it possble also made it possible for cockpit to provide a detailed look at the potentional changes an action would cause as well as the ability to react to changes made by other login sessions.
+			Building this UI required making non-trival changes to rpm-ostree itself. This is a pattern we've seen several times actually where working on cockpit interface for a tool or service helps uncover issues that user will run into whether cockpit was a thing or not. Building out the UI really helps it take the next step from toolbox to product. In this case fixing these issues not only allowed cockpit to deliver a nice easy way for user to upgrade their systems but also performing the same actions from the terminal are now safer and easier to reason about.
 		</aside>
     </section>
 
     <section data-background-color="white">
         <img src="upgrade-non-idempotent.png">
 		<aside class="notes">
-			The rpm-ostree command was not idempotent. It wasn't possible to be sure exactly what changes you were deploying depending on when the repo you are pulling from got updated. This could be a problem for multiple machines trying to upgrade in sync or in the case of cokcpit on a single machine we couldn't be sure that the exact changes that are displaying to the user is in fact what will be deployed.
+			One of the main issues was that rpm-ostree operations were not idempotent. It wasn't possible to be sure exactly what changes you were deploying. What exact version got deployed was racy. This could be a problem for multiple machines trying to upgrade in sync or even on a single machine you couldn't be sure that the exact changes you carefully preview are in fact what will be deployed.
 		</aside>
     </section>
 
     <section data-background-color="white">
         <img src="deploy-idempotent.png">
 		<aside class="notes">
-			The solution was to add a new verb deploy that would allow you target a
-			specfic version or hash. Cockpit can show those change diffs with confidence
-			and ensure that only those changes are deployed when the user applies them.
+			The solution was to add a new verb deploy that would allow you target a specfic version or hash if you prefer. Cockpit can show those RPM change diffs with confidence and ensure that only those changes are deployed when the user applies them.
 		</aside>
     </section>
 
     <section>
-		<h2>Want useable APIs?<br><strong>Add them to cockpit</strong></h2>
-		<aside class="notes">
-			Going through the process of adding a new UI to cockpit won't only give you a nice interface web interface but i can really help surface usablity issues with the underlying API or command. In this case not only do cockpit users now have a nice easy way to upgrade their systems. Terminal users also have commands that are safer and easier to reason about.
+        <h2><strong>Multi-User Safety</strong></h2>
+ 		<aside class="notes">
+			The rpm-ostree command was not safe for multiple users. Users couldn't know what others were doing on the system and could end up with a corrupted system if certain actions were performed at the same time. Locking was added as an ostree primitive to prevent potentionaly corrupting concurent actions.
+	    </aside>
+    </section>
+
+    <section>
+       <h2><strong>DBUS API</strong></h2>
+ 		<aside class="notes">
+			A DBUS API was added to rpm-ostree that made it possible to provide information on the status of the system as well as the ability to react to changes made elsewhere. It also had the added advantage of allowing cockpit to provide a detailed look at potentional changes without resorting to screen scraping.
 		</aside>
     </section>
 
-    <section style="text-align: left">
-		<h2><strong>Still to come</strong></h2>
-	    <ul style="margin-left: 50px; text-align: left">
+    <section>
+		<h2><strong>More to come</strong></h2>
+		<aside class="notes">
+		<p>There's still more that we'd like to do with ostree.</p>
+	    <ul>
 	    	 <li>Deploying arbitrary versions</li>
 	        <li>Rebase support</li>
 	        <li>Improve multi-OS support</li>
+	        <li>Manage trusted GPG keys</li>
 	    </ul>
-		<aside class="notes">
-			There are more use cases that cockpit should grow support for.
-		</aside>
-    </section>
-
-    <section data-background-color="white">
-        <img src="multiple-os.png">
-		<aside class="notes">
-			RPM OSTree supports having multiple OSes side by side and switching between them. Cockpit needs to surface this
 		</aside>
     </section>
 
     <section data-background-color="white">
 		<h1>Containers</h1>
-		<aside class="notes">
-			<ul>
-				<li>with Kubernetes/Openshift</li>
-				<li>Last year we added a Kubernetes/Openshift UI in Cockpit.</li>
-			</ul>
-		</aside>
-    </section>
+        <aside class="notes">
+			Switching topics to container management. Last year we added a Kubernetes/Openshift UI in Cockpit.
 
-    <section>
-        <h2><strong>Kubernetes:</strong><br> Container Orchestration</h2>
-        <h2><strong>Openshift:</strong><br> Kubernetes+</h2>
-		<aside class="notes">
 			Quick review: Kubernetes is a container orchestration system that handles
 			scheduling and management of docker containers. Openshift is built on top
 			of Kubernetes and provides additonal deployment, orchestration, and routing
@@ -173,62 +159,29 @@
 		    I'm just going say kubernetes, unless i'm refering specifically to features
 		    only in openshift.
 		</aside>
-	</section>
+    </section>
 
-    <section>
-		<h1>Goals:</h1>
-		<h2>
-			<em><strong>1.</strong> Make kubernetes features <strong>discoverable</strong></em>
-			<br>
-			<em><strong>2.</strong> Provide a UI for common <strong>administrative</strong> use cases</em>
-		</h2>
+    <section data-background-video="kube-features.webm">
 		<aside class="notes">
-			Note that we don't say anything about developers here. We aren't aiming to provide
-			a UI for common developer use cases. There are other tools that are good at that,
-			cockpit is primarily a administor tool so that's what we chose to focus on.
-		</aside>
-	</section>
+            <p>Alright lets take a look at the UI itself. We try to focus on common administrative tasks. Let's start by uploading a simple service. This is a pretty useless mock service that does nothing but say hello. Once deployed we can see details about our objects.</p>
 
-    <section style="text-align: left">
-        <h2><strong>Installation</strong></h2>
-        <p>Already running Cockpit on your nodes?</p>
-        <ul style="margin-left: 50px; text-align: left" class="fragment">
-            <li>Install as a normal cockpit package</li>
-            <li>Uses the logged in users api authorizations</li>
-        </ul>
-        <aside class="notes">
-			<ul>
-			    <li>So how do get this UI, well are you already running Cockpit on your nodes?.</li>
-			    <li>If you are then you can simply install the cockpit kubernetes package (rpm or deb). Like everything else in cockpit, you'll have the same permissions with the kubernetes API as would if you were on issuing commands on the command line. Cockpit will respect your user's kubectl settings.</li>
-			</ul>
+            <p>Pods are what kubernetes schedules and manages. A pods is one or more containers. We can inspect our pods, see details about the container it contains, follow the logs and even execute commands.</p>
+
+            <p>Replication Controllers are how Pods are managed and handles scheduling them on available nodes.</p>
+
+            <p>Since pods come and go, services define a set of pods that can be accessed in a stable way, even when the underlying pods change. We check on a services status, where it is located and what it exposes.</p>
+
+			<p>Cockpit also provides some nice visualization to help admins see what objects are running and how they relate to and interact with each other. You can even make changes from this view and see it react.</p>
 		</aside>
     </section>
 
-    <section style="text-align: left">
-        <h2><strong>Installation</strong></h2>
-        <p>Without Cockpit on your nodes?</p>
-        <ul style="margin-left: 50px; text-align: left" class="fragment">
-            <li>Install as a stand alone unprivileged Docker container or a Kubernetes Pod</li>
-            <li>Uses the logged in users api authorizations</li>
-        </ul>
-
-		<aside class="notes">
-		    <ul>
-		        <li>What if you don't want to install cockpit on any of your nodes,
-		        or maybe you want
-		    to allow users who have API access to be able to use this UI for managing
-		    kubernetes without giving them a user account on the node OS. </li>
-		    <li>So there is also the option of deploying cockpit's kubernetes UI as either
-		    a stand alone container or kubernetes pod.</li>
-        </ul>
-	    </aside>
-    </section>
 
     <section>
-        <h2>Container Configuration</h2>
-        <p>Environment Variables + Downward API
+        <h2><strong>Cockpit Kubernetes Container</strong></h2>
    		<aside class="notes">
-   		    <ul><li>
+   		    <ul>
+   		    <li>So now that we have this UI we wanted to really eat our dogfood and run this UI seperate from the rest of cockpit as a pod in kubernetes. Enter the cockpit/kubernetes container.</li>
+   		    <li>
 		    The cockpit/kubernetes container looks at environment varibles to know how
 		    to connect to the kubernetes master. When running as pod most of what it needs
 		    will be automatically populated by the downward API and default secrets.</li>
@@ -239,16 +192,16 @@
 		    use in our browser to access our service.</li></ul>
 		</aside>
     </section>
+
     <section data-background-video="oc-create.webm">
 		<aside class="notes">
 		    <ul>
-            <li>Openshift has a nice template feature that lets you create API object definitions from a template. We can use this to generate the object definitions our cockpit kubernetes service with the correct environment variables filled in.</li>
-		    <li>We can pipe these definitions to oc create to actually crete the objects.</li></ul>
+            <li>Lets look at how this gets deployed on openshift. Openshift has a nice template feature that lets you create API object definitions from a template. We can use this to generate the object definitions our cockpit kubernetes service with the correct environment variables filled in.</li>
+		    <li>We can pipe these definitions to oc create to actually create the objects.</li></ul>
 		</aside>
     </section>
 
-    <section>
-        TODO: LOGIN VIDEO
+    <section data-background-video="kube-login.webm">
 		<aside class="notes">
 		    Now lets hit our newly deployed service in the browser. Right away we get
 		    redirected to the our kubernetes master api server. I've configured this one
@@ -265,70 +218,34 @@
 		</aside>
 	</section>
 
-    <section>
-        TODO: Video of features.
+        <section data-background-video="kube-kill.webm">
 		<aside class="notes">
-            Alright lets take a look at the UI itself. Let's start by uploading a
-            a simple service. This just a simple sample app with a redis database and a
-            php webserver.
-
-            Pods are what kubernetes schedules and manages. A pods is one or more containers.
-            We can inspect our pods, see details about the container it contains, follow the
-            logs and even execute commands.
-
-            Replication Controllers are how Pods are managed. We can tell kubernetes how many
-            pods we want and it will handle scheduling them on available nodes.
-
-            Since pods come and go, services define a set of pods that can be accessed in a
-            stable way, even when the underlying pods change. We check on a services status,
-            where it is located and what it exposes.
-
-			Cockpit also provides some nice visualization to help admins see what objects
-			are running and how they relate to and interact with each other.
+            Just to reiterate that we are running in a pod in kubernetes. Here's what it looks like if you kill the kubernetes pod we are running in. First we delete the replication controller so that we don't get respawned, and then delete the pod. It takes a moment for kubernetes to kill the pod, but when it does we are disconnected and can't reconnect.
 		</aside>
     </section>
 
     <section>
-        TODO: Video of killing service
+        <h2><strong>Not there yet...</strong></h2>
 		<aside class="notes">
-            Just to reiterate that we are running in a pod in kubernetes. Here's what it looks like if you kill the kubernetes pod we are running in. First we delete the replication controller so that we don't get respawned, and then delete the pod. And just like that we are disconnected and can't reconnect.
-		</aside>
-    </section>
-
-    <section style="text-align: left">
-        <h2>Coming improvements</h2>
-        <ul style="margin-left: 50px; text-align: left" class="fragment">
-            <li>Better support for non-cluster admin users.</li>
-            <li>Project and User management in openshift</li>
-            <li>UI for openshift registry</li>
-        </ul>
-    </section>
-
-    <section style="text-align: left">
-        <h2>Needed Kubernetes Improvments</h2>
-        <ul style="margin-left: 50px; text-align: left" class="fragment">
-            <li>Discoverable external urls.</li>
-            <li>Safer authentication defaults</li>
-        </ul>
-		<aside class="notes">
-            Actually running this on kubernetes isn't . These are some things we'd like to see change upstream in kubernetes/openshift.
-            To improve the usability.
-
-            <ul>
+		    <ul>
+		    <li>
+            While this mostly works, it isn't as smooth as it could be. There are quite a few issues we've run into and several things we'd like to change upstream in kubernetes/openshift to improve the usability.</li>
+            <li>I won't get into all of them now but a couple i wanted to highlight</li>
                 <li>Discoverable external urls: Right now to make OAuth work we have to manually specify what the public urls for our service and the kubeapi master are. Kuberenetes already knowns the master URL so we really shouldn't have to specify that again, but more that that it would be ideal if there was a way to communicate better about external domains / addresses using the downward API so we don't have to specify those manually.</li>
                 <li>Better authentication defaults: On openshift origin, the default is to accept any username/password combo. While our container will run with that, it's probably not a good idea to keep it like that in most cases. On kubernetes the api is open by default, our container will refuse to log a user into an open api. So right now to use this with a standard kubernetes install you need to use basic auth. There's been some talk upstream about bringing in some of openshift's OAuth code into kubernetes. That would help make this more usable out of the box.</li>
             </ul>
 		</aside>
-
     </section>
 
-
-	<section style="text-align: left">
-        <h2><strong>Make Cockpit better</strong></h2>
-        <p>Add your software!</p>
+    <section>
+        <h2><strong>More to come</strong></h2>
 		<aside class="notes">
-            This is really easy to do: just open a pr and maybe change the API when necessary to provide a consistent user experience
-		</aside>
+            <ul>
+                <li>Better support for non-cluster admin users.</li>
+                <li>Project and User management in openshift</li>
+                <li>UI for openshift registry</li>
+            </ul>
+        </aside>
     </section>
 
     	<section data-background-color="white">
