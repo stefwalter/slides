@@ -21,8 +21,7 @@
 		<img src="logo.png">
 		<aside class="notes">
 			<ul>
-				<li>Welcome, this talk is about Cockpit.</li>
-				<li>Going to show you how it works, and what makes it special.</li>
+				<li>Welcome, this talk is about Cockpit in it I'm going to show you how it works, and what makes it special.</li>
 				<li>I imagine some of you have heard about Cockpit before</li>
 				<li>But in case you haven't I'll do a quick overview.</li>
 			</ul>
@@ -41,16 +40,14 @@
 		<aside class="notes">
 			<ul>
 				<li>Cockpit is a *remote interactive* admin interface</li>
-				<li>Cockpit runs in a browser and is accessible remotely. Most</li>
-				<li>server and systems are headless. It's interactive, you perform
-				admin tastks interactively, troubleshoot, configure and so on.</li>
+				<li>Cockpit runs in a browser and is accessible remotely.</li>
+				<li>It's interactive, you perform admin tasks interactively, troubleshoot, configure and so on.</li>
 			</ul>
 		</aside>
 	</section>
 
 	<section>
 		<img src="cockpit-system.png">
-		<!-- TODO: Perhaps have a video with slides of Cockpit here -->
 		<aside class="notes">
 			<ul>
 				<li>Looks like this</li>
@@ -59,9 +56,13 @@
 	</section>
 
 	<section>
-		<h2><strong>Zero footprint</strong></h2>
-		<!-- TODO: Should we really have this slide? -->
-	</section>
+        <h2><strong>Zero footprint</strong></h2>
+		<aside class="notes">
+			<ul>
+				<li>What does that mean, well when you aren't actually logged in to cockpit with your browser, cockpit doesn't consume any resources on your system. It doesn't need any special configuration or run anything to track the state of your system when you aren't actually logged in and using it.</li>
+			</ul>
+		</aside>
+    </section>
 
 	<section style="text-align: left;">
 		<h1>Goals:</h1>
@@ -78,7 +79,7 @@
 
 	<section data-background-video="change-hostname.webm">
 		<aside class="notes">
-			<!-- TODO: Add notes -->
+			Here's a simple example, changing the hostname. We give it a pretty name of "My pink pony" it generates an appropriate hostname. And the name is changed both in the browser and in a the terminal.
 		</aside>
 	</section>
 
@@ -96,33 +97,33 @@
 	</section>
 
 	<section data-background-video="network-bond.webm">
-		<!-- TODO: Fill in notes here -->
+	    <aside class="notes">
+		Configuring Network interface bonding can be tricky, especially for non-experts. Cockpit uses the Network manager DBUS API to make it easy. It gives you visiblity into what your options are making it easy to select the relevent interfaces and modes. Even offering context appropriate options, Making changes after the fact is easy as well, here we adjust the IP settings. Swtiching from DHCP to a static IPs.
+		</aside>
 	</section>
 
 	<section>
-		<!-- TODO: -->
+        <h2><strong>Cockpit:</strong> A Linux Session in your Browser</title>
 		<aside class="notes">
 			<ul>
 				<li>Now I could show you Cockpit all day ... there's so many cool
 				features configuring storage, starting services, docker containers,
-				looking through logs But what I'm really excited is about how
+				looking through logs But what the real focus of this talk is about how
 				Cockpit works And it's in the title of the talk ... cockpit is a
-				Linux session<li>
-				<li>Now Linux session is a bit of a vague term ... but I'm talking
+				Linux session</li>
+				<li>Now Linux session might be a bit of a vague term ... but I'm talking
 				about this in the sense of an X11 login session or an SSH login
 				session.</li>
 				<li>Cockpit is a login session that runs in your browser.</li>
 				<li>Most of Cockpit is written in javascript, and that javascript
-				code is running in a logged in linux session, both from a security
-				perspective, from XXXXX</li>
+				code is running in a logged in linux session just as if that user was interacting with the system from the command line.</li>
 			</ul>
 		</aside>
 	</section>
 
 	<section>
-		<!-- TODO: -->
-		APIs
-		SLIDE:
+	    <h2>System APIs</h2>
+	    <img src="apis.png"/>
 		<aside class="notes">
 			<ul>
 				<li>A linux system, especially modern Linux has many APIs for
@@ -130,7 +131,7 @@
 
 				<li>Some of the APIs are obvious, DBus apis or REST apis. systemd is
 				a good example It has a DBus API for doing all sorts of stuff. The
-				hostname changes previously was implemented by calling the system
+				hostname changes shown previously was implemented by calling the system
 				hostnamed API.</li>
 
 				<li>Other APIs aren't so obvious, accessing them may involve spawning
@@ -140,125 +141,99 @@
 	</section>
 
 	<section data-background-video="dbus-proxy.webm">
-		<!-- TODO: Perhaps an introduction slide? -->
 		<aside class="notes">
 			<ul>
-				<li>Here's an example of the hostnamed call we made earlier. I'm
-				typing javascript code directly in the interactive console on my
-				browser here. If you have Cockpit running on your system try this.</li>
+				<li>Let's look at some examples, here's the hostnamed call we made earlier. We are typing javascript code directly in the interactive console in a
+				browser. If you have Cockpit running on your system try this.</li>
 
-				<li>It's trivial to interact with the APIs, easier even than if you
-				were on the system itself ... but that's the point ... we are on
+				<li>It's trivial to interact with the DBUS API, easier even than if you
+				were on the system itself issueing gdbus commands... but that's the point ... we are on
 				the system ... logged into the system ... and the javascript code
 				here is running as part of the login session.</li>
 
-				<li>This is what got me excited about Cockpit. Now when I started
-				hacking on it it couldn't do all of this stuff ... but the very idea
+				<li>This is what got me excited about Cockpit. The very idea
 				that there was code in the browser interacting directly with the system
-				cutting through the usual layers of crap ... and really makes building
+				cutting through the usual layers of crap ... really makes building
 				admin tools fun again.</li>
+
+				<li>And of course it works both ways, changes made via the command line tools update the api and those changes are picked up by the cockpit UI in the browser.</li>
             </ul>
 		</aside>
 	</section>
 
 	<section data-background-video="spawn-process.webm">
-		<!-- TODO: Finish up-->
 		<aside class="notes">
 			<ul>
 				<li>Let me show you another example. Spawning a process. Here's a single
 				line of code that spaws a process in the Cockpit session. I'm spawning
 				ping.</li>
 
-				<li>Do you notice how the output streams back ... and we can react to
-				it in real time.</li>
+				<li>Notice how the output streams back, this allows us to react to it in real time.</li>
 			</ul>
 		</aside>
 	</section>
 
 	<section data-background-video="read-file.webm">
-		<!-- TODO: Finish up-->
-		<aside class="notes">
-		</aside>
-	</section>
-
-	<section>
-		<!-- TODO: -->
-		SLIDE: ????
 		<aside class="notes">
 			<ul>
-				<li>Now I could show you more and more about this, reading files,
-				monitoring them connecting to sockets, doing REST requests ...
-				but lets move on.</li>
+				<li>Here's another example, Again a one liner, allows us to read files from off the system.
+				Here we are opening the os-release file. You can see we get the file contents streamed back to the browser.</li>
+
 			</ul>
-		</aside>
 	</section>
 
 	<section>
-		<!-- TODO: -->
-		Architecture
+		<h2>Architecture</h2>
 		<aside class="notes">
 			<ul>
+				<li>There are of course a lot more supported operations, writing files,
+				monitoring them, connecting to sockets, doing HTTP requests. ...
+				but lets move on.</li>
 				<li>So how does all this work?
 			</ul>
 		</aside>
 	</section>
 
-	<section data-background="transport-02.png">
-		<!-- TODO: -->
+	<section data-background="transport-03-small.png">
 		<aside class="notes">
 			<ul>
 				<li>Bridge</li>
-				<li>IMAGE: Updated</li>
 				<li>Well if you're logged into Cockpit and look closely ... you'll
 				notice there's a process called cockpit-bridge</li>
 
 				<li>cockpit-bridge doesn't know anything about configuring a system
 				it knows how to process messages. The bridge receives messages
-				on its standard in ... and produces messages on its stdout. A
+				on its standard in ... and produces messages on its stdout. A incoming
 				message might be about invoking a dbus method, or spawing a process
 				or reading a file</li>
 
-				<li>and it produces messages with the results asynchronously ... The
+				<li>It produces messages with the results asynchronously ... The
 				javascript code running in the browser reacts to those messages
 				and can carry out the actions it needs to.</li>
 			</ul>
 		</aside>
 	</section>
 
-	<section data-background="transport-03.png">
-		<!-- TODO: -->
-		Web Service
+	<section data-background="transport-04-small.png">
 		<aside class="notes">
 			<ul>
-				<li>IMAGE: Updated</li>
 				<li>Now obviously the browser cannot talk directly with the bridge
 				on standard in and standard out.</li>
 
 				<li>Enter the WebSocket ... The cockpit-ws process makes a WebSocket
 				available for the browser to talk to ... and any messages passed
 				over the WebSocket are passed to the bridge and vice versa.</li>
-			</ul>
-		</aside>
-	</section>
 
-	<section data-background="transport-04.png">
-		<!-- TODO: -->
-		HTTP
-			IMAGE: Updated
-		<aside class="notes">
-			<ul>
 				<li>One last piece ... how does the javascript code that comprises
-				Cockpit get to the browser? Well iva HTTP, cockpit-ws has a small
+				Cockpit get to the browser? Well via HTTP, cockpit-ws has a small
 				web server that loads Cockpit into the browser once you're logged in.</li>
+
 			</ul>
 		</aside>
 	</section>
 
 	<section>
-		<!-- TODO: -->
-		Authentication and Identity
-
-		SLIDE:
+		<h2>Authentication and Identity</h2>
 		<aside class="notes">
 			<ul>
 				<li>Now you may be wondering about security ... this all sounds pretty
@@ -278,13 +253,14 @@
 	</section>
 
 	<section data-background-video="login-process.webm">
-		<!-- TODO: -->
 		<aside class="notes">
 			<ul>
+			    <li>Let take a look at what is happening when a user logs in. First we check that there are no cockpit processes running</li>
+			    <li>When you load cockpit in a browser. You can see that the cockpit-ws process is socket activated. It runs as a unprivileged user without access to much of anything.
 				<li>The user name and password that you type here is passed into the
 				PAM stack, which checks auth ... then access ... whether you're allowed
 				to log in ... creates a pam session, including SELinux session, logind
-				session ... and then launches the bridge inside that cockpit-bridge</li>
+				session ... and then launches the cockpit-bridge inside that session</li>
 
 				<li>Here's the terminal we have inside of Cockpit. You can see what the
 				session looks like and that we're logged in as a specific user.</li>
@@ -297,15 +273,14 @@
 
 				<li>When Cockpit needs to do something with evelevated privileges ... it
 				uses sudo or polkit depending on the scenario ... and that only succeeds
-				if the system allowed you to perform that operation.xxxxxxx</li>
+				if the system is configured to allow you to perform that operation.</li>
 			</ul>
 		</aside>
 	</section>
 
 	<section data-background-video="logout-process.webm">
-		<!-- TODO: -->
 		<aside class="notes">
-
+        Now lets log out. You can see that the cockpit-bridge and cockpit-session processes go away. And when no longer in the use, after a bit cockpit-ws goes away as well.
 		</aside>
 	</section>
 
@@ -334,50 +309,31 @@
 				source than the server. If you have an onclick attribute or eval of
 				some string ... or an inline script tag it's just not going to run.</li>
 
-				<li>So we can really underscore the concept that the code is running as
-				the user and only the users code is running.</li>
+				<li>So the code is running as the user and only the users code is running.</li>
 			</ul>
 		</aside>
 	</section>
 
 	<section>
-		<!-- TODO: -->
-		Plugabbility
+        <img src="cockpit-system.png">
 		<aside class="notes">
 			<ul>
-				<li>One of teh things you typically expect of a login session is the
-				ability to run different tools or applications. A login session is not
-				a kiosk. On your desktop you can run various applications, and usually
-				install and remove them ... and when you login via SSH it's a similar
-				story you can add or even build tools to run.</li>
+				<li>One of the things you typically expect of a login session is the
+				ability to run different tools or applications. On your desktop you can run various applications, and usually install and remove them ... and when you login via SSH it's a similar story.</li>
 
 				<li>Cockpit is componentized and pluggable the same way. Each section you
 				see here is really running as a separate browser based application ...
 				loosely coupled. They often come in different subpackages (RPMs) and
 				are installable and removable.</li>
-			</ul>
-		</aside>
-	</section>
 
-	<section>
-		<!-- TODO: -->
-		VIDEO: pluggable
-		<aside class="notes">
-			<ul>
 				<li>In fact it's easy to build your own bits of UI that interact with
-				your custom admin scripts or other tooling. Here's the full text of
-				such a tool, and here is it running.</li>
+				your custom admin scripts or other tooling. There's some great examples of this in the cockpit repo on github if you are interested in seeing just how simple it can be.</li>
 			</ul>
 		</aside>
 	</section>
 
-	<section>
-		<!-- TODO: -->
-		SLIDE: full module
-	</section>
 
 	<section data-background-video="terminal-mc.webm">
-		<!-- TODO: -->
 		<aside class="notes">
 			<ul>
 				<li>And as you seen before Cockpit can host terminal based applications</li>
@@ -391,50 +347,50 @@
 				<li>You can even do some pretty wild things like running GTK apps. This
 				is broadway, and these apps are really running in the browser. GTK
 				supports HTML5 based rendering, and Cockpit provides the login
-				session and authentication to wrap it all together. This is just an
-				example, but I hope it proves my point.</li>
+				session and authentication to wrap it all together. Note that we aren't talking to the broadway websocket directly from the browser. The messages are flowing the way we saw earlier. From the browser to cockpit-ws to the bridge and then on to the broadway websocket. This is just an
+				example, but I hope it proves the point.</li>
 			</ul>
 		</aside>
 	</section>
 
 	<section data-background-video="embed-cockpit.webm">
 		<aside class="notes">
-			<!-- TODO: Maybe drop this session -->
 			<ul>
-				<li>Each of those components are also embeddable in other web based
-				applications. Here's an example.</li>
+				<li>Each cockpit component is also embeddable in other web based
+				applications. Here's an example. You can see some of the cockpit UIs split and embedded in different website.</li>
 			</ul>
 		</aside>
 	</section>
+
 
 	<section>
 		<h2>Running Cockpit over SSH</h2>
 		<aside class="notes">
 			<ul>
-				<li>Now often you don't want to make servers directly accessible to
-                    a browser on port 9090. That's the way Cockpit normally works.</li>
+				<li>Now the way cockpit normally works is that you point your browser to when cockpit is running, usually on port 9090. But often you don't want to make servers directly accessible in that way.</li>
 				<li>One of the cooler things about Cockpit is that it can connect out
 				to other servers via SSH ... even if those servers are not accessible
-				to the browser. They may be behind a firewall and you may have a
-				bastion host ... or simply don't want to open up the additional
+				to the browser. They may be behind a firewall and you access them via a bastion host ... or maybe you simply don't want to open up an additional
 				TCP port to allow the browser to connect to Cockpit.</li>
+				<li>That's when ssh comes in to play.</li>
             </ul>
         </aside>
 	</section>
 	<section data-background-video="multiple-hosts.webm">
 		<aside class="notes">
 			<ul>
-				<li>Cockpit connects out to those servers via ssh, using password,
-				key based auth and others</li>
+				<li>Lets add a new server</li>
+				<li>We need to confirm the FP. Since ssh is configured to accept password logins and credentials are the same as the server we are already logged into, cockpit is able to connect right away and you are able to and you are able to interact with that server. Generally with cockpit you interact with one server at a time but it does show graphs from multiple servers on the dashboard.</li>
+				<li>Now lets add an atomic server. This server doesn't have the same user accounts as the other two configured in the same way, so authentication fails. We can use the cockpit UI to load the needed key in a ssh-agent and use that key to connect to this host. Now even though the key is loaded, it's still failing because we need to access it as a differnet user, in this case root. We can specify the user to connect as and that way cockpit will log into that machine as that user. Now that we've connected you can see that the cockpit session on the atomic host is running as root while the cockpit session on our other servers is running as stef.</li>
+<li>One interesting thing to note here, is you'll notice that each server doesn't have the same set of packages, or options in the navigation. That is because each server provides it's own set of javascript packages to the browser. That has two main advantages, 1) each server only displays UI that is relevant for the installed software on that server. and 2) The versions of the cockpit-bridge and cockpit javascript packages do not have to be sncronized between the servers you want to access in this. Every javascript package only talks to a bridge running on the same server ensuring that is will be compatible.</li>
 			</ul>
 		</aside>
 	</section>
 
 	<section data-background="transport-multi.png">
-		<!-- TODO: -->
 		<aside class="notes">
 			<ul>
-				<li>The same cockpit-bridge is launched as it was earlier ... but in
+				<li>So here's what that looks like. On our primary server, the server that servThe same cockpit-bridge is launched as it was earlier ... but in
 				this case it's launched over SSH, which starts the session as the
 				appropriate user, and we talk to the bridge over standard in and
 				standard out as before.</li>
@@ -443,17 +399,17 @@
 	</section>
 
 	<section>
-		<!-- TODO: -->
-		Declarative vs. Interactive
-		SLIDE: text
+        <h2>Use wisely</h2>
+		<h2>Remember, Cockpit is <br/><strong>Interactive</strong> not <strong>Declarative</strong>
 		<aside class="notes">
 			<ul>
 				<li>Now obviously you don't want to do this with thousands of servers.
 				And that's where I want to highlight the difference between declarative
 				and interactive configuration.</li>
 				<li>With declarative configuration you define the state you want, and
-				then say "Mkae it so" or "make 10 of these" and the management system
-				executes your wishes. That's what you want with thousands of servers.</li>
+				then say "Make it so" or "make 10 of these" and the management system
+				executes your wishes. That's what you want with thousands of servers,
+				but that's not what cockpit is.</li>
 				<li>Interactive is a different use case, where you troubleshoot
 				interactively, maybe do some configuration interactively and so on.</li>
 				<li>Sometimes the use cases overlap, where you might want to interactively
@@ -473,8 +429,7 @@
 			<ul>
 				<li>Many options to contribute: Report bugs, join discussions, add features
                 to Cockpit, adapt software API so others can integrate it into Cockpit,
-                Fix issues, become a maintainer for Cockpit in a distro (e.g. Debian),
-                work on designs</li>
+                Fix issues, become a maintainer for Cockpit in a distro. We are currently looking for a debian maintainer, work on designs</li>
                 <li>Don't hesitate to post work in progress pull requests,
                 we do that all the time to get valuable feedback - and chances are
                 that someone will step in and help</li>
@@ -490,6 +445,14 @@
 		<p><tt>stef.thewalter.net</tt></p>
 		<p><tt>github.com/cockpit-project/cockpit</tt></p>
 		<p>Red Hat, Inc</p>
+
+		<aside class="notes">
+			<ul>
+				<li>Look at the website, github or wiki to get started on hacking,
+                it's really easy - don't hesitate to ask on irc: #cockpit on freenode</li>
+			</ul>
+		</aside>
+	</section>
 	</section>
 
 </div>
