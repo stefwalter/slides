@@ -73,8 +73,43 @@
 		</aside>
 	</section>
 
-	<section data-background-color="white" data-transition="slide">
-		<h1>OSTree in<br>Cockpit</h1>
+	<section>
+		<h2><strong>Mooo!</strong></h2>
+		<aside class="notes">
+			<ul>
+				<li>Talk about not shooting cattle</li>
+				<li>Troubleshooting</li>
+				<li>Using Cockpit with cloud operating systems.</li>
+				<li>Parts of Cockpit are included in Atomic.</li>
+				<li>Cockpit is not listening on port 9090 on Atomic</li>
+				<li>Another one of the things we worked on this year was
+					making Cockpit work better with cloud instances.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background-color="white">
+		<img src="multi-host-ssh.png">
+		<aside class="notes">
+			<ul>
+				<ul>So how do you access it? Over SSH</ul>
+				<ul>cockpit-bridge is spawned over SSH in a real SSH session.</ul>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background-video="multi-host-ssh.webm">
+		<aside class="notes">
+			<li>Browsers don't do key auth. It would be awesome if they did.</li>
+			<li>Key authentication.</li>
+			<li>SSH agent</li>
+			<li>There's more ideas in this area. We could make a container like Peter
+				was talking about earlier, with SSH keys.</li>
+		</aside>
+	</section>
+
+	<section>
+		<h2><em>OSTree in Cockpit</em></h2>
 		<aside class="notes">
 			<p>Software updates on Atomic Hosts</p>
 		</aside>
@@ -132,21 +167,63 @@
 		</aside>
     </section>
 
-    <section>
-		<h2><strong>More to come</strong></h2>
+	<section>
+		<h2><em>SELinux<br>Troubleshooting</em></h2>
 		<aside class="notes">
-		<p>There's still more that we'd like to do with ostree.</p>
-	    <ul>
-	    	 <li>Deploying arbitrary versions</li>
-	        <li>Rebase support</li>
-	        <li>Improve multi-OS support</li>
-	        <li>Manage trusted GPG keys</li>
-	    </ul>
+			What's next?
+		</aside>
+	</section>
+
+    <section>
+		<h2>Cockpit<br><strong>more than configuration</strong></h2>
+        <aside class="notes">
+            <ul>
+                <li>Configuration is an important aspect of a system</li>
+                <li>Independent of system lifespan, they can run into trouble</li>
+                <li>We want to make troubleshooting discoverable</li>
+            </ul>
 		</aside>
     </section>
 
-	<section data-background-color="white" data-transition="slide">
-		<h1>Containers<br>and Cockpit</h1>
+	<section>
+        <h2><strong>setenforce 0</strong></h2>
+		<aside class="notes">
+            SELinux has acceptance issues among users and developers
+            <ul>
+                <li>Requires thought during development</li>
+                <li>Enables finegrained security</li>
+                <li>Troubleshooting can quickly degenerate into parsing complex error messages</li>
+                <li>So what is probably the most common solution? Turn it off.</li>
+            </ul>
+		</aside>
+	</section>
+
+	<section>
+        	<img src="selinux-v5-design.png">
+		<aside class="notes">
+            		... Enter the Cockpit interface for setroubleshootd.
+            	<ul>
+                <li>Developers enhanced the DBus-API for setroubleshootd</li>
+                <li>Designs to interact with it</li>
+                <li>Present errors to the Cockpit user, allow fixing them if possible</li>
+                <li>Nothing a user couldn't do without Cockpit, just more comfortable</li>
+            </ul>
+		</aside>
+	</section>
+
+	<section>
+		<h2><em>Image Scanning<br>Troubleshooting</em></h2>
+		<aside class="notes">
+			What's next?
+		</aside>
+	</section>
+
+	<section>
+        	<img src="image-scanning.png">
+	</section>
+
+	<section>
+		<h2><em>Containers<br>and Cockpit</em></h2>
         	<aside class="notes">
 			Switching topics to container management. Last year we added a Kubernetes/Openshift UI in Cockpit.
 
@@ -177,7 +254,7 @@
 
 
     <section>
-        <h2><strong>Cockpit Kubernetes Container</strong></h2>
+	    <h2>Make it a <em>container</em></h2>
    		<aside class="notes">
    		    <ul>
    		    <li>So now that we have this UI we wanted to really eat our dogfood and run this UI seperate from the rest of cockpit as a pod in kubernetes. Enter the cockpit/kubernetes container.</li>
@@ -221,12 +298,6 @@
         <section data-background-video="kube-kill.webm">
 		<aside class="notes">
             Just to reiterate that we are running in a pod in kubernetes. Here's what it looks like if you kill the kubernetes pod we are running in. First we delete the replication controller so that we don't get respawned, and then delete the pod. It takes a moment for kubernetes to kill the pod, but when it does we are disconnected and can't reconnect.
-		</aside>
-    </section>
-
-    <section>
-        <h2><strong>Not there yet...</strong></h2>
-		<aside class="notes">
 		    <ul>
 		    <li>While this mostly works, it isn't as smooth as it could be. There aren't a lot of integrated UIs successfully delivering in this way. Openshift's webconsole doesn't run as a pod, and while it's registry sort of does, it requires some non-standard integration to get it going.</li>
             <li>I won't get into all the details now but I did want to highlight a couple</li>
@@ -236,272 +307,8 @@
 		</aside>
     </section>
 
-    <section>
-        <h2><strong>More to come</strong></h2>
-		<aside class="notes">
-            <ul>
-                <li>Better support for non-cluster admin users.</li>
-                <li>Project and User management in openshift</li>
-                <li>UI for openshift registry</li>
-            </ul>
-        </aside>
-    </section>
-
-	<section data-background-color="white" data-transition="slide">
-		<h1>Tuned landed</h1>
-		<aside class="notes">
-            <ul>
-                <li>Cockpit is design driven</li>
-                <li>Improve user experience by improving APIs and making it accessible in Cockpit</li>
-            </ul>
-		</aside>
-    </section>
-
-    <section>
-        <p>How Tuned got into Cockpit</p>
-        <h2><strong>a success story</strong></h2>
-		<aside class="notes">
-            <ul>
-                <li>Initiative from tuned team</li>
-                <li>Short iterations: update API and design</li>
-                <li>Cockpit team polished user story, context, Cockpit specifics</li>
-                <li>Cockpit integration tests help pick up regressions in the future</li>
-            </ul>
-		</aside>
-	</section>
-
-    <section data-background-video="tuned.webm">
-		<aside class="notes">
-            <ul>
-                <li>You don't have to know about tuned to find it in the system properties</li>
-                <li>"Let's see what this does"</li>
-                <li>UI provides feedback (default vs. custom profile)</li>
-            </ul>
-		</aside>
-	</section>
-
-	<section data-background-color="white" data-transition="slide">
-		<h1>SELinux<br>Troubleshooting</h1>
-		<aside class="notes">
-			What's next?
-		</aside>
-	</section>
-
-    <section>
-		<h2>Cockpit<br><strong>more than configuration</strong></h2>
-        <aside class="notes">
-            <ul>
-                <li>Configuration is an important aspect of a system</li>
-                <li>Independent of system lifespan, they can run into trouble</li>
-                <li>We want to make troubleshooting discoverable</li>
-            </ul>
-		</aside>
-    </section>
-
-	<section>
-        <h2><strong>setenforce 0</strong></h2>
-		<aside class="notes">
-            SELinux has acceptance issues among users and developers
-            <ul>
-                <li>Requires thought during development</li>
-                <li>Enables finegrained security</li>
-                <li>Troubleshooting can quickly degenerate into parsing complex error messages</li>
-                <li>So what is probably the most common solution? Turn it off.</li>
-            </ul>
-		</aside>
-	</section>
-
-	<section>
-        <img src="selinux-v5-design.png">
-		<aside class="notes">
-            ... Enter the Cockpit interface for setroubleshootd.
-            <ul>
-                <li>Developers enhanced the DBus-API for setroubleshootd</li>
-                <li>Designs to interact with it</li>
-                <li>Present errors to the Cockpit user, allow fixing them if possible</li>
-                <li>Nothing a user couldn't do without Cockpit, just more comfortable</li>
-            </ul>
-		</aside>
-	</section>
-
-	<section data-transition="slide" data-background-color="white">
-		<h1>Cockpit and<br>Atomic</h1>
-	</section>
-
-	<section>
-		<h2><strong>Mooo!</strong></h2>
-		<aside class="notes">
-			<ul>
-				<li>Talk about not shooting cattle</li>
-				<li>Troubleshooting</li>
-				<li>Using Cockpit with cloud operating systems.</li>
-				<li>Parts of Cockpit are included in Atomic.</li>
-				<li>Cockpit is not listening on port 9090 on Atomic</li>
-				<li>Another one of the things we worked on this year was
-					making Cockpit work better with cloud instances.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section data-background-color="white">
-		<img src="multi-host-ssh.png">
-		<aside class="notes">
-			<ul>
-				<ul>So how do you access it? Over SSH</ul>
-				<ul>cockpit-bridge is spawned over SSH in a real SSH session.</ul>
-			</ul>
-		</aside>
-	</section>
-
-	<section data-background-video="multi-host-ssh.webm">
-		<aside class="notes">
-			<li>Browsers don't do key auth. It would be awesome if they did.</li>
-			<li>Key authentication.</li>
-			<li>SSH agent</li>
-			<li>There's more ideas in this area. We could make a container like Peter
-				was talking about earlier, with SSH keys.</li>
-		</aside>
-	</section>
-
-	<section data-transition="slide" data-background-color="white">
-		<h1>Continuous<br>Integration</h1>
-	</section>
-
-	<section>
-		<h2><em>Combinatorial Explosion</em></h2>
-		<aside class="notes">
-			<ul>
-				<li>Cockpit talks to tons APIs, from systemd, ssh-agent, file formats, etc.</li>
-				<li>Combinatorial explosion</li>
-				<li>The would grind to a halt, if we didn't test.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section data-background-color="white">
-		<img src="ci-tasks.png">
-		<aside class="notes">
-			<ul>
-				 <li>Real operating systems: Fedora, RHEL, Atomic, Debian</li>
-				 <li>Real browsers: Firefox, Chrome</li>
-		The code XXX in each PR boots hundreds
-		of times before it merges.
-				<li>Not just talking about unit testing, we have a couple thousand of those.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section>
-		<h2><strong>10,000</strong> testing<br>instances a day</h2>
-		<aside class="notes">
-			<ul>
-				<li>On busy days we can have up to 10,000 testing instances.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section data-background="yo-dawg.png" data-background-position="bottom right"
-		data-background-size='10em'>
-		<h2><strong>Test virtual machines</strong><br>
-			run in<br>
-			<strong>Docker containers</strong></h2>
-	</section>
-
-	<section data-background="01-initial.png" data-background-color="white" data-background-size='100%'>
-		<aside class="notes">
-			<ul>
-				<li>Testing is distributed and can scale up and down.</li>
-				<li>You can run it on your laptop and contribute.</li>
-				<li>Fedora Project has donated some instances.</li>
-				<li>Other random machines we found.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section data-background="02-tasks.png" data-background-color="white" data-background-size='100%'>
-	</section>
-
-	<section data-background="03-logs.png" data-background-color="white" data-background-size='100%'>
-	</section>
-
-	<section data-background="04-status.png" data-background-color="white" data-background-size='100%'>
-	</section>
-
-	<section>
-		<h2>Packaging &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <strong>Upstream</strong></h2>
-		<aside class="notes">
-			<ul>
-				<li>Packaging is upstream.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section data-background-color="white">
-		<img src="qe-tasks.png">
-		<aside class="notes">
-			<ul>
-				<li>QE testing is upstream.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section>
-		<h2>Packaging &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <strong>Upstream</strong><br>
-		QE Testing &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <strong>Upstream</strong></h2>
-		<aside class="notes">
-			<ul>
-				<li>Packaging is Upstream, when it needs to be testable.</li>
-				<li>QE testing is upstream.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section>
-		<!-- TODO: Fix the spacing mess -->
-		<h2>Packaging &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <strong>Upstream</strong><br>
-		QE Testing &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <strong>Upstream</strong></h2>
-		<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CI  &nbsp;&nbsp;=&nbsp;&nbsp; <strong>Upstream</strong></h2>
-		<aside class="notes">
-			<ul>
-				<li>I'd be lying if I said this was easy. Constant care and feeding</li>
-				<li>Everyone will probably find bugs, and say our tests suck.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section data-transition="slide" data-background-color="white">
-		<h1>Continuous Delivery</h1>
-		<aside class="notes">
-			<li>50 releases of Cockpit this year, most of them stable.</li>
-		</aside>
-	</section>
-
-	<section>
-		<h3><em>Sign a tag</em> &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <em>Becomes a release</em></h3>
-	</section>
-
-	<section>
-		<ul style="text-align: left; font-size: 1.4em;">
-			<li><em>Tarballs</em></li>
-			<li><em>Koji</em> scratch build</li>
-			<li><em>Fedora</em> commit</li>
-			<li><em>Koji</em> build</li>
-			<li><em>COPR</em> builds</li>
-			<li><em>Debian</em> packaging</li>
-			<li><em>Docker Hub</em> containers</li>
-			<li><em>Upload documentation</em></li>
-		</ul>
-	</section>
-
-	<section>
-		<h3>The real magic of continous<br>
-		happens <strong>before you merge</strong></h3>
-		<aside class="notes">
-		</aside>
-	</section>
-
-	<section data-transition="slide" data-background-color="white">
-		<h1>System APIs</h1>
+    	<section>
+		<h2>Calling <em>system APIs</em></h2>
 	</section>
 
 	<section data-background-video="dbus-proxy.webm">
@@ -547,36 +354,78 @@
 	</section>
 
 	<section>
-        	<h2><strong>Content-Security-Policy</strong></h2>
+		<h2><em>Combinatorial Explosion</em></h2>
 		<aside class="notes">
 			<ul>
-				<li>Now if you're running javascript *AS* the logged in user ... you want
-				to be damn sure that only the code that was intended to run gets run
-				... and that nobody can sneak code in via MITM or XSS or request forgeries</li>
+				<li>Cockpit talks to tons APIs, from systemd, ssh-agent, file formats, etc.</li>
+				<li>Combinatorial explosion</li>
+				<li>The would grind to a halt, if we didn't test.</li>
+			</ul>
+		</aside>
+	</section>
 
-				<li>Nowadays browsers have this thing called Content Security Policy
-				... which if you're not familiar with it is sorta like SELinux for
-				browser content.</li>
+	<section data-background-color="white">
+		<img src="ci-tasks.png">
+		<aside class="notes">
+			<ul>
+				 <li>Real operating systems: Fedora, RHEL, Atomic, Debian</li>
+				 <li>Real browsers: Firefox, Chrome</li>
+		The code XXX in each PR boots hundreds
+		of times before it merges.
+				<li>Not just talking about unit testing, we have a couple thousand of those.</li>
 			</ul>
 		</aside>
 	</section>
 
 	<section>
-        	<h2><strong>Enforced security</strong></h2>
-        	<img src="CSP_denied.png">
+		<h2><strong>10,000</strong> testing<br>instances a day</h2>
 		<aside class="notes">
 			<ul>
-				<li>You can tell the browser to refuse to execute code from any other
-				source than the server. If you have an onclick attribute or eval of
-				some string ... or an inline script tag it's just not going to run.</li>
-
-				<li>So the code is running as the user and only the users code is running.</li>
+				<li>On busy days we can have up to 10,000 testing instances.</li>
 			</ul>
 		</aside>
 	</section>
 
-	<section data-transition="slide" data-background-color="white">
-		<h1>More Magic</h1>
+	<section data-background="yo-dawg.png" data-background-position="bottom right"
+		data-background-size='10em'>
+		<h2><strong>Test virtual machines</strong><br>
+			run in<br>
+			<strong>Docker containers</strong></h2>
+	</section>
+
+	<section>
+		<!-- TODO: Fix the spacing mess -->
+		<h2>Packaging &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <strong>Upstream</strong><br>
+		QE Testing &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <strong>Upstream</strong></h2>
+		<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CI  &nbsp;&nbsp;=&nbsp;&nbsp; <strong>Upstream</strong></h2>
+		<aside class="notes">
+			<ul>
+				<li>I'd be lying if I said this was easy. Constant care and feeding</li>
+				<li>Everyone will probably find bugs, and say our tests suck.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h2><em>Continuous Delivery</em></h2>
+		<aside class="notes">
+			<li>50 releases of Cockpit this year, most of them stable.</li>
+		</aside>
+	</section>
+
+	<section>
+		<h3><em>Sign a tag</em> &nbsp;&nbsp;&#xf0a9;&nbsp;&nbsp; <em>Becomes a release</em></h3>
+	</section>
+
+	<section>
+		<h3>The real magic of continous<br>
+		happens <strong>before you merge</strong></h3>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<h2><em>More Magic</em></h2>
 	</section>
 
 	<section data-background-video="gtk-broadway.webm">
