@@ -41,7 +41,7 @@
 		</aside>
 	</section>
 
-	<section>
+	<section data-background-color="white">
 		<img src="cockpit-system.png">
 		<aside class="notes">
 			<ul>
@@ -198,7 +198,7 @@
 		</aside>
 	</section>
 
-	<section>
+	<section data-background-color="white">
         	<img src="selinux-v5-design.png">
 		<aside class="notes">
             		... Enter the Cockpit interface for setroubleshootd.
@@ -218,7 +218,7 @@
 		</aside>
 	</section>
 
-	<section>
+	<section data-background-color="white">
         	<img src="image-scanning.png">
 	</section>
 
@@ -307,52 +307,6 @@
 		</aside>
     </section>
 
-    	<section>
-		<h2>Calling <em>system APIs</em></h2>
-	</section>
-
-	<section data-background-video="dbus-proxy.webm">
-		<aside class="notes">
-			<ul>
-				<li>Let's look at some examples, here's the hostnamed call we made earlier. We are typing javascript code directly in the interactive console in a
-				browser. If you have Cockpit running on your system try this.</li>
-
-				<li>It's trivial to interact with the DBUS API, easier even than if you
-				were on the system itself issueing gdbus commands... but that's the point ... we are on
-				the system ... logged into the system ... and the javascript code
-				here is running as part of the login session.</li>
-
-				<li>This is what got me excited about Cockpit. The very idea
-				that there was code in the browser interacting directly with the system
-				cutting through the usual layers of crap ... really makes building
-				admin tools fun again.</li>
-
-				<li>And of course it works both ways, changes made via the command line tools update the api and those changes are picked up by the cockpit UI in the browser.</li>
-            </ul>
-		</aside>
-	</section>
-
-	<section data-background-video="spawn-process.webm">
-		<aside class="notes">
-			<ul>
-				<li>Let me show you another example. Spawning a process. Here's a single
-				line of code that spaws a process in the Cockpit session. I'm spawning
-				ping.</li>
-
-				<li>Notice how the output streams back, this allows us to react to it in real time.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section data-background-video="read-file.webm">
-		<aside class="notes">
-			<ul>
-				<li>Here's another example, Again a one liner, allows us to read files from off the system.
-				Here we are opening the os-release file. You can see we get the file contents streamed back to the browser.</li>
-
-			</ul>
-	</section>
-
 	<section>
 		<h2><em>Combinatorial Explosion</em></h2>
 		<aside class="notes">
@@ -422,6 +376,52 @@
 		happens <strong>before you merge</strong></h3>
 		<aside class="notes">
 		</aside>
+	</section>
+
+    	<section>
+		<h2>Calling <em>system APIs</em></h2>
+	</section>
+
+	<section data-background-video="dbus-proxy.webm">
+		<aside class="notes">
+			<ul>
+				<li>Let's look at some examples, here's the hostnamed call we made earlier. We are typing javascript code directly in the interactive console in a
+				browser. If you have Cockpit running on your system try this.</li>
+
+				<li>It's trivial to interact with the DBUS API, easier even than if you
+				were on the system itself issueing gdbus commands... but that's the point ... we are on
+				the system ... logged into the system ... and the javascript code
+				here is running as part of the login session.</li>
+
+				<li>This is what got me excited about Cockpit. The very idea
+				that there was code in the browser interacting directly with the system
+				cutting through the usual layers of crap ... really makes building
+				admin tools fun again.</li>
+
+				<li>And of course it works both ways, changes made via the command line tools update the api and those changes are picked up by the cockpit UI in the browser.</li>
+            </ul>
+		</aside>
+	</section>
+
+	<section data-background-video="spawn-process.webm">
+		<aside class="notes">
+			<ul>
+				<li>Let me show you another example. Spawning a process. Here's a single
+				line of code that spaws a process in the Cockpit session. I'm spawning
+				ping.</li>
+
+				<li>Notice how the output streams back, this allows us to react to it in real time.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background-video="read-file.webm">
+		<aside class="notes">
+			<ul>
+				<li>Here's another example, Again a one liner, allows us to read files from off the system.
+				Here we are opening the os-release file. You can see we get the file contents streamed back to the browser.</li>
+
+			</ul>
 	</section>
 
 	<section>
