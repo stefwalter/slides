@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="slides.css">
+<script src="reveal/lib/js/head.min.js"></script>
+<title>TODO Title</title>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<section>
+	<section>
+		<!-- Bring in the RHEL title screens -->
+		Cockpit is a<br>
+		Linux admin interface
+	</section>
+
+	<section>
+		<!-- TODO: Deemphasize Cockpit -->
+		<h2>Cockpit is a<br>
+			<strong>remote interactive</strong><br>
+			Linux admin interface</h2>
+		<aside class="notes">
+			<ul>
+				<li>Cockpit is a *remote interactive* admin interface</li>
+				<li>Cockpit runs in a browser.</li>
+				<li>It's zero footprint.</li>
+				<li>Use it to configure, don't configure to use.</li>
+            		</ul>
+		</aside>
+	</section>
+
+	<section>
+		<img src="cockpit-system.png">
+		<aside class="notes">
+			<ul>
+				<li>Looks like this, but you've probably seen it already.</li>
+				<li>Goal: Make Linux and RHEL discoverable by broader admin audience.</li>
+				<li>Goal: Make complex Linux tasks discoverable.</li>
+				<li>Can't look at all the features today, but check it out.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		Why?
+	</section>
+
+	<section data-background-image="Optimusprimealtmoviemode.jpg">
+		<h3 style="background-color: rgba(0, 0, 0, 0.5);"><em>Building your own<br>
+				truck^H^H^H^H^Hserver</em></h3>
+		<aside class="notes">
+		<!--
+		# Deploying linux servers has been like building your own truck
+		# We give you a bunch of parts, the motor, lights, wheels etc. and
+		# help you learn how to put together a purpose built truck.
+		-->
+	</section>
+
+	<section data-background-image="240365952_50d8e21091_o.jpg">
+		<!--
+		# You can build powerful purpose built trucks
+		-->
+	</section>
+
+	<section data-background-image="706204705_2de29819f3_o.jpg">
+		<!--
+		# Can do image based deployment of your trucks, virtualize them with RHEV.
+		-->
+	</section>
+
+	<section data-background-image="file141869_1.jpg">
+		<!--
+		# Can containerize your trucks ;)
+		-->
+	</section>
+
+	<section data-background-image="1848912010_a1d700953b_o.jpg">
+		<!--
+		# Build servers that nobody else thinks are a good idea, but somehow they work for you.
+		-->
+	</section>
+
+	<section data-background-image="funny-picture-496594282.jpg">
+		<!--
+		# Build workhorse servers that can be overloaded
+		-->
+	</section>
+
+	<section data-background-image="6230429515_57a053c1b1_o.jpg">
+		<!--
+		# Build fast sleek low-latency servers
+		-->
+	</section>
+
+	<section data-background-image="1088-funny0152.jpg">
+		<!--
+		# Or you can build it completely wrong
+		-->
+	</section>
+
+	<section>
+		<h3>But but, I just want<br>
+			to <strong>drive</strong> it</h3>
+		<aside class="notes">
+			<!--
+			But not everyone knows how to build a truck, what if you just want to drive it.
+			-->
+		</aside>
+	</section>
+
+	<section data-background-image="0638.servermanager1_75040ADF.png">
+		<aside class="notes">
+			<!--
+			This is what it looks like to "drive" windows server
+			-->
+		</aside>
+	</section>
+
+	<section data-background-image="server-prompt.png">
+		<aside class="notes">
+			<ul>
+				<li>This is what it looks like to "drive" Linux servers</li>
+				<li>When you're at a root bash prompt, the possibilities are
+					endless, and the power is limitless.</li>
+				<li>We all have a mental model, where we can imagine how Linux
+					fits together, how the daemons are interacting, and where to
+					look for symptoms of problems.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background-image="7490249498_d0a49557d1_o.jpg">
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
+	</section>
+
+	<!--
+		Goals
+		Show simple action
+
+# So this is the first goal. Make linux usable by non-expert admins.
+
+# Demo: Log into cockpit
+# We all know 10 ways to change the host name.
+# But for someone who is just starting with linux, even this task has a
+# steep learning curve.
+# Cockpit makes it easy.
+# Show how a non expert can change the host name, and perform mundane task.
+# Click on the server section
+# Click on Host name
+# Change it
+
+		Show complex action
+
+# So that was easy. Trivial ... but you guys already knew how to do that.
+# On to our second goal, make linux features discoverable.
+
+# Demo:
+# We're going to greate a bonded network interface.
+# How would you normally do this. You'd read some blogs, decide between
+# opposing opinions, maybe download some tools, check that they're available
+# for your version of Linux, read some manual pages, and finally assemble a
+# command to execute, etc.
+# That's a big investment of time.
+# Here's how you do it with Cockpit.
+# Click on the Networking section
+# Choose 'Add Bond'
+# Click eth5 and eth6
+# Create the bond
+# Click on the bond to set an address
+# Configure the address
+
+	-->
+
+	<!--
+# Troubleshooting
+	-->
+
+	<section>
+		<h2><strong>But!</strong></h2>
+	<!--
+# But there's gotta be a catch.
+	-->
+	</section>
+
+
+	<!-- Not configuration management
+		"What does it cost me?"
+		Not a new configuration management system you have to buy into
+		Interactive not declarative
+		Cockpit doesn't take over your machine
+# Cockpit doesn't store data or make policy decisions on its own. It just
+# exposes the configuration services and state of the actual server.
+# Parts of the server like systemd, NetworkManager, and so on own the state of the server.
+# We just interact with those services.
+# In fact we don't even have our own user accounts or access policy.
+
+# "Cockpit is interactive, it shows you what's on your machines, and carries
+# out your actions on the machine. In this way it's different from other
+# tools like Satellite or CloudForms, which contain policy. Those are
+# declarative tools, whereas Cockpit is interactive".
+	-->
+
+	<!-- No mid tier
+		"What does this mean?"
+	-->
+
+	<!-- An interactive login session on a server.
+	It means you're actually logged in.
+	"These are Linux features"
+# Demo
+# Login with an unprivileged account used to log in is a server account
+# Show how the user only has permission to do the things they could do from a console prompt.
+# Show how the user is authenticated in a real linux session, as if they were SSH'd in
+	-->
+
+	<!-- Integration with other tools
+	Cockpit reacts to the server
+
+# Cockpit can't and will be able to do everything.
+# You must be able to use Cockpit at the same time as the terminal, scripts,
+# and larger management systems.
+# It's vital that Cockpit reacts to changes made by other tools.
+
+# Demo
+# Show starting a Docker container, and how that updates the display
+# Access the container terminal and actually do stuff through Cockpit
+# Exit the container by typing exit at the terminal
+# Cockpit knows that it exited
+	-->
+
+	<!-- Plugin integration
+	It means its trivial to write code that acts against the server.
+
+# Cockpit is being built from components. Each of which can be delivered
+# separately, and can be used as a plugin mechanism.
+
+# Demo time
+# http://stef.thewalter.net/creating-plugins-for-the-cockpit-user-interface.html
+# http://stef.thewalter.net/using-dbus-from-javascript-in-cockpit.html
+	-->
+
+	<!-- Zero footprint
+	# Cockpit has zero footprint, and starts on demand
+	# Exits when not in use
+	# We do this via socket activation
+
+# Demo time
+# Stop cockpit
+# Show how cockpit processes are not running
+# Show how cockpit-ws starts when you connect to port 9090
+# Show how cockpit-bridge and several other processes start when you login
+# They exit when you log out.
+	-->
+
+	<!-- Cockpit over SSH
+# The Cockpit web app running in your browser contains all the UI logic
+# cockpit-ws serves the Cockpit to your browser, and lets the web app connect
+# back through a WebSocket.
+# Cockpit sends command messages to the system through the WebSocket
+# cockpit-bridge is launches as the user on login, and processes those messages.
+# When connecting out to other systems, we simply launch cockpit-bridge on the
+# other system via ssh.
+	Slides from architecture talk
+	-->
+
+	<!-- Consistent look and feel
+	-->
+
+	<!-- Demo Topics
+	OSTree example?
+	SELinux troubleshooting
+	Tuned and performance profiles.
+	Run a docker container
+	-->
+
+	<!-- Possible additional slides
+	Out of the box?
+	Troubleshooting
+	Embedding Cockpit
+	-->
+
+	<section style="text-align: left;">
+		<h2>Goals:</h2>
+		<h2>
+			<strong>1.</strong> Linux <strong>usable</strong><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				by non-expert admins<br>
+			<strong>2.</strong> Complex Linux features<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<strong>discoverable</strong>
+		</h2>
+		<aside class="notes">
+			<ul>
+				<li>Goal: Make Linux and RHEL discoverable by broader admin audience.</li>
+				<li>Goal: Make complex Linux tasks discoverable.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background-video="change-hostname.webm">
+		<aside class="notes">
+			Here's a simple example, changing the hostname. We give it a pretty name of "My pink pony" it generates an appropriate hostname. And the name is changed both in the browser and in a the terminal.
+		</aside>
+	</section>
+
+	<section data-background-video="network-bond.webm">
+	    <aside class="notes">
+		Configuring Network interface bonding can be tricky, especially for non-experts. Cockpit uses the Network manager DBUS API to make it easy. It gives you visiblity into what your options are making it easy to select the relevent interfaces and modes. Even offering context appropriate options, Making changes after the fact is easy as well, here we adjust the IP settings. Swtiching from DHCP to a static IPs.
+		</aside>
+	</section>
+
+</section>
+
+<section>
+	<section>
+		<h2><strong>1. Continuous Delivery</strong></h2>
+		<aside class="notes">
+			<ul>
+				<li>First topic, delivery</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<p>"Our highest priority is to satisfy the customer<br>
+		through early and continuous delivery<br>
+		of valuable software."</p>
+		<p style="text-align: right"><strong>-- Agile Manifesto</strong></p>
+		<aside class="notes">
+			<ul>
+				<li>The first three principles in the Agile manifesto are about
+					deliverying rapidly.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<p>" Deliver working software frequently, from a<br>
+		couple of weeks to a couple of months, with a<br>
+		preference to the shorter timescale. "</p>
+		<p style="text-align: right"><strong>-- Agile Manifesto</strong></p>
+		<aside class="notes">
+			<ul>
+				<li>The first three principles in the Agile manifesto are about
+					deliverying rapidly.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<p>"Release Early. Release Often.<br>
+		And listen to your customers."</p>
+		<p style="text-align: right"><strong>-- Cathedral and the Bazaar</strong></p>
+		<aside class="notes">
+			<ul>
+				<li>Said another way, this is one of the core ideas in open source.</li>
+				<li>One of the key factors in the success of Linux.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<img data-src="feedback-loop.png">
+		<p>Feedback loop: <strong>Users and contributors</strong></p>
+		<aside class="notes">
+			<ul>
+				<li>Users, get involved, try it out, fill a need, contribute back.</li>
+				<li>Some users don't want to be part of this feedback loop, and that's fine.</li>
+				<li>If the contributor feedback loop isn't small enough, you lose contributors.</li>
+				<li>Drives things forward.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h3>Delivering every <i>N</i> months<br>
+			is <strong>not often enough</strong></h3>
+		<aside class="notes">
+			<ul>
+				<li>Deliver here might be a release, it might be a testable runnable
+					package, easy to get, easy to contribute to.</li>
+				<li>To have an open source community grow, you need a feedback loop
+					that's shorter than that.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section style="text-align: left;">
+		<p><strong>Maintainer release to do list:</strong></p>
+		<ul style="list-style-type: none">
+			<li>- Make sure it works</li>
+			<li>- Merge some last fixes</li>
+			<li>lather, rinse, repeat</li>
+			<li>...</li>
+			<li>- Tag the release</li>
+			<li><pre># make distcheck</pre></li>
+			<li><pre># gpg -b -n 'worldsbestmaintainer@example.com' ...</pre></li>
+			<li><pre># scp release-1.2.* some@myfavoritehosting...</pre></li>
+			<li>- Send out release notes</li>
+			<li>...</li>
+			<li><small>Profit?</small></li>
+		</ul>
+		<aside class="notes">
+			<ul>
+				<li>Hoping it's not a brown paper bag release.</li>
+				<li>Doing all these steps manually, makes you not want to deliver regularly.</li>
+				<li>Kills release early, release often.</li>
+				<li>Releasing should be automated.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section style="text-align: left;">
+		<p><strong>Each packager release to do list:</strong></p>
+		<ul style="list-style-type: none;">
+			<li>- Download the tarball</li>
+			<li>- Build it</li>
+			<li>- Patches for differences on this distro</li>
+			<li>- Submit patches upstream</li>
+			<li>- lather, rinse, repeat</li>
+			<li>...</li>
+			<li>- Update packaging files like spec files</li>
+			<li>- Perform scratch builds</li>
+			<li>- Commit and push changes to spec files</li>
+			<li>- Create an update to push update into distro</li>
+			<li>...</li>
+			<li><small>Profit?</small></li>
+		</ul>
+		<aside class="notes">
+			<ul>
+				<li>Doing this manually, makes impossible to release regularly.</li>
+				<li>Packaging should be automated.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background-color="black">
+		<img class="stretch" src="robots-1276095_b1bdc29d42_o.jpg">
+		<aside class="notes">
+			<ul>
+				<li>Life is too short to do all that work manually.</li>
+				<li>Automation makes "release early, release often" maintain a constant pace
+					indefinitely.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h3><em>Sign a tag</em> &nbsp;&nbsp;<span class="fa">&#xf0a9;</span>&nbsp;&nbsp; <em>Becomes a release</em></h3>
+		<aside class="notes">
+			<ul>
+				<li>This is what we do in Cockpit. Something that we have experience with.</li>
+				<li>Delivering as automated releases.</li>
+				<li>50 releases of Cockpit in a year.</li>
+				<li>One or two broken with a core regression, releases.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section style="text-align: left;">
+		<ul style="font-size: 1.4em; padding-left: 2em;">
+			<li><em>Tarballs</em></li>
+			<li><em>Koji</em> scratch build</li>
+			<li><em>Fedora</em> commit</li>
+			<li><em>Koji</em> build</li>
+			<li><em>Bodhi</em> update</li>
+			<li><em>COPR</em> builds</li>
+			<li><em>Debian</em> packages</li>
+			<li><em>Ubuntu PPA</em> packages</li>
+			<li><em>Docker Hub</em> containers</li>
+			<li><em>Upload documentation</em></li>
+		</ul>
+		<aside class="notes">
+			<ul>
+				<li>Here's what the robots do. They do this weekly.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<strong>https://github.com/cockpit-project/cockpituous</strong>
+		<aside class="notes">
+			<ul>
+				<li>Here's where our upstream robots live.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background-color="#262626">
+		<img src="spec-robot.png">
+		<aside class="notes">
+			<ul>
+				<li>Lets take a look at one of the robots.</li>
+				<li>Look familiar? It's just a shell script.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section style="text-align: left;">
+		<h3>Yes, even RHEL:</h3>
+	        <ul style="text-align: left; font-size: 1.4em; padding-left: 2em;">
+			<li><em>Internal repo</em> tracks upstream</li>
+			<li><em>Changes</em> go upstream eventually</li>
+			<li><em>Bugs</em> scripted</li>
+			<li><em>Flag requests</em> scripted</li>
+			<li><em>Advisories</em> scripted</li>
+			<hr>
+			<li><em>Dist-git</em> soon</li>
+			<li><em>Builds</em> soon</li>
+		</ul>
+		<aside class="notes">
+			<h3>Cockpit rebase for 7.2.5</h3>
+			<ul style="text-align: left; font-size: 1.4em; padding-left: 2em;">
+				<li><em>Edit config</em> z release, Cockpit version</li>
+				<li><em>Create bugs</em> bugs.py</li>
+				<li><em>Request flags</em> bugs.py</li>
+				<li><em>Create advisories</em> advisories.py</li>
+			</ul>
+			<h3>Bugs + Advisories ready in less than 3 minutes</h3>
+		</aside>
+	</section>
+
+	<section>
+		<strong>Mojo: Cockpit release automation for RHEL</strong>
+        	<aside class="notes">
+			<ul>
+				<li>This is in Mojo.</h3>
+			</ul>
+		</aside>
+ 	</section>
+
+	<section>
+		<h3>Packaging &nbsp;&nbsp;<span class="fa">&#xf0a9;</span>&nbsp;&nbsp; <strong>Upstream</strong></h3>
+		<aside class="notes">
+			<ul>
+				<li>Packaging is upstream.</li>
+				<li>There's a unconvertional key change here.</li>
+				<li>To give the robots the tools they need to do their job, packaging needs
+					to go upstream.</li>
+				<li>Should be reliably updated as part of the various pull requests.</li>
+				<li>That leads us to the next topic.</li>
+			</ul>
+		</aside>
+	</section>
+
+</section>
+
+<section>
+	<section>
+		<h2><strong>2. Continuous Integration</strong></h2>
+		<aside class="notes">
+			<ul>
+				<li>In order for "release early, release often" to actually work at
+					its this pace, the software actually needs to work.</li>
+				<li>Open source has typically taken the hit on delivery, when testing
+					and integration wasn't advanced enough.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<p>"Working software is the primary measure of progress."</p>
+		<p style="text-align: right"><strong>-- Agile Manifesto</strong></p>
+		<aside class="notes">
+			<ul>
+				<li>Again this is a key concept in Agile.</li>
+				<li>Less of a core concept on open source, but it's pretty much expected.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+	    <h2>Cockpit calls System APIs</h2>
+	    <img src="apis.png"/>
+		<aside class="notes">
+			<ul>
+				<li>A linux system, especially modern Linux has many APIs for
+				configuring aspects of the system.</li>
+
+				<li>Some of the APIs are obvious, DBus apis or REST apis. systemd is
+				a good example It has a DBus API for doing all sorts of stuff. The
+				hostname changes shown previously was implemented by calling the system
+				hostnamed API.</li>
+
+				<li>Other APIs aren't so obvious, accessing them may involve spawning
+				a process, or reading a file such as the ones in /proc</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background-video="dbus-proxy.webm">
+		<aside class="notes">
+			<ul>
+				<li>Let's look at some examples, here's the hostnamed call we made earlier. We are typing javascript code directly in the interactive console in a
+				browser. If you have Cockpit running on your system try this.</li>
+
+				<li>It's trivial to interact with the DBUS API, easier even than if you
+				were on the system itself issueing gdbus commands... but that's the point ... we are on
+				the system ... logged into the system ... and the javascript code
+				here is running as part of the login session.</li>
+
+				<li>This is what got me excited about Cockpit. The very idea
+				that there was code in the browser interacting directly with the system
+				cutting through the usual layers of crap ... really makes building
+				admin tools fun again.</li>
+
+				<li>And of course it works both ways, changes made via the command line tools update the api and those changes are picked up by the cockpit UI in the browser.</li>
+            </ul>
+		</aside>
+	</section>
+
+	<section>
+		<h2>Cockpit project<br>
+			<strong>lives and dies by its testing</strong></h2>
+		<aside class="notes">
+			<ul>
+				<li>Due to its architecture testing and integration and vital to Cockpit.</li>
+				<li>Cockpit talks to tons APIs, from systemd, ssh-agent, file formats, etc.</li>
+				<li>Rather than pay the price of a massive unbounded abstraction layer,
+					we've paid the price of testing well, which we need anyway.</li>
+				<li>But Cockpit would grind to a halt, if we didn't test.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background-color="black">
+		<img class="stretch" src="robots-1276095_b1bdc29d42_o.jpg">
+		<aside class="notes">
+			<ul>
+				<li>So we don't test manually. Again robots to the rescue.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background-color="white">
+		<img src="ci-tasks.png">
+		<aside class="notes">
+			<ul>
+				<li>Real operating systems: Fedora, RHEL, Atomic, Debian</li>
+				<li>Real browsers: Firefox, Chrome</li>
+				<li>Not just talking about unit testing, we have a couple thousand of those.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<img data-src="feedback-loop.png">
+		<p>Feedback loop: <strong>Contributors fix the bugs</strong></p>
+		<aside class="notes">
+			<ul>
+				<li>This is a massive boon to Open Source.</li>
+				<li>If you only test long after a contribution, then you have no way of
+					having the contributor's insight and knowledge when making a fix.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h2><strong>10,000</strong> testing<br>instances a day</h2>
+		<aside class="notes">
+			<ul>
+				<li>The tests in each PR boots hundreds to thousands of times before merge.</li>
+				<li>On busy days we can have up to 10,000 testing instances.</li>
+				<li>All before merging.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background="yo-dawg.png" data-background-position="bottom right"
+		data-background-size='10em'>
+		<h2><strong>Test virtual machines</strong><br>
+			run in<br>
+			<strong>Docker containers</strong></h2>
+	</section>
+
+	<section data-background="01-initial.png" data-background-color="white" data-background-size='100%'>
+		<aside class="notes">
+			<ul>
+				<li>Testing is distributed and can scale up and down.</li>
+				<li>Contributors can run it on your laptop.</li>
+				<li>Fedora Project has donated some instances.</li>
+				<li>Other random machines we found.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background="02-tasks.png" data-background-color="white" data-background-size='100%'>
+		<aside class="notes">
+			<ul>
+				<li>Each of these verify machines look for tasks to run.</li>
+				<li>Maybe pick certain ones, or a certain operating system.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background="03-logs.png" data-background-color="white" data-background-size='100%'>
+		<aside class="notes">
+			<ul>
+				<li>They post their results logs, journal, screenshots to a publically
+					accessible URL.</li>
+				<li>Even if the verify machine doesn't run publically.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background="04-status.png" data-background-color="white" data-background-size='100%'>
+		<aside class="notes">
+			<ul>
+				<li>That publically accessible URL, gets posted where the contributor
+					can see the failure of a given change on a given operating system.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background="05-naughty.png" data-background-color="white" data-background-size='100%'>
+		<aside class="notes">
+			<ul>
+				<li>Known issues.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background="06-images.png" data-background-color="white" data-background-size='100%'>
+		<aside class="notes">
+			<ul>
+				<li>Known issues.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h3>Integration test code</h3>
+		https://github.com/cockpit-project/cockpit/tree/master/test
+	</section>
+
+	<section>
+		<h3><strong>Distributed</strong> is key</h3>
+		<aside class="notes">
+			<ul>
+				<li>Don't bind yourself into a single testing cluster or framework
+					where everything has to be ported.</li>
+				<li>By posting the results to a public URL, you can distribute
+					the infrastructure testing load.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h3><strong>Distributed</strong> scales</h3>
+		<aside class="notes">
+			<ul>
+				<li>Cockpit has 5 or 6 machines donated around the globe doing
+					its testing. I could contribute with my own machine.</li>
+				<li>It's easy to scale up and down when you have things distributed.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h3><strong>Distributed</strong> makes<br>
+			Open Source work</h3>
+		<aside class="notes">
+			<ul>
+				<li>We can't hoard our integration testing, like it's some kind of advantage.</li>
+				<li>If you do, you lose most of the advantage of that testing.</li>
+				<li>Just like when you hoard code: it's the anti-thesis of open source.</li>
+				<li>To get the advantages of continuous integration, it needs to be upstream
+					it needs to be open source.</li>
+			</ul>
+		</aside>
+	</section>
+
+
+	<section data-background-color="white">
+		<img src="qe-tasks.png">
+		<aside class="notes">
+			<ul>
+				<li>In Cockpit QE testing is upstream.</li>
+				<li>QE also runs it again during acceptance testing, but the fact that it's
+					upstream shortens the testing feedback loop massively.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h3>Packaging &nbsp;&nbsp;<span class="fa">&#xf0a9;</span>&nbsp;&nbsp; <strong>Upstream</strong><br>
+		QE Testing &nbsp;&nbsp;<span class="fa">&#xf0a9;</span>&nbsp;&nbsp; <strong>Upstream</strong></h3>
+		<aside class="notes">
+			<ul>
+				<li>Packaging is Upstream, when it needs to be testable.</li>
+				<li>QE testing is upstream.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<!-- TODO: Fix the spacing mess -->
+		<h3>&nbsp;&nbsp;&nbsp;Packaging &nbsp;&nbsp;<span class="fa">&#xf0a9;</span>&nbsp;&nbsp; <strong>Upstream</strong><br>
+		&nbsp;&nbsp;&nbsp;QE Testing &nbsp;&nbsp;<span class="fa">&#xf0a9;</span>&nbsp;&nbsp; <strong>Upstream</strong></h3>
+		<h3>Open Source  &nbsp;&nbsp;=&nbsp;&nbsp; <strong>Upstream</strong></h3>
+		<aside class="notes">
+			<ul>
+				<li>I'd be lying if I said this was easy. Constant care and feeding</li>
+				<li>But as with everything else about open source, don't hoard it, share
+					it and maintain it together.</li>
+			</ul>
+		</aside>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h2><strong>3. Cross Project Development</strong></h2>
+		<aside class="notes">
+			<ul>
+				<li>Last topic here.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h3>Agile wants <strong>fast feedback</strong></h3>
+		<aside class="notes">
+			<ul>
+				<li>Short feedback loops are a core concept in Agile.</li>
+				<li>Often you'll see sprints measured in weeks, and we talked about code
+					delivered more often than monthly.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h3>Open Source: <strong>Standing on the<br>
+			shoulders of giants</strong></h3>
+		<aside class="notes">
+			<ul>
+				<li>In open source rather than reinventing everything, we should use the
+					code and libraries that others have already written for a task.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h3>At that pace, how can I help<br>
+			projects change the parts I need?</h3>
+		<aside class="notes">
+			<ul>
+				<li>So how can projects work together, and still have a short feedback
+					loop for the contributor?</li>
+				<li>Does this sorta kill all the stuff we talked about before? Will
+					contributors be long gone before something is actually delivered,
+					because of the interwoven projects?</li>
+				<li>If I can't deliver a feature until there's change X in project Y, how
+					can I get that to happen now?</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h3>Cockpit has <strong>contributed to</strong>:</h3>
+		<table>
+			<tr>
+				<td>Atomic</td>
+				<td>atomicapp</td>
+				<td>AccountsService</td>
+			</tr>
+			<tr>
+				<td>d3</td>
+				<td>DBus</td>
+				<td>GLib</td>
+			</tr>
+			<tr>
+				<td>journal</td>
+				<td>Kubernetes</td>
+				<td>libssh</td>
+			</tr>
+			<tr>
+				<td>libvirt</td>
+				<td>LVM</td>
+				<td>NetworkManager</td>
+			</tr>
+			<tr>
+				<td>Openshift</td>
+				<td>ostree</td>
+				<td>polkit</td>
+			</tr>
+			<tr>
+				<td>react</td>
+				<td>realmd</td>
+				<td>SELinux</td>
+			</tr>
+			<tr>
+				<td>sssd</td>
+				<td>storaged</td>
+				<td>subscription-manager</td>
+			</tr>
+			<tr>
+				<td>systemd</td>
+				<td>udisks</td>
+				<td>...</td>
+			</tr>
+		</table>
+		<aside class="notes">
+			<ul>
+				<li>Remember Cockpit talks directly to crazy amounts of APIs and
+					system components to get its job done.</li>
+				<li>And somehow we've contributed to tons of projects in order to get
+					Cockpit features implemented.</li>
+				<li>These are just contributions listed here, and I think I missed
+					a few.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h3>Use <strong>design driven development</strong></h3>
+		<aside class="notes">
+			<ul>
+				<li>This is a tool to make the cross project development work.</li>
+				<li>And it makes it possible to have a shorter agile feedback loop.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background-color="white">
+		<img src="What-Meme.jpg">
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h3>First: The story of <strong>what<br>
+			the user should accomplish</strong></h3>
+		<aside class="notes">
+			<ul>
+				<li>First we figure out, and write down, what a user should accomplish
+					the feature or change.</li>
+				<li>Describe the user.</li>
+				<li>Describe the workflow or tasks they'll need to do to use the
+					feature or change.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-background-color="white">
+		<img src="How-Meme.jpg">
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h3>Next: Figure out <strong>how to<br>implement it</strong></h3>
+		<aside class="notes">
+			<ul>
+				<li>Now take a look at how you're going to implement that change.</li>
+				<li>Write that down too.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h3>Example time</h3>
+		https://github.com/cockpit-project/cockpit/wiki/Feature:-iSCSI-Initiator
+		<aside class="notes">
+			<ul>
+				<li>Here's an example from Cockpit, which I'll load in my web browser.</li>
+				<li>You can see the personas described, these are the users.</li>
+				<li>A description of what they should accomplish.</li>
+				<li>Next we take a look at their workflow.</li>
+				<li>Then we figure out how to implement it.</li>
+				<li>And here's feedback from others.</li>
+				<li>Now you don't have to track this in a wiki page, but it's an example
+					of how easy it is to get started.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<img data-src="feedback-loop.png">
+		<p>Feedback: Design and dependencies</p>
+		<aside class="notes">
+			<ul>
+				<li>This is a feedback loop just like all the others.</li>
+				<li>Each time we've gone to a project with a design driven story of
+					the feature it's made it possible to contribute a change.</li>
+				<li>When we haven't taken this step, we've often failed to help
+					make a change in a dependency.</li>
+			</ul>
+		</aside>
+	</section>
+</section>
+
+<section>
+	<section>
+		<img data-src="feedback-loop.png" style="min-width: 70%">
+		<aside class="notes">
+			<ul>
+				<li>Pardon the broken record.</li>
+				<li>So to summarize.</li>
+				<li>The feedback loop is key to both Agile and Open Source.</li>
+				<li>And I hope the examples of how we do this have helped give you ideas
+					for plans on how you can apply this.</li>
+				<li>Red Hat hasn't yet shortened the feedback loops in the areas of
+					delivery and testing, and changing this is key to Red Hat's future.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h2><strong>Questions?
+			<br><br>
+			cockpit-project.org</strong></h2>
+		<p><tt>#cockpit on Freenode</tt></p>
+		<p><tt>github.com/cockpit-project/cockpit</tt></p>
+	</section>
+
+	<section style="text-align: left;">
+		<p>Credits:</p>
+		<ul>
+Credits:
+d10n2000 on Flickr, bigfez on Flickr, dalbera on Flickr
+axeman3d on Flickr, toddmccann on Flickr
+		</ul>
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
+	</section>
+</section>
+
+</div>
+</div>
+
+<script src="reveal/js/reveal.js"></script>
+<script src="slides.js"></script>
+
+</body>
+</html>
