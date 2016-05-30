@@ -10,7 +10,7 @@ Reveal.initialize({
     		38: 'prev'
   	},
 
-	transition: 'fade', // none/fade/slide/convex/concave/zoom
+	transition: 'slide', // none/fade/slide/convex/concave/zoom
 
 	// Optional reveal.js plugins
 	dependencies: [
@@ -30,6 +30,18 @@ Reveal.initialize({
 		{ src: 'reveal/plugin/notes/notes.js', async: true }
 	]
 });
+
+function followFooter(event) {
+	var slide = event.currentSlide;
+	var list = document.getElementsByClassName("reveal");
+	if (slide.classList.contains("follow-along"))
+		list[0].classList.add("following");
+	else
+		list[0].classList.remove("following");
+}
+
+Reveal.addEventListener('slidechanged', followFooter);
+Reveal.addEventListener('ready', followFooter);
 
 /* Printing and PDF exports */
 var link = document.createElement( 'link' );

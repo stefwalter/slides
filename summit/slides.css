@@ -2,7 +2,10 @@
 @import url('reveal/lib/css/zenburn.css');
 
 body {
-	background-color: #222;
+	background-image: url('light-background-summit.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
 	font-family: Overpass;
 	font-size: 38px;
 	font-weight: normal;
@@ -15,7 +18,7 @@ body {
 }
 
 .reveal section {
-	color: #aaa;
+	color: #354045;
 }
 
 .reveal section,
@@ -41,7 +44,6 @@ body {
 .reveal h1 {
 	font-size: 4.5em;
 	color: black;
-	background-color: white;
 	font-weight: bold;
 }
 
@@ -76,12 +78,12 @@ body {
 }
 
 .reveal strong {
-	color: #fff;
+	color: black;
 	font-weight: bold;
 }
 
 .reveal em {
-	color: #fff;
+	color: black;
 	font-style: none;
 }
 
@@ -136,3 +138,65 @@ body {
 .reveal .controls .navigate-down.enabled:hover {
   border-top-color: #8dcffc; }
 
+.reveal section.summit-title {
+	color: #354045;
+}
+
+.reveal section.summit-title strong {
+	color: inherit;
+	font-style: none;
+	font-weight: bold;
+}
+
+.reveal .follow-footer {
+	position: absolute;
+	display: block;
+	width: 100%;
+	bottom: 0px;
+	background-color: white;
+	background: linear-gradient(to bottom, transparent 0px, #d0ecf6 30px);
+	padding: 20px 50px 10px 20px;
+	font-size: 20px;
+	color: #888;
+	display: none;
+	z-index: 1;
+}
+
+.reveal .follow-footer strong {
+	color: #002366;
+}
+
+html.follow .follow-footer {
+	display: block;
+}
+
+.reveal .logo-footer {
+	position: absolute;
+	display: block;
+	bottom: 0px;
+	left: 30px;
+}
+
+.reveal .logo-footer img {
+	height: 130px;
+}
+
+html.follow .logo-footer,
+html.demo .logo-footer {
+	display: none;
+}
+
+html.demo body {
+	background-image: url('demo-background.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+html.demo .reveal section {
+	color: #aaa;
+}
+
+html.demo .reveal section strong {
+	color: #fff;
+}

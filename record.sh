@@ -2,20 +2,12 @@
 
 set -x
 
-X=1680
-Y=200
+recordmydesktop \
+	-x 1680 -y 200 --width 1024 --height 576 \
+	--fps 24 --freq 44100 --delay 3 \
+	--workdir /opt/tmp \
+	--v_bitrate 2000000 \
+	-o /opt/tmp/demo.ogv
 
-W=640
-H=480
-#W=800
-#H=600
-W=1024
-H=768
-
-# recordmydesktop -x $X -y $Y --width $W --height $H --v_bitrate 2000000 \
-# 	--fps 24 --freq 44100  --workdir /opt/tmp -o ./demo.ogv
-
-# Build with https://github.com/stefwalter/byzanz
-# * No loops
-# * Handle Ctrl-C right
-byzanz-record --audio --cursor --x=$X --y=$Y --width=$W --height=$H --duration=1500000 ./demo.webm
+	# -x 1690 -y 30 --width 1280 --height 720 \
+# ffmpeg -i cockpit-atomic-kube-2015-2.ogv -vn -c copy cockpit-atomic-kube-2015-2.ogg
