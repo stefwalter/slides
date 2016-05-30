@@ -18,7 +18,6 @@
 	</div>
 
 	<div class="logo-footer">
-		<img src="redhat-black.png">
 	</div>
 
 <div class="slides">
@@ -37,13 +36,13 @@
 
 	<section data-background-video="login-rhel-cli.ogv" data-background-color="#000"
 		data-background-video-muted="true">
-	<!--
-	What do you see when you log into a RHEL server?
-	-->
-	<!--
-	What if I told you that there's a new way to log into a RHEL system?
-	And it looked like this.
-	-->
+		<!--
+		What do you see when you log into a RHEL system?
+		-->
+		<!--
+		What if I told you that there's a new way to log into a RHEL system?
+		And it looked like this.
+		-->
 	</section>
 
 	<section>
@@ -53,23 +52,24 @@
 				<ul>
 					<li>Port is websm port.</li>
 				</ul>
-		<!--
-		Using my browser
-		I'm going to type the same credentials.
-		Show simple action
+			<!--
+			TODO: notes
+			Using my browser
+			I'm going to type the same credentials.
+			Show simple action
 
-# So this is the first goal. Make linux usable by non-expert admins.
+			# So this is the first goal. Make linux usable by non-expert admins.
 
-# Demo: Log into cockpit
-# We all know 10 ways to change the host name.
-# But for someone who is just starting with linux, even this task has a
-# steep learning curve.
-# Cockpit makes it easy.
-# Show how a non expert can change the host name, and perform mundane task.
-# Click on the server section
-# Click on Host name
-# Change it
-		-->
+			# Demo: Log into cockpit
+			# We all know 10 ways to change the host name.
+			# But for someone who is just starting with linux, even this task has a
+			# steep learning curve.
+			# Cockpit makes it easy.
+			# Show how a non expert can change the host name, and perform mundane task.
+			# Click on the system section
+			# Click on Host name
+			# Change it
+			-->
 			</aside>
 		</section>
 
@@ -100,8 +100,6 @@
 		</aside>
 	</section>
 
-	<!-- Why? -->
-
 	<section data-state="follow" style="text-align: left;">
 		<h2>
 			1. Linux <strong>usable</strong><br>
@@ -121,10 +119,10 @@
 
 	<section data-state="follow" data-background-image="Optimusprimealtmoviemode.jpg">
 		<h3 style="background-color: rgba(0, 0, 0, 0.75); color: white;">Building your own<br>
-				truck^H^H^H^H^Hserver</h3>
+				truck^H^H^H^H^Hsystem</h3>
 		<aside class="notes">
 		<!--
-		# Deploying linux servers has been like building your own truck
+		# Deploying linux system has been like building your own truck
 		# We give you a bunch of parts, the motor, lights, wheels etc. and
 		# help you learn how to put together a purpose built truck.
 		-->
@@ -150,19 +148,19 @@
 
 	<section data-state="follow" data-background-image="1848912010_a1d700953b_o.jpg">
 		<!--
-		# Build servers that nobody else thinks are a good idea, but somehow they work for you.
+		# Build system that nobody else thinks are a good idea, but somehow they work for you.
 		-->
 	</section>
 
 	<section data-state="follow" data-background-image="funny-picture-496594282.jpg">
 		<!--
-		# Build workhorse servers that can be overloaded
+		# Build workhorse system that can be overloaded
 		-->
 	</section>
 
 	<section data-state="follow" data-background-image="6230429515_57a053c1b1_o.jpg">
 		<!--
-		# Build fast sleek low-latency servers
+		# Build fast sleek low-latency systems
 		-->
 	</section>
 
@@ -236,18 +234,30 @@
 
 		-->
 		</section>
+
+		<section data-background-video="network-bond.webm" data-background-color="black">
+			<!-- TODO: RHEL specific demo -->
+		</section>
 	</section>
 
 	<section>
 		<section data-state="demo">
 			<h2>Drive it:<br> <strong>Troubleshoot SELinux</strong></h2>
 		</section>
+
+		<section data-background-color="black">
+			<!-- TODO: Record the demo -->
+		</section>
 	</section>
 
 	<section>
 		<section data-state="demo">
-			<h2>Drive it:<br> <strong>Mount an iSCSI share</strong></h2>
+			<h2>Drive it:<br> <strong>Mount an iSCSI disk</strong></h2>
 			<!-- TODO: Make this work on RHEL demo system -->
+		</section>
+
+		<section data-background-color="black">
+			<!-- TODO: Record the demo -->
 		</section>
 	</section>
 
@@ -255,64 +265,86 @@
 		<section data-state="demo">
 			<h2>Drive it:<br> <strong>Start a Container</strong></h2>
 		</section>
+
+		<section data-background-color="black">
+			<!-- TODO: Record the demo -->
+		</section>
 	</section>
 
 	<section>
 		<h1>How?</h1>
+		<!-- TODO: Notes -->
 	</section>
 
 	<section>
+		<p>Pure interface, no "mid-tier"</p>
 		<img src="rhel-layers.png">
-	<!-- Not configuration management
-		"What does it cost me?"
-		Not a new configuration management system you have to buy into
-		Interactive not declarative
-		Cockpit doesn't take over your machine
+		<!-- TODO: Notes
+		Not configuration management
+			"What does it cost me?"
+			Not a new configuration management system you have to buy into
+			Interactive not declarative
+			Cockpit doesn't take over your machine
 
-		# Cockpit doesn't store data or make policy decisions on its own. It just
-		# exposes the configuration services and state of the actual server.
-		# Parts of the server like systemd, NetworkManager, and so on own the state of the server.
-		# We just interact with those services.
-		# In fact we don't even have our own user accounts or access policy.
+			# Cockpit doesn't store data or make policy decisions on its own. It just
+			# exposes the configuration services and state of the actual server.
+			# Parts of the server like systemd, NetworkManager, and so on own the state of the server.
+			# We just interact with those services.
+			# In fact we don't even have our own user accounts or access policy.
 
-		# "Cockpit is interactive, it shows you what's on your machines, and carries
-		# out your actions on the machine. In this way it's different from other
-		# tools like Satellite or CloudForms, which contain policy. Those are
-		# declarative tools, whereas Cockpit is interactive".
-	-->
+			# "Cockpit is interactive, it shows you what's on your machines, and carries
+			# out your actions on the machine. In this way it's different from other
+			# tools like Satellite or CloudForms, which contain policy. Those are
+			# declarative tools, whereas Cockpit is interactive".
+		-->
 	</section>
 
-	<section data-transition="slide-in fade-out">
+	<section data-transition="slide-in none">
 		<img src="transport-02.png">
+		<!-- TODO: Notes -->
 	</section>
 
-	<section data-transition="fade-in fade-out">
+	<section data-transition="none">
 		<img src="transport-03.png">
+		<!-- TODO: Notes -->
 	</section>
 
-	<section data-transition="fade-in slide-out">
+	<section data-transition="none">
 		<img src="transport-04.png">
+		<!-- TODO: Notes -->
 	</section>
 
 	<section>
-		<section data-slide="demo">
-			<h3>Accessing an API</h3>
+		<section data-state="demo">
+			<h2>Show me:<br>
+				<strong>Access a System API</strong></h2>
+			<!-- TODO: Notes -->
+		</section>
+
+		<section data-background-color="black">
+			<!-- TODO: Record the demo -->
 		</section>
 	</section>
 
 	<section>
-		<section data-slide="demo">
-			<h3>Spawning a process</h3>
+		<section data-state="demo">
+			<h2>Show me:<br> <strong>Spawn a Process</strong></h2>
+			<!-- TODO: Notes -->
+		</section>
+
+		<section data-background-color="black">
+			<!-- TODO: Record the demo -->
 		</section>
 	</section>
 
 	<section>
-		Adding a plugin
+		<h3>Lets add a plugin</h3>
 	</section>
 
 	<section>
-		<section data-slide="demo">
-			<h3>Build it</h3>
+		<section data-state="demo">
+			<h2>Build it:<br>
+				<strong>What's using NN port?</strong></h2>
 		<!-- Plugin integration
 		lsof for a given port
 		Demo setup location and API
@@ -327,6 +359,10 @@
 		# http://stef.thewalter.net/using-dbus-from-javascript-in-cockpit.html
 		-->
 		</section>
+
+		<section data-background-color="black">
+			<!-- TODO: Record the demo -->
+		</section>
 	</section>
 
 	<section>
@@ -337,12 +373,12 @@
 	</section>
 
 	<section>
-		<h3>Zero footprint</h3>
+		<h2><strong>Zero</strong> footprint</h2>
 	</section>
 
 	<section>
 		<section data-state="demo">
-			<h3><strong>Drive</strong>: Prove it</h3>
+			<h2>Prove it:<br> <strong>Starts on demand</strong></h2>
 			<!-- Zero footprint
 			# Cockpit has zero footprint, and starts on demand
 			# Exits when not in use
@@ -356,6 +392,10 @@
 			# They exit when you log out.
 			-->
 		</section>
+
+		<section data-background-color="black">
+			<!-- TODO: Record the demo -->
+		</section>
 	</section>
 
 	<section>
@@ -364,7 +404,7 @@
 
 	<section>
 		<section data-state="demo">
-			<h3><strong>Drive</strong>: Login session</h3>
+			<h2>Prove it:<br> <strong>Login session</strong></h2>
 			<!-- An interactive login session on a server.
 			It means you're actually logged in.
 			"These are Linux features"
@@ -375,38 +415,49 @@
 			# Show how the user is authenticated in a real linux session, as if they were SSH'd in
 			-->
 		</section>
-	</section>
 
-	<section>
-		<h3>Works over SSH</h3>
-		<aside class="notes">
-			<!-- TODO: point out OSTree -->
-		</aside>
-		<!-- Cockpit over SSH
-		# The Cockpit web app running in your browser contains all the UI logic
-		# cockpit-ws serves the Cockpit to your browser, and lets the web app connect
-		# back through a WebSocket.
-		# Cockpit sends command messages to the system through the WebSocket
-		# cockpit-bridge is launches as the user on login, and processes those messages.
-		# When connecting out to other systems, we simply launch cockpit-bridge on the
-		# other system via ssh.
-		Slides from architecture talk
-		-->
-	</section>
-
-	<section>
-		<section data-state="demo">
-			<h3><strong>Drive</strong>: Access over SSH</h3>
+		<section data-background-color="black">
+			<!-- TODO: Record the demo -->
 		</section>
 	</section>
 
 	<section>
-		Integration with other tools
+		<h2>Works over SSH</h2>
+		<aside class="notes">
+			<!-- TODO -->
+		</aside>
+	</section>
+
+	<section>
+		<img src="transport-multi.png">
 	</section>
 
 	<section>
 		<section data-state="demo">
-			<h3><strong>Drive</strong>: OSTree tooling</h3>
+			<h3>Prove it:<br>
+				<strong>Cockpit over SSH</strong></h3>
+			<!-- TODO: point out OSTree -->
+			<!-- Cockpit over SSH
+			# The Cockpit web app running in your browser contains all the UI logic
+			# cockpit-ws serves the Cockpit to your browser, and lets the web app connect
+			# back through a WebSocket.
+			# Cockpit sends command messages to the system through the WebSocket
+			# cockpit-bridge is launches as the user on login, and processes those messages.
+			# When connecting out to other systems, we simply launch cockpit-bridge on the
+			# other system via ssh.
+			Slides from architecture talk
+			-->
+		</section>
+	</section>
+
+	<section>
+		<h2><strong>Integration</strong> with
+			<br>management tooling</h3>
+	</section>
+
+	<section>
+		<section data-state="demo">
+			<h2>Prove it:<br> <strong>OSTree Example</strong></h2>
 			<!-- Integration with other tools
 			OSTree????
 			Cockpit reacts to the server
@@ -423,13 +474,15 @@
 			# Cockpit knows that it exited
 			-->
 		</section>
+
+		<section data-background-color="black">
+			<!-- TODO: Record the demo -->
+		</section>
 	</section>
 
-	<section>
-		Red Hat Common User Experience
-		aka Patternfly
-
-		<img src="RH_ProductUX_examples.png">
+	<section data-background-color="white">
+		<h3>Red Hat Common User Experience</h3>
+		<p><img src="RH_ProductUX_examples.png" style="height: 620px"></p>
 	</section>
 
 	<!-- TODO Summary slide -->

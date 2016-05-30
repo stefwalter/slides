@@ -42,9 +42,7 @@ body {
 }
 
 .reveal h1 {
-	font-size: 4.5em;
-	color: black;
-	font-weight: bold;
+	font-size: 3.5em;
 }
 
 .reveal h2 {
@@ -175,14 +173,14 @@ html.follow .follow-footer {
 	display: block;
 	bottom: 0px;
 	left: 30px;
-}
-
-.reveal .logo-footer img {
 	height: 130px;
+	width: 150px;
+	background-image: url('redhat-black.png');
+	background-position: 50% 50%;
+	background-size: cover;
 }
 
-html.follow .logo-footer,
-html.demo .logo-footer {
+html.follow .logo-footer {
 	display: none;
 }
 
@@ -191,6 +189,10 @@ html.demo body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 50% 50%;
+}
+
+html.demo .reveal .logo-footer {
+	background-image: url('redhat-logo.png');
 }
 
 html.demo .reveal section {
