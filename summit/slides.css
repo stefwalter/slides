@@ -106,6 +106,11 @@ body {
 	width: 33%;
 	text-align: left;
 	white-space: nowrap;
+	font-size: 28px;
+}
+
+.reveal ul {
+	margin-left: 2em;
 }
 
 .reveal .controls .navigate-left,
@@ -137,13 +142,25 @@ body {
   border-top-color: #8dcffc; }
 
 .reveal section.summit-title {
-	color: #354045;
+	color: white;
+	text-align: left;
 }
 
 .reveal section.summit-title strong {
 	color: inherit;
 	font-style: none;
 	font-weight: bold;
+}
+
+.reveal section.summit-title img {
+	width: 250px;
+	position: absolute;
+	top: -50px;
+	right: -100px;
+}
+
+.reveal section.summit-title p {
+	font-size: 25px;
 }
 
 .reveal .follow-footer {
@@ -184,21 +201,21 @@ html.follow .logo-footer {
 	display: none;
 }
 
-html.demo body {
+html.head body {
 	background-image: url('demo-background.svg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 50% 50%;
 }
 
-html.demo .reveal .logo-footer {
+html.head .reveal .logo-footer {
 	background-image: url('redhat-logo.png');
 }
 
-html.demo .reveal section {
+html.head .reveal section {
 	color: #aaa;
 }
 
-html.demo .reveal section strong {
+html.head .reveal section strong {
 	color: #fff;
 }
