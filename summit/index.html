@@ -36,13 +36,12 @@
 
 	<section data-background-video="login-rhel-cli.ogv" data-background-color="#000"
 		data-background-video-muted="true">
-		<!--
-		What do you see when you log into a RHEL system?
-		-->
-		<!--
-		What if I told you that there's a new way to log into a RHEL system?
-		And it looked like this.
-		-->
+		<aside class="notes">
+			<ul>
+				<li>What do you see when you log into a RHEL system?</li>
+				<li>What if I told you that there's a simple way to log into a RHEL system?</li>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
@@ -50,26 +49,13 @@
 			<h2>Demo: <strong>Port 9090 login</strong></h2>
 			<aside class="notes">
 				<ul>
+					<li>Throughout today's talk we're going to have lots of hands
+						on action. You'll see a screen like this each time.</li>
+					<li>And it looks like this</li>
+					<li>Using my browser I'm going to type the same credentials
+						as on the command line.</li>
 					<li>Port is websm port.</li>
 				</ul>
-			<!--
-			TODO: notes
-			Using my browser
-			I'm going to type the same credentials.
-			Show simple action
-
-			# So this is the first goal. Make linux usable by non-expert admins.
-
-			# Demo: Log into cockpit
-			# We all know 10 ways to change the host name.
-			# But for someone who is just starting with linux, even this task has a
-			# steep learning curve.
-			# Cockpit makes it easy.
-			# Show how a non expert can change the host name, and perform mundane task.
-			# Click on the system section
-			# Click on Host name
-			# Change it
-			-->
 			</aside>
 		</section>
 
@@ -78,12 +64,38 @@
 		</section>
 	</section>
 
+	<section>
+		<h1>What?</h1>
+		<aside class="notes">
+			<ul>
+				<li>What is that thing we just saw?</li>
+			</ul>
+		</aside>
+	</section>
+
 	<section data-transition="slide-in fade-out">
 		<h2>Code name: <strong>Cockpit</strong></h2>
+		<aside class="notes">
+			<ul>
+				<li>It's code name is "Cockpit"</li>
+				<li>You'll hear about it referred to that way.</li>
+			</ul>
+		</aside>
 	</section>
 
 	<section data-state="follow" data-transition="fade-in slide-out">
 		<h2>Project: <strong>Cockpit</strong></h2>
+		<aside class="notes">
+			<ul>
+				<li>Who are we kidding, this is really an open source project
+					and its name is Cockpit.</li>
+				<li>And it's not something way off in the future, you can use it
+					on RHEL, Fedora, Debian, Atomic Host today.</li>
+				<li>If you want to follow along go to this URL at the bottom of the
+					screen. We'll leave it displayed here for a while so
+					you have a chance.</li>
+			</ul>
+		</aside>
 	</section>
 
 
@@ -92,12 +104,16 @@
 			Linux admin interface</h2>
 		<aside class="notes">
 			<ul>
-				<li>Cockpit is a *remote interactive* admin interface</li>
-				<li>Cockpit runs in a browser.</li>
+				<li>It's is a *remote interactive* admin interface</li>
+				<li>It runs in a browser.</li>
 				<li>It's zero footprint.</li>
-				<li>Use it to configure, don't configure to use.</li>
+				<li>Works out of the box. Use it to configure, don't configure to use it.</li>
             		</ul>
 		</aside>
+	</section>
+
+	<section>
+		<h1>Why?</h1>
 	</section>
 
 	<section data-state="follow" style="text-align: left;">
@@ -121,6 +137,9 @@
 		<h3 style="background-color: rgba(0, 0, 0, 0.75); color: white;">Building your own<br>
 				truck^H^H^H^H^Hsystem</h3>
 		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 		<!--
 		# Deploying linux system has been like building your own truck
 		# We give you a bunch of parts, the motor, lights, wheels etc. and
@@ -129,42 +148,70 @@
 	</section>
 
 	<section data-state="follow" data-background-image="240365952_50d8e21091_o.jpg">
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 		<!--
 		# You can build powerful purpose built trucks
 		-->
 	</section>
 
 	<section data-state="follow" data-background-image="706204705_2de29819f3_o.jpg">
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 		<!--
 		# Can do image based deployment of your trucks, virtualize them with RHEV.
 		-->
 	</section>
 
 	<section data-state="follow" data-background-image="file141869_1.jpg">
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 		<!--
 		# Can containerize your trucks ;)
 		-->
 	</section>
 
 	<section data-state="follow" data-background-image="1848912010_a1d700953b_o.jpg">
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 		<!--
 		# Build system that nobody else thinks are a good idea, but somehow they work for you.
 		-->
 	</section>
 
 	<section data-state="follow" data-background-image="funny-picture-496594282.jpg">
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 		<!--
 		# Build workhorse system that can be overloaded
 		-->
 	</section>
 
 	<section data-state="follow" data-background-image="6230429515_57a053c1b1_o.jpg">
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 		<!--
 		# Build fast sleek low-latency systems
 		-->
 	</section>
 
 	<section data-state="follow" data-background-image="1088-funny0152.jpg">
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 		<!--
 		# Or you can build it completely wrong
 		-->
@@ -233,47 +280,82 @@
 			# Configure the address
 
 		-->
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 		</section>
 
-		<section data-background-video="network-bond.webm" data-background-color="black">
-			<!-- TODO: RHEL specific demo -->
+		<section data-background-video="network-bond.ogv" data-background-color="black"
+			data-background-video-muted="true">
+			<aside class="notes">
+				<ul>
+				</ul>
+			</aside>
 		</section>
 	</section>
 
 	<section>
 		<section data-state="head">
 			<h2>Drive it:<br> <strong>Troubleshoot SELinux</strong></h2>
+			<aside class="notes">
+				<ul>
+				</ul>
+			</aside>
 		</section>
 
-		<section data-background-color="black">
-			<!-- TODO: Record the demo -->
+		<section data-background-video="selinux-troubleshooting.ogv" data-background-color="black"
+			data-background-video-muted="true">
+			<aside class="notes">
+				<ul>
+				</ul>
+			</aside>
 		</section>
 	</section>
 
 	<section>
 		<section data-state="head">
 			<h2>Drive it:<br> <strong>Mount an iSCSI disk</strong></h2>
-			<!-- TODO: Make this work on RHEL demo system -->
+			<aside class="notes">
+				<ul>
+				</ul>
+			</aside>
 		</section>
 
-		<section data-background-color="black">
-			<!-- TODO: Record the demo -->
+		<section data-background-video="iscsi-initiator.ogv" data-background-color="black"
+			data-background-video-muted="true">
+			<aside class="notes">
+				<ul>
+				</ul>
+			</aside>
 		</section>
 	</section>
 
 	<section>
 		<section data-state="head">
 			<h2>Drive it:<br> <strong>Start a Container</strong></h2>
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 		</section>
 
 		<section data-background-color="black">
 			<!-- TODO: Record the demo -->
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 		</section>
 	</section>
 
 	<section>
 		<h1>How?</h1>
 		<!-- TODO: Notes -->
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
@@ -297,32 +379,59 @@
 			# tools like Satellite or CloudForms, which contain policy. Those are
 			# declarative tools, whereas Cockpit is interactive".
 		-->
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 	</section>
 
 	<section data-transition="slide-in none">
 		<img src="transport-02.png">
 		<!-- TODO: Notes -->
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 	</section>
 
 	<section data-transition="none">
 		<img src="transport-03.png">
 		<!-- TODO: Notes -->
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 	</section>
 
 	<section data-transition="none">
 		<img src="transport-04.png">
 		<!-- TODO: Notes -->
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
 		<section data-state="head">
 			<h2>Show me:<br>
 				<strong>Access a System API</strong></h2>
-			<!-- TODO: Notes -->
+			<aside class="notes">
+				<pre>
+					proxy = cockpit.dbus("org.freedesktop.hostname1").proxy()
+					proxy.KernelRelease
+					proxy.StaticHostname
+					proxy.SetStaticHostname("marmalade", true)
+					- Switch to terminal
+					hostname
+					hostnamectl set-hostname ZeroG
+					proxy.StaticHostname
+				</pre>
+			</aside>
 		</section>
 
-		<section data-background-color="black">
-			<!-- TODO: Record the demo -->
+		<section data-background-video="dbus-proxy.ogv" data-background-color="black"
+			data-background-video-muted="true">
 		</section>
 	</section>
 
@@ -330,38 +439,53 @@
 		<section data-state="head">
 			<h2>Show me:<br> <strong>Spawn a Process</strong></h2>
 			<!-- TODO: Notes -->
+			<aside class="notes">
+				<pre>
+					zz = cockpit.spawn(["ping", "8.8.8.8"])
+					zz.close()
+				</pre>
+			</aside>
 		</section>
 
-		<section data-background-color="black">
-			<!-- TODO: Record the demo -->
+		<section data-background-video="spawn-process.ogv" data-background-color="black"
+			data-background-video-muted="true">
 		</section>
 	</section>
 
 	<section>
 		<h3>Lets add a plugin</h3>
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
 		<section data-state="head">
 			<h2>Build it:<br>
-				<strong>What's using NN port?</strong></h2>
-		<!-- Plugin integration
-		lsof for a given port
-		Demo setup location and API
+				<strong>Export a directory over NFS</strong></h2>
+			<!-- Plugin integration
+			lsof for a given port
+			Demo setup location and API
 
-		It means its trivial to write code that acts against the server.
+			It means its trivial to write code that acts against the server.
 
-		# Cockpit is being built from components. Each of which can be delivered
-		# separately, and can be used as a plugin mechanism.
+			# Cockpit is being built from components. Each of which can be delivered
+			# separately, and can be used as a plugin mechanism.
 
-		# Demo time
-		# http://stef.thewalter.net/creating-plugins-for-the-cockpit-user-interface.html
-		# http://stef.thewalter.net/using-dbus-from-javascript-in-cockpit.html
-		-->
+			# Demo time
+			# http://stef.thewalter.net/creating-plugins-for-the-cockpit-user-interface.html
+			# http://stef.thewalter.net/using-dbus-from-javascript-in-cockpit.html
+			-->
+			<aside class="notes">
+				<ul>
+					scp -r * admin@rhel.system:.local/share/cockpit/plugin/
+				</ul>
+			</aside>
 		</section>
 
-		<section data-background-color="black">
-			<!-- TODO: Record the demo -->
+		<section data-background-video="nfs-plugin.ogv" data-background-color="black"
+			data-background-video-muted="true">
 		</section>
 	</section>
 
@@ -370,36 +494,52 @@
 		<!--
 		# But there's gotta be a catch.
 		-->
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
 		<h2><strong>Zero</strong> footprint</h2>
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
 		<section data-state="head">
 			<h2>Prove it:<br> <strong>Starts on demand</strong></h2>
-			<!-- Zero footprint
-			# Cockpit has zero footprint, and starts on demand
-			# Exits when not in use
-			# We do this via socket activation
+				<!-- Zero footprint
+				# Cockpit has zero footprint, and starts on demand
+				# Exits when not in use
+				# We do this via socket activation
 
-			# Demo time
-			# Stop cockpit
-			# Show how cockpit processes are not running
-			# Show how cockpit-ws starts when you connect to port 9090
-			# Show how cockpit-bridge and several other processes start when you login
-			# They exit when you log out.
-			-->
+				# Demo time
+				# Stop cockpit
+				# Show how cockpit processes are not running
+				# Show how cockpit-ws starts when you connect to port 9090
+				# Show how cockpit-bridge and several other processes start when you login
+				# They exit when you log out.
+				-->
+			<aside class="notes">
+				<ul>
+				</ul>
+			</aside>
 		</section>
 
-		<section data-background-color="black">
-			<!-- TODO: Record the demo -->
+		<section data-background-video="zero-footprint.ogv" data-background-color="black"
+			data-background-video-muted="true">
 		</section>
 	</section>
 
 	<section>
 		<h3>A real login session</h3>
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
@@ -414,10 +554,14 @@
 			# Show how the user only has permission to do the things they could do from a console prompt.
 			# Show how the user is authenticated in a real linux session, as if they were SSH'd in
 			-->
+			<aside class="notes">
+				<ul>
+				</ul>
+			</aside>
 		</section>
 
-		<section data-background-color="black">
-			<!-- TODO: Record the demo -->
+		<section data-background-video="login-session.ogv" data-background-color="black"
+			data-background-video-muted="true">
 		</section>
 	</section>
 
@@ -425,11 +569,19 @@
 		<h2>Works over SSH</h2>
 		<aside class="notes">
 			<!-- TODO -->
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 		</aside>
 	</section>
 
 	<section>
 		<img src="transport-multi.png">
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
@@ -448,11 +600,19 @@
 			Slides from architecture talk
 			-->
 		</section>
+
+		<section data-background-video="multiple-hosts.ogv" data-background-color="black"
+			data-background-video-muted="true">
+		</section>
 	</section>
 
 	<section>
 		<h2><strong>Integration</strong> with
 			<br>management tooling</h3>
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 	</section>
 
 	<section>
@@ -473,6 +633,10 @@
 			# Exit the container by typing exit at the terminal
 			# Cockpit knows that it exited
 			-->
+			<aside class="notes">
+				<ul>
+				</ul>
+			</aside>
 		</section>
 
 		<section data-background-color="black">
@@ -483,6 +647,10 @@
 	<section data-background-color="white">
 		<h3>Red Hat Common User Experience</h3>
 		<p><img src="RH_ProductUX_examples.png" style="height: 620px"></p>
+		<aside class="notes">
+			<ul>
+			</ul>
+		</aside>
 	</section>
 
 	<!-- TODO Summary slide -->

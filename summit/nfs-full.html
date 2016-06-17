@@ -1,0 +1,50 @@
+<head>
+    <title>NFS Export</title>
+    <meta charset="utf-8">
+    <link href="../base1/cockpit.css" type="text/css" rel="stylesheet">
+    <script src="../base1/jquery.js"></script>
+    <script src="../base1/cockpit.js"></script>
+</head>
+<body>
+    <div class="page-ct container-fluid" style='max-width: 400px'>
+        <table class="form-table-ct">
+            <tr>
+                <td><label class="control-label">Path</label></td>
+                <td><input class="form-control" id="path" value=""></td>
+            </tr>
+            <tr>
+		<td></td>
+                <td><button class="btn btn-default btn-primary" id="export">Export</button></td>
+            </tr>
+        </table>
+        <p>
+	    <pre id="output"></pre>
+        </p>
+    </div>
+
+    <script>
+        $("#export").on("click", run);
+
+        function run() {
+	    var path = $("#path").val();
+            zz = cockpit.spawn(["exportfs", "*:" + path], {
+                "superuser": true
+	    });
+        }
+
+        var output = $("#output");
+	cockpit.file("/var/lib/nfs/etab").watch(changed);
+
+	function changed() {
+		output.empty();
+
+		var proc = cockpit.spawn(["exportfs"], { "superuser": true })
+		proc.stream(display);
+	}
+
+	function display(data) {
+		output.append(document.createTextNode(data));
+	}
+    </script>
+</body>
+</html>
