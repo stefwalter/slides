@@ -1,5 +1,5 @@
-@import url('reveal/css/reveal.css');
-@import url('reveal/lib/css/zenburn.css');
+@import url('../reveal/css/reveal.css');
+@import url('../reveal/lib/css/zenburn.css');
 
 body {
 	background-image: url('light-background-summit.svg');
