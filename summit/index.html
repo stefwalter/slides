@@ -13,9 +13,8 @@
 
 <div class="reveal">
 
-	<!-- TODO: Explain this URL. And call it out early suggest people go there even if they don't know if they're going to follow along. -->
 	<div class="follow-footer">
-		Go to:&nbsp;&nbsp;&nbsp;<strong>http://cockpit-project.org/running.html</strong>
+		cockpit-project.org/running.html
 	</div>
 
 	<div class="logo-footer">
@@ -23,24 +22,160 @@
 
 <div class="slides">
 
-	<section class="summit-title" data-background-image="rh-summit-theme-start.svg"
-		data-background-color="#d0ecf6" style="padding-left: 150px;">
+	<section data-state="no-footer" class="summit-title"
+	  	data-background-image="rh-summit-theme-start.svg"
+		data-background-color="#d0ecf6"
+		data-background-position="right"
+		data-background-size="180%">
 		<div>
-			<img src="summit.svg" style="width: 250px; position: relative; top: -50px;">
+			<img src="summit.svg">
 		</div>
 		<div class="text">
-			<h3><strong>DISCOVERABLE LINUX</strong></h3>
+			<h4><strong>DISCOVERABLE LINUX</strong><br>
 			for next generation of<br>
-			<strong>SYSTEM ADMINISTATORS</strong>
+			<strong>SYSTEM ADMINISTATORS</strong></h4>
+			<p style="text-align: left; position: absolute;"><br>
+			<strong>Stef Walter<br>Principal Engineer, Red Hat</strong></p>
 		</div>
 	</section>
 
-	<section data-background-video="login-rhel-cli.ogv" data-background-color="#000"
+	<section data-state="no-footer">
+		<h2>Follow along</h2>
+		<p>cockpit-project.org/running.html</p>
+		<aside class="notes">
+			<h2>TODO: Most notes are missing</h2>
+		</aside>
+	</section>
+
+	<section data-state="no-footer" data-background-image="Optimusprimealtmoviemode.jpg">
+		<h3 style="background-color: rgba(0, 0, 0, 0.75); color: white;">Building your own<br>
+				truck^H^H^H^H^Hsystem</h3>
+		<aside class="notes">
+			<ul>
+				<li>Deploying linux system has been like building your own truck</li>
+				<li>We give you a bunch of parts, the motor, lights, wheels etc. and
+				help you learn how to put together a purpose built truck.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-state="no-footer" data-background-image="240365952_50d8e21091_o.jpg">
+		<aside class="notes">
+			<ul>
+				<li>You can build powerful purpose built trucks</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-state="no-footer" data-background-image="706204705_2de29819f3_o.jpg">
+		<aside class="notes">
+			<ul>
+				<li>Can do image based deployment of your trucks, virtualize them with RHEV.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-state="no-footer" data-background-image="file141869_1.jpg">
+		<aside class="notes">
+			<ul>
+				<li>Can containerize your trucks ;)</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-state="no-footer" data-background-image="1848912010_a1d700953b_o.jpg">
+		<aside class="notes">
+			<ul>
+				<li>Build system that nobody else thinks are a good idea, but
+				somehow they work for you.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-state="no-footer" data-background-image="funny-picture-496594282.jpg">
+		<aside class="notes">
+			<ul>
+				<li>Build workhorse system that can be overloaded</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-state="no-footer" data-background-image="6230429515_57a053c1b1_o.jpg">
+		<aside class="notes">
+			<ul>
+				<li>Build fast sleek low-latency system</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-state="no-footer" data-background-image="1088-funny0152.jpg">
+		<aside class="notes">
+			<ul>
+				<li>Or you can build it completely wrong</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h2>But but, I just want<br>
+			to <strong>drive</strong> it</h2>
+		<aside class="notes">
+			<ul>
+				<li>But not everyone knows how to build a truck, what if
+				you just want to drive it.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section data-state="no-footer" data-background-video="login-rhel-cli.ogv" data-background-color="#000"
 		data-background-video-muted="true">
 		<aside class="notes">
 			<ul>
 				<li>What do you see when you log into a RHEL system?</li>
-				<li>What if I told you that there's a simple way to log into a RHEL system?</li>
+				<li>When you're at a root bash prompt, the possibilities are
+				endless, and the power is limitless.</li>
+				<li>We all have a mental model, where we can imagine how Linux
+				fits together, how the daemons are interacting, and where to
+				look for symptoms of problems.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h2>A <strong>remote interactive</strong><br>
+			Linux admin interface</h2>
+		<aside class="notes">
+			<ul>
+				<li>It's is a *remote interactive* admin interface</li>
+				<li>It runs in a browser.</li>
+				<li>It's zero footprint.</li>
+				<li>Works out of the box. Use it to configure, don't configure to use it.</li>
+            		</ul>
+		</aside>
+	</section>
+
+	<section style="text-align: left;">
+		<h2>
+			1. Linux <strong>usable</strong><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				by non-expert admins<br>
+			2. Complex Linux features<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<strong>discoverable</strong>
+		</h2>
+		<aside class="notes">
+			<ul>
+				<li>Goal: Make Linux and RHEL discoverable by broader admin audience.</li>
+				<li>Goal: Make complex Linux tasks discoverable.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section>
+		<h1>What?</h1>
+		<aside class="notes">
+			<ul>
+				<li>What is that thing we just saw?</li>
 			</ul>
 		</aside>
 	</section>
@@ -60,18 +195,9 @@
 			</aside>
 		</section>
 
-		<section data-background-video="rhel-cockpit-login.ogv" data-background-color="#000"
-			data-background-video-muted="true">
+		<section data-state="no-footer" data-background-video="rhel-cockpit-login.ogv"
+			data-background-color="#000" data-background-video-muted="true">
 		</section>
-	</section>
-
-	<section>
-		<h1>What?</h1>
-		<aside class="notes">
-			<ul>
-				<li>What is that thing we just saw?</li>
-			</ul>
-		</aside>
 	</section>
 
 	<section data-transition="slide-in fade-out">
@@ -84,7 +210,7 @@
 		</aside>
 	</section>
 
-	<section data-state="follow" data-transition="fade-in slide-out">
+	<section data-transition="fade-in slide-out">
 		<h2>Project: <strong>Cockpit</strong></h2>
 		<aside class="notes">
 			<ul>
@@ -99,196 +225,47 @@
 		</aside>
 	</section>
 
-
-	<section data-state="follow">
-		<h2>A <strong>remote interactive</strong><br>
-			Linux admin interface</h2>
+	<section data-state="no-footer">
+		<h2>Follow along</h2>
+		<p>cockpit-project.org/running.html</p>
 		<aside class="notes">
-			<ul>
-				<li>It's is a *remote interactive* admin interface</li>
-				<li>It runs in a browser.</li>
-				<li>It's zero footprint.</li>
-				<li>Works out of the box. Use it to configure, don't configure to use it.</li>
-            		</ul>
-		</aside>
-	</section>
-
-	<section>
-		<h1>Why?</h1>
-	</section>
-
-	<section data-state="follow" style="text-align: left;">
-		<h2>
-			1. Linux <strong>usable</strong><br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				by non-expert admins<br>
-			2. Complex Linux features<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<strong>discoverable</strong>
-		</h2>
-		<aside class="notes">
-			<ul>
-				<li>Goal: Make Linux and RHEL discoverable by broader admin audience.</li>
-				<li>Goal: Make complex Linux tasks discoverable.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section data-state="follow" data-background-image="Optimusprimealtmoviemode.jpg">
-		<h3 style="background-color: rgba(0, 0, 0, 0.75); color: white;">Building your own<br>
-				truck^H^H^H^H^Hsystem</h3>
-		<aside class="notes">
-			<ul>
-			</ul>
-		</aside>
-		<!--
-		# Deploying linux system has been like building your own truck
-		# We give you a bunch of parts, the motor, lights, wheels etc. and
-		# help you learn how to put together a purpose built truck.
-		-->
-	</section>
-
-	<section data-state="follow" data-background-image="240365952_50d8e21091_o.jpg">
-		<aside class="notes">
-			<ul>
-			</ul>
-		</aside>
-		<!--
-		# You can build powerful purpose built trucks
-		-->
-	</section>
-
-	<section data-state="follow" data-background-image="706204705_2de29819f3_o.jpg">
-		<aside class="notes">
-			<ul>
-			</ul>
-		</aside>
-		<!--
-		# Can do image based deployment of your trucks, virtualize them with RHEV.
-		-->
-	</section>
-
-	<section data-state="follow" data-background-image="file141869_1.jpg">
-		<aside class="notes">
-			<ul>
-			</ul>
-		</aside>
-		<!--
-		# Can containerize your trucks ;)
-		-->
-	</section>
-
-	<section data-state="follow" data-background-image="1848912010_a1d700953b_o.jpg">
-		<aside class="notes">
-			<ul>
-			</ul>
-		</aside>
-		<!--
-		# Build system that nobody else thinks are a good idea, but somehow they work for you.
-		-->
-	</section>
-
-	<section data-state="follow" data-background-image="funny-picture-496594282.jpg">
-		<aside class="notes">
-			<ul>
-			</ul>
-		</aside>
-		<!--
-		# Build workhorse system that can be overloaded
-		-->
-	</section>
-
-	<section data-state="follow" data-background-image="6230429515_57a053c1b1_o.jpg">
-		<aside class="notes">
-			<ul>
-			</ul>
-		</aside>
-		<!--
-		# Build fast sleek low-latency systems
-		-->
-	</section>
-
-	<section data-state="follow" data-background-image="1088-funny0152.jpg">
-		<aside class="notes">
-			<ul>
-			</ul>
-		</aside>
-		<!--
-		# Or you can build it completely wrong
-		-->
-	</section>
-
-	<section data-state="follow">
-		<h2>But but, I just want<br>
-			to <strong>drive</strong> it</h2>
-		<aside class="notes">
-			<!--
-			But not everyone knows how to build a truck, what if you just want to drive it.
-			-->
-		</aside>
-	</section>
-
-	<section data-state="follow" data-background-image="0638.servermanager1_75040ADF.png">
-		<aside class="notes">
-			<!--
-			This is what it looks like to "drive" windows server
-			-->
-		</aside>
-	</section>
-
-	<section data-state="follow" data-background-image="server-prompt.png" data-background-color="black">
-		<aside class="notes">
-			<ul>
-				<li>This is what it looks like to "drive" Linux servers</li>
-				<li>When you're at a root bash prompt, the possibilities are
-					endless, and the power is limitless.</li>
-				<li>We all have a mental model, where we can imagine how Linux
-					fits together, how the daemons are interacting, and where to
-					look for symptoms of problems.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section data-state="follow" data-background-image="7490249498_d0a49557d1_o.jpg">
-		<aside class="notes">
-			<ul>
-			</ul>
 		</aside>
 	</section>
 
 	<section>
 		<section data-state="head">
 			<h2>Drive it:<br><strong>Make a network bond</strong></h2>
-		<!--
-			Show complex action
-
-			# So that was easy. Trivial ... but you guys already knew how to do that.
-			# On to our second goal, make linux features discoverable.
-
-			# Demo:
-			# We're going to greate a bonded network interface.
-			# How would you normally do this. You'd read some blogs, decide between
-			# opposing opinions, maybe download some tools, check that they're available
-			# for your version of Linux, read some manual pages, and finally assemble a
-			# command to execute, etc.
-			# That's a big investment of time.
-			# Here's how you do it with Cockpit.
-			# Click on the Networking section
-			# Choose 'Add Bond'
-			# Click eth5 and eth6
-			# Create the bond
-			# Click on the bond to set an address
-			# Configure the address
-
-		-->
-		<aside class="notes">
-			<ul>
-			</ul>
-		</aside>
+			<aside class="notes">
+				<ul>
+					<li>Network interface bonding can be tricky, especially for
+						non-experts.</li>
+					<li>Cockpit uses the Network manager DBUS API to make it easy.</li>
+					<li>It gives you visiblity into what your options are making it
+					easy to select the relevent interfaces and modes.</li>
+					<li>Even offering context appropriate options, Making changes
+					after the fact is easy as well, here we adjust the IP settings.</li>
+				</ul>
+				<pre>
+					# Demo:
+					# We're going to greate a bonded network interface.
+					# How would you normally do this. You'd read some blogs, decide between
+					# opposing opinions, maybe download some tools, check that they're available
+					# for your version of Linux, read some manual pages, and finally assemble a
+					# command to execute, etc.
+					# That's a big investment of time.
+					# Here's how you do it with Cockpit.
+					# Click on the Networking section
+					# Choose 'Add Bond'
+					# Click eth5 and eth6
+					# Create the bond
+					# Click on the bond to set an address
+					# Configure the address
+				</pre>
+			</aside>
 		</section>
 
-		<section data-background-video="network-bond.ogv" data-background-color="black"
-			data-background-video-muted="true">
+		<section data-state="no-footer" data-background-video="network-bond.ogv"
+			data-background-color="black" data-background-video-muted="true">
 			<aside class="notes">
 				<ul>
 				</ul>
@@ -305,8 +282,8 @@
 			</aside>
 		</section>
 
-		<section data-background-video="selinux-troubleshooting.ogv" data-background-color="black"
-			data-background-video-muted="true">
+		<section data-state="no-footer" data-background-video="selinux-troubleshooting.ogv"
+			data-background-color="black" data-background-video-muted="true">
 			<aside class="notes">
 				<ul>
 				</ul>
@@ -323,8 +300,8 @@
 			</aside>
 		</section>
 
-		<section data-background-video="iscsi-initiator.ogv" data-background-color="black"
-			data-background-video-muted="true">
+		<section data-state="no-footer" data-background-video="iscsi-initiator.ogv"
+			data-background-color="black" data-background-video-muted="true">
 			<aside class="notes">
 				<ul>
 				</ul>
@@ -341,8 +318,8 @@
 			</aside>
 		</section>
 
-		<section data-background-video="docker-example.ogv" data-background-color="black"
-			data-background-video-muted="true">
+		<section data-state="no-footer" data-background-video="docker-example.ogv"
+			data-background-color="black" data-background-video-muted="true">
 		</section>
 	</section>
 
@@ -355,28 +332,17 @@
 	</section>
 
 	<section>
+		<h3>Look ma no hands...</h3>
+	</section>
+
+	<section>
 		<p>Pure interface, no "mid-tier"</p>
 		<img src="rhel-layers.png">
-		<!-- TODO: Notes
-		Not configuration management
-			"What does it cost me?"
-			Not a new configuration management system you have to buy into
-			Interactive not declarative
-			Cockpit doesn't take over your machine
-
-			# Cockpit doesn't store data or make policy decisions on its own. It just
-			# exposes the configuration services and state of the actual server.
-			# Parts of the server like systemd, NetworkManager, and so on own the state of the server.
-			# We just interact with those services.
-			# In fact we don't even have our own user accounts or access policy.
-
-			# "Cockpit is interactive, it shows you what's on your machines, and carries
-			# out your actions on the machine. In this way it's different from other
-			# tools like Satellite or CloudForms, which contain policy. Those are
-			# declarative tools, whereas Cockpit is interactive".
-		-->
 		<aside class="notes">
 			<ul>
+				<li>Interacts with parts of the system like systemd, NetworkManager,
+					and so on own the state of the system.</li>
+				<li>We just interact with those services.</li>
 			</ul>
 		</aside>
 	</section>
@@ -420,10 +386,27 @@
 					hostnamectl set-hostname ZeroG
 					proxy.StaticHostname
 				</pre>
+				<li>Let's look at some examples, here's the hostnamed call we made earlier.
+				We are typing javascript code directly in the interactive console in a
+				browser. If you have Cockpit running on your system try this.</li>
+
+				<li>It's trivial to interact with the DBUS API, easier even than if you
+				were on the system itself issueing gdbus commands... but that's the point
+				... we are on the system ... logged into the system ... and the javascript code
+				here is running as part of the login session.</li>
+
+				<li>This is what got me excited about Cockpit. The very idea
+				that there was code in the browser interacting directly with the system
+				cutting through the usual layers of crap ... really makes building
+				admin tools fun again.</li>
+
+				<li>And of course it works both ways, changes made via the command line
+				tools update the api and those changes are picked up by the cockpit UI
+				in the browser.</li>
 			</aside>
 		</section>
 
-		<section data-background-video="dbus-proxy.ogv" data-background-color="black"
+		<section data-state="no-footer" data-background-video="dbus-proxy.ogv" data-background-color="black"
 			data-background-video-muted="true">
 		</section>
 	</section>
@@ -439,8 +422,8 @@
 			</aside>
 		</section>
 
-		<section data-background-video="spawn-process.ogv" data-background-color="black"
-			data-background-video-muted="true">
+		<section data-state="no-footer" data-background-video="spawn-process.ogv"
+			data-background-color="black" data-background-video-muted="true">
 		</section>
 	</section>
 
@@ -460,7 +443,7 @@
 			lsof for a given port
 			Demo setup location and API
 
-			It means its trivial to write code that acts against the server.
+			It means its trivial to write code that acts against the system.
 
 			# Cockpit is being built from components. Each of which can be delivered
 			# separately, and can be used as a plugin mechanism.
@@ -476,7 +459,7 @@
 			</aside>
 		</section>
 
-		<section data-background-video="nfs-plugin.ogv" data-background-color="black"
+		<section data-state="no-footer" data-background-video="nfs-plugin.ogv" data-background-color="black"
 			data-background-video-muted="true">
 		</section>
 	</section>
@@ -521,7 +504,7 @@
 			</aside>
 		</section>
 
-		<section data-background-video="zero-footprint.ogv" data-background-color="black"
+		<section data-state="no-footer" data-background-video="zero-footprint.ogv" data-background-color="black"
 			data-background-video-muted="true">
 		</section>
 	</section>
@@ -537,12 +520,12 @@
 	<section>
 		<section data-state="head">
 			<h2>Prove it:<br> <strong>Login session</strong></h2>
-			<!-- An interactive login session on a server.
+			<!-- An interactive login session on a system.
 			It means you're actually logged in.
 			"These are Linux features"
 
 			# Demo
-			# Login with an unprivileged account used to log in is a server account
+			# Login with an unprivileged account used to log in is a system account
 			# Show how the user only has permission to do the things they could do from a console prompt.
 			# Show how the user is authenticated in a real linux session, as if they were SSH'd in
 			-->
@@ -552,7 +535,7 @@
 			</aside>
 		</section>
 
-		<section data-background-video="login-session.ogv" data-background-color="black"
+		<section data-state="no-footer" data-background-video="login-session.ogv" data-background-color="black"
 			data-background-video-muted="true">
 		</section>
 	</section>
@@ -569,6 +552,8 @@
 		<img src="transport-multi.png">
 		<aside class="notes">
 			<ul>
+				<li>When connecting out to other systems, we simply launch
+					cockpit-bridge on the other system via ssh.</li>
 			</ul>
 		</aside>
 	</section>
@@ -577,20 +562,15 @@
 		<section data-state="head">
 			<h3>Prove it:<br>
 				<strong>Cockpit over SSH</strong></h3>
-			<!-- TODO: point out OSTree -->
-			<!-- Cockpit over SSH
-			# The Cockpit web app running in your browser contains all the UI logic
-			# cockpit-ws serves the Cockpit to your browser, and lets the web app connect
-			# back through a WebSocket.
-			# Cockpit sends command messages to the system through the WebSocket
-			# cockpit-bridge is launches as the user on login, and processes those messages.
-			# When connecting out to other systems, we simply launch cockpit-bridge on the
-			# other system via ssh.
-			Slides from architecture talk
-			-->
+			<aside class="notes">
+				<ul>
+					<li>...</li>
+					<li>Point out OSTree which goes into next slide</li>
+				</ul>
+			</aside>
 		</section>
 
-		<section data-background-video="multiple-hosts.ogv" data-background-color="black"
+		<section data-state="no-footer" data-background-video="multiple-hosts.ogv" data-background-color="black"
 			data-background-video-muted="true">
 		</section>
 	</section>
@@ -600,6 +580,24 @@
 			<br>management tooling</h3>
 		<aside class="notes">
 			<ul>
+				<li>Not configuration management</li>
+				<li>"What does it cost me?</li>
+				<li>Not a new configuration management system you have to buy into</li>
+				<li>Cockpit doesn't take over your machine</li>
+				<li>Cockpit doesn't store data or make policy decisions on its own. It just
+				exposes the configuration services and state of the actual system.</li>
+				<li>In fact we don't even have our own user accounts or access policy.</li>
+
+				<li>"Cockpit is interactive, it shows you what's on your machines,
+				and carries out your actions on the machine. In this way it's
+			       	different from other tools like Satellite or CloudForms, which
+				contain policy. Those are declarative tools, whereas Cockpit
+				is interactive"</li>
+
+				<li>Cockpit can't and will be able to do everything.</li>
+				<li>You must be able to use Cockpit at the same time as the terminal,
+				scripts, and larger management systems.</li>
+				<li>It's vital that Cockpit reacts to changes made by other tools.</li>
 			</ul>
 		</aside>
 	</section>
@@ -607,28 +605,13 @@
 	<section>
 		<section data-state="head">
 			<h2>Prove it:<br> <strong>OSTree Example</strong></h2>
-			<!-- Integration with other tools
-			OSTree????
-			Cockpit reacts to the server
-
-			# Cockpit can't and will be able to do everything.
-			# You must be able to use Cockpit at the same time as the terminal, scripts,
-			# and larger management systems.
-			# It's vital that Cockpit reacts to changes made by other tools.
-
-			# Demo
-			# Show starting a Docker container, and how that updates the display
-			# Access the container terminal and actually do stuff through Cockpit
-			# Exit the container by typing exit at the terminal
-			# Cockpit knows that it exited
-			-->
 			<aside class="notes">
 				<ul>
 				</ul>
 			</aside>
 		</section>
 
-		<section data-background-video="ostree-demo.ogv" data-background-color="black"
+		<section data-state="no-footer" data-background-video="ostree-demo.ogv" data-background-color="black"
 			data-background-video-muted="true">
 		</section>
 	</section>
@@ -642,70 +625,25 @@
 		</aside>
 	</section>
 
-	<!-- TODO Summary slide -->
-
-	<!-- Possible additional slides
-	Out of the box?????
-	Troubleshooting?????
-	Embedding Cockpit?????
-
-	<section data-background-video="change-hostname.webm">
-		<aside class="notes">
-			Here's a simple example, changing the hostname. We give it a pretty name of "My pink pony" it generates an appropriate hostname. And the name is changed both in the browser and in a the terminal.
-		</aside>
-	</section>
-
-	<section data-background-video="network-bond.webm">
-	    <aside class="notes">
-		Configuring Network interface bonding can be tricky, especially for non-experts. Cockpit uses the Network manager DBUS API to make it easy. It gives you visiblity into what your options are making it easy to select the relevent interfaces and modes. Even offering context appropriate options, Making changes after the fact is easy as well, here we adjust the IP settings. Swtiching from DHCP to a static IPs.
-		</aside>
-	</section>
-
-	<section data-background-video="dbus-proxy.webm">
-		<aside class="notes">
-			<ul>
-				<li>Let's look at some examples, here's the hostnamed call we made earlier. We are typing javascript code directly in the interactive console in a
-				browser. If you have Cockpit running on your system try this.</li>
-
-				<li>It's trivial to interact with the DBUS API, easier even than if you
-				were on the system itself issueing gdbus commands... but that's the point ... we are on
-				the system ... logged into the system ... and the javascript code
-				here is running as part of the login session.</li>
-
-				<li>This is what got me excited about Cockpit. The very idea
-				that there was code in the browser interacting directly with the system
-				cutting through the usual layers of crap ... really makes building
-				admin tools fun again.</li>
-
-				<li>And of course it works both ways, changes made via the command line tools update the api and those changes are picked up by the cockpit UI in the browser.</li>
-            </ul>
-		</aside>
-	</section>
-
-	-->
-
-<!-- What problem is Cockpit solving: move the truck stuff first -->
-
 	<section>
-		<h2><strong>Questions?
-			<br><br>
-			cockpit-project.org</strong></h2>
-		<p><tt>#cockpit on Freenode</tt></p>
-		<p><tt>github.com/cockpit-project/cockpit</tt></p>
-	</section>
-
-	<section style="text-align: left;">
-		<p>Credits:</p>
-		<ul>
-Credits:
-d10n2000 on Flickr, bigfez on Flickr, dalbera on Flickr
-axeman3d on Flickr, toddmccann on Flickr
-		</ul>
+		<h2><strong>Usable</strong> RHEL
+			<strong>Discoverable</strong> RHEL</h3>
 		<aside class="notes">
 			<ul>
 			</ul>
 		</aside>
 	</section>
+
+	<section data-state="no-footer">
+		<h2><strong>Questions?
+			<br><br>
+			cockpit-project.org</strong></h2>
+		<p><tt>github.com/cockpit-project/cockpit</tt></p>
+		<p>&nbsp;</p>
+		<p style="font-size: 0.7em">Credits: d10n2000, bigfez, dalbera,
+		axeman3d, toddmccann on Flickr</p>
+	</section>
+
 </section>
 
 </div>

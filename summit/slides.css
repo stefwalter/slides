@@ -144,6 +144,7 @@ body {
 .reveal section.summit-title {
 	color: white;
 	text-align: left;
+	margin-left: -2em;
 }
 
 .reveal section.summit-title strong {
@@ -155,8 +156,8 @@ body {
 .reveal section.summit-title img {
 	width: 250px;
 	position: absolute;
-	top: -50px;
-	right: -100px;
+	top: -100px;
+	right: -150px;
 }
 
 .reveal section.summit-title p {
@@ -166,23 +167,21 @@ body {
 .reveal .follow-footer {
 	position: absolute;
 	display: block;
-	width: 100%;
+	width: 60%;
 	bottom: 0px;
-	background-color: white;
-	background: linear-gradient(to bottom, transparent 0px, #d0ecf6 30px);
-	padding: 20px 50px 10px 20px;
+	border-top: 2px solid #aaa;
+	padding: 22px 50px 22px 20px;
 	font-size: 20px;
-	color: #888;
-	display: none;
-	z-index: 1;
-}
-
-.reveal .follow-footer strong {
-	color: #002366;
-}
-
-html.follow .follow-footer {
+	color: black;
 	display: block;
+	z-index: 1;
+	margin-left: 20%;
+	margin-right: 20%;
+	text-align: center;
+}
+
+html.head .reveal .follow-footer {
+	color: white;
 }
 
 .reveal .logo-footer {
@@ -195,9 +194,11 @@ html.follow .follow-footer {
 	background-image: url('redhat-black.png');
 	background-position: 50% 50%;
 	background-size: cover;
+	z-index: 2;
 }
 
-html.follow .logo-footer {
+html.no-footer .reveal .follow-footer,
+html.no-footer .reveal .logo-footer {
 	display: none;
 }
 
