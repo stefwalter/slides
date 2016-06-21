@@ -5,3 +5,5 @@
 .goutputstream*
 /scratch/
 npm-debug.log
+/dist.*
+/*.zip
