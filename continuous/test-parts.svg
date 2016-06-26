@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="800"
+   height="600"
+   viewBox="0 0 800 600"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="test-parts.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="345.46124"
+     inkscape:cy="285.39676"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-452.36216)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Overpass;-inkscape-font-specification:'Overpass, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="147.40538"
+       y="835.04303"
+       id="text4136"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="147.40538"
+         y="835.04303"
+         id="tspan4150"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;font-family:Overpass;-inkscape-font-specification:'Overpass Bold';fill:#007a87;fill-opacity:0.94117647">SINK</tspan><tspan
+         sodipodi:role="line"
+         x="147.40538"
+         y="865.30359"
+         id="tspan4182">Post a logs, attachments</tspan><tspan
+         sodipodi:role="line"
+         x="147.40538"
+         y="884.05359"
+         id="tspan4178">Post status </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Overpass;-inkscape-font-specification:'Overpass, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="487.62585"
+       y="727.69196"
+       id="text4140"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="487.62585"
+         y="727.69196"
+         id="tspan4192"
+         style="font-weight:bold;font-size:40px;fill:#007a87;fill-opacity:0.94117647">ARTIFACT</tspan><tspan
+         sodipodi:role="line"
+         x="487.62585"
+         y="757.95251"
+         id="tspan4227">Build a testable artifact.</tspan><tspan
+         sodipodi:role="line"
+         x="487.62585"
+         y="776.70251"
+         id="tspan4194">An image or container</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Overpass;-inkscape-font-specification:'Overpass, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="384.37369"
+       y="890.60645"
+       id="text4146"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4148"
+         x="384.37369"
+         y="890.60645"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;font-family:Overpass;-inkscape-font-specification:'Overpass Bold';fill:#007a87;fill-opacity:0.94117647">SUITE</tspan><tspan
+         sodipodi:role="line"
+         x="384.37369"
+         y="920.867"
+         id="tspan4198">Run a set of tests</tspan><tspan
+         sodipodi:role="line"
+         x="384.37369"
+         y="939.617"
+         id="tspan4204">Single test suite</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Overpass;-inkscape-font-specification:'Overpass, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="146.21469"
+       y="630.66296"
+       id="text4152"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4154"
+         x="146.21469"
+         y="630.66296"
+         style="font-weight:bold;font-size:40px;fill:#007a87;fill-opacity:0.94117647">GITHUB</tspan><tspan
+         sodipodi:role="line"
+         x="146.21469"
+         y="660.92352"
+         id="tspan4184">Store tasks, status </tspan><tspan
+         sodipodi:role="line"
+         x="146.21469"
+         y="679.67352"
+         id="tspan4186">Show feedback</tspan><tspan
+         sodipodi:role="line"
+         x="146.21469"
+         y="698.42352"
+         id="tspan4156" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Overpass;-inkscape-font-specification:'Overpass, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="366.72232"
+       y="579.66815"
+       id="text4158"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="366.72232"
+         y="579.66815"
+         id="tspan4162"
+         style="font-weight:bold;font-size:40px;fill:#007a87;fill-opacity:0.94117647">RUNNER</tspan><tspan
+         sodipodi:role="line"
+         x="366.72232"
+         y="609.92871"
+         id="tspan4229">Choose what to run</tspan><tspan
+         sodipodi:role="line"
+         x="366.72232"
+         y="628.67871"
+         id="tspan4233">Distributed decisions</tspan></text>
+    <path
+       sodipodi:type="star"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#a30000;stroke-width:0.56446801;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.94117647;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="path4170"
+       sodipodi:sides="5"
+       sodipodi:cx="-175.76654"
+       sodipodi:cy="341.21478"
+       sodipodi:r1="49.979588"
+       sodipodi:r2="0.012733086"
+       sodipodi:arg1="-1.3258177"
+       sodipodi:arg2="0.8562099"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m -163.64471,292.72746 -12.11349,48.49694 49.85169,-3.46448 -49.8666,3.46577 18.69994,46.34119 -18.70577,-46.35497 -38.2945,32.10491 38.3058,-32.11472 -42.36723,-26.49927 42.38006,26.50699 z"
+       inkscape:transform-center-x="62.926524"
+       inkscape:transform-center-y="-8.1981631"
+       transform="matrix(4.1524262,3.3182102,-3.3174216,4.1514394,2242.6376,-86.938956)" />
+  </g>
+</svg>
