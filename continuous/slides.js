@@ -6,8 +6,8 @@ Reveal.initialize({
 	center: true,
 
 	keyboard: {
-    		40: 'next',
-    		38: 'prev'
+    		40: 'right',
+    		38: 'left'
   	},
 
 	transition: 'slide', // none/fade/slide/convex/concave/zoom
