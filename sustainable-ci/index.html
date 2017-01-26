@@ -15,7 +15,7 @@
 <div class="slides">
 
 	<section>
-		How to make Agile self-sustaining in your Project.
+		<h2>Self-sustaining Agile<br><strong>in your project</strong></h2>
 	</section>
 
 	<section>
@@ -176,7 +176,7 @@
 		</aside>
 	</section>
 
-	<section data-background="devdoc_hackfest.jpg">
+	<section data-background="typingman.gif">
 		<h2 style="color: white; padding-top: 7em;">Hackfest Room C236</h2>
 	</section>
 
@@ -314,9 +314,56 @@
 		</aside>
 	</section>
 
+	<section data-background-color="white">
+		<img src="ci_testing.png">
+		<aside class="notes">
+			<ul>
+				<li>Real operating systems: Fedora, RHEL, Atomic, Debian</li>
+				<li>Real browsers: Firefox, Chrome</li>
+				<li>Not just talking about unit testing, we have a couple thousand of those.</li>
+			</ul>
+		</aside>
+	</section>
+
 	<section>
-	<h2>Cockpit releases weekly</h2>
-	<h4>50 releases a year</h4>
+		<h2>It scales baaaaayyybeee!</h2>
+	</section>
+
+	<section>
+		<h2>Cockpit releases weekly</h2>
+		<h4>50 releases a year</h4>
+	</section>
+
+	<section>
+		<h3><em>Sign a tag</em> &nbsp;&nbsp;<span class="fa">&#xf0a9;</span>&nbsp;&nbsp; <em>Becomes a release</em></h3>
+		<aside class="notes">
+			<ul>
+				<li>This is what we do in Cockpit. Something that we have experience with.</li>
+				<li>Delivering as automated releases.</li>
+				<li>50 releases of Cockpit in a year.</li>
+				<li>One or two broken with a core regression, releases.</li>
+			</ul>
+		</aside>
+	</section>
+
+	<section style="text-align: left;">
+		<ul style="font-size: 1.2em; padding-left: 2em;">
+			<li><em>Tarballs</em></li>
+			<li><em>Scratch</em> builds</li>
+			<li><em>Fedora RPM</em> spec and changelog</li>
+			<li><em>Koji</em> binary build</li>
+			<li><em>Bodhi</em> binary update</li>
+			<li><em>COPR</em> preview builds</li>
+			<li><em>Debian</em> packages</li>
+			<li><em>Ubuntu PPA</em> packages</li>
+			<li><em>Docker Hub</em> containers</li>
+			<li><em>Upload documentation</em></li>
+		</ul>
+		<aside class="notes">
+			<ul>
+				<li>Here's what the robots do. They do this weekly.</li>
+			</ul>
+		</aside>
 	</section>
 
 	<section data-background-color="black">
@@ -328,24 +375,12 @@
 		</aside>
 	</section>
 
-	<section data-background-color="white">
-		<img src="ci-tasks.png">
-		<aside class="notes">
-			<ul>
-				<li>Real operating systems: Fedora, RHEL, Atomic, Debian</li>
-				<li>Real browsers: Firefox, Chrome</li>
-				<li>Not just talking about unit testing, we have a couple thousand of those.</li>
-			</ul>
-		</aside>
-	</section>
-
 <!--
 	<section data-background="yo-dawg.png" data-background-position="bottom right"
 		data-background-size='10em'>
 		<h2><strong>Test virtual machines</strong><br>
 			run in<br><strong>Docker containers</strong></h2>
 	</section>
--->
 
 	<section data-background="01-initial.png" data-background-color="white" data-background-size='100%'>
 		<aside class="notes">
@@ -386,7 +421,6 @@
 		</aside>
 	</section>
 
-	<!--
 	<section data-background="06-images.png" data-background-color="white" data-background-size='100%'>
 		<aside class="notes">
 			<ul>
@@ -402,95 +436,13 @@
 			</ul>
 		</aside>
 	</section>
-	-->
 
 	<section>
 		<img src="test-parts.png">
 	</section>
-
-	<!--
-	<section>
-		<h3>Red Hat QE Testing &nbsp;&nbsp;<span class="fa">&#xf0a9;</span>&nbsp;&nbsp; <strong>Upstream</strong></h3>
-		<aside class="notes">
-			<ul>
-				<li>Packaging is Upstream, when it needs to be testable.</li>
-				<li>QE testing is upstream.</li>
-			</ul>
-		</aside>
-	</section>
-	-->
-
-	<section>
-		<h3><em>Sign a tag</em> &nbsp;&nbsp;<span class="fa">&#xf0a9;</span>&nbsp;&nbsp; <em>Becomes a release</em></h3>
-		<aside class="notes">
-			<ul>
-				<li>This is what we do in Cockpit. Something that we have experience with.</li>
-				<li>Delivering as automated releases.</li>
-				<li>50 releases of Cockpit in a year.</li>
-				<li>One or two broken with a core regression, releases.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section style="text-align: left;">
-		<ul style="font-size: 1.2em; padding-left: 2em;">
-			<li><em>Tarballs</em></li>
-			<li><em>Scratch</em> builds</li>
-			<li><em>Fedora RPM</em> spec and changelog</li>
-			<li><em>Koji</em> binary build</li>
-			<li><em>Bodhi</em> binary update</li>
-			<li><em>COPR</em> preview builds</li>
-			<li><em>Debian</em> packages</li>
-			<li><em>Ubuntu PPA</em> packages</li>
-			<li><em>Docker Hub</em> containers</li>
-			<li><em>Upload documentation</em></li>
-		</ul>
-		<aside class="notes">
-			<ul>
-				<li>Here's what the robots do. They do this weekly.</li>
-			</ul>
-		</aside>
-	</section>
-
-<!--
-	<section>
-		<h3><strong>Distributed</strong> is key</h3>
-		<aside class="notes">
-			<ul>
-				<li>Don't bind yourself into a single testing cluster or framework
-					where everything has to be ported.</li>
-				<li>By posting the results to a public URL, you can distribute
-					the infrastructure testing load.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section>
-		<h3><strong>Distributed</strong> scales</h3>
-		<aside class="notes">
-			<ul>
-				<li>Cockpit has 5 or 6 machines donated around the globe doing
-					its testing. I could contribute with my own machine.</li>
-				<li>It's easy to scale up and down when you have things distributed.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section>
-		<h3><strong>Distributed</strong> makes<br>
-			Open Source work</h3>
-		<aside class="notes">
-			<ul>
-				<li>We can't hoard our integration testing, like it's some kind of advantage.</li>
-				<li>If you do, you lose most of the advantage of that testing.</li>
-				<li>Just like when you hoard code: it's the anti-thesis of open source.</li>
-				<li>To get the advantages of continuous integration, it needs to be upstream
-					it needs to be open source.</li>
-			</ul>
-		</aside>
-	</section>
 -->
-	<section data-background="devdoc_hackfest.jpg">
+
+	<section data-background="typingman.gif">
 		<h2 style="color: white; padding-top: 7em;">Hackfest Room C236</h2>
 	</section>
 
@@ -584,27 +536,7 @@
 		* Fedora Openstack<br>
 	</section>
 
-	<section>
-		<h2>Continuous Delivery</h2>
-	</section>
 
-	<section data-background="flickr-valkyrieh116-2431800217_a376d729ab_o.jpg">
-	</section>
-
-	<section>
-		<h3>Packaging &nbsp;&nbsp;<span class="fa">&#xf0a9;</span>&nbsp;&nbsp; <strong>Upstream</strong><br>
-		Patching &nbsp;&nbsp;<span class="fa">&#xf0a9;</span>&nbsp;&nbsp; <strong>Upstream</strong></h3>
-		<aside class="notes">
-			<ul>
-				<li>Packaging is upstream.</li>
-				<li>There's a unconvertional key change here.</li>
-				<li>To give the robots the tools they need to do their job, packaging needs
-					to go upstream.</li>
-				<li>Should be reliably updated as part of the various pull requests.</li>
-				<li>That leads us to the next topic.</li>
-			</ul>
-		</aside>
-	</section>
 	-->
 
 	<section data-background-color="black" style="color: white;">
@@ -643,30 +575,6 @@
 	</section>
 
 <!--
-	<section data-background-color="white">
-		<img src="qe-tasks.png">
-		<aside class="notes">
-			<ul>
-				<li>In Cockpit QE testing is upstream.</li>
-				<li>QE also runs it again during acceptance testing, but the fact that it's
-					upstream shortens the testing feedback loop massively.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section data-state="head">
-		<h2><strong>Act 2</strong></h2>
-		<img src="divider-29115_1280.png" style="width: 300px">
-	</section>
-
-	<section>
-		<h2><strong>Continuous Delivery</strong></h2>
-		<aside class="notes">
-			<ul>
-			</ul>
-		</aside>
-	</section>
-
 	<section>
 		<p>"Release Early. Release Often.<br>
 		And listen to your customers."</p>
@@ -695,6 +603,13 @@
 					that's shorter than that.</li>
 			</ul>
 		</aside>
+	</section>
+
+	<section>
+		<h2>Continuous Delivery</h2>
+	</section>
+
+	<section data-background="flickr-valkyrieh116-2431800217_a376d729ab_o.jpg">
 	</section>
 
 	<section style="text-align: left;">
@@ -794,8 +709,8 @@
 		data-background="seedling-kmdoncaster-flickr-26122812592_8e999a3520_o.jpg">
 		<h4 style="padding-top: 10em">
 		<ol style="color: white">
-			<li><strong style="color: white">Post rapid feedback on each change</strong></li>
-			<li><strong style="color: white">Make the tests open and reproducible.</strong></li>
+			<li><strong style="color: white">Tests changeable by those making software changes</strong></li>
+			<li><strong style="color: white">Post rapid feedback on each change.</strong></li>
 		</ol>
 	</section>
 
