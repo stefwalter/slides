@@ -11,64 +11,73 @@
 </head>
 <body>
 
+<!--
+	TODO: Credits
+	TODO: Title slide
+	TODO: Finish up commands
+	TODO: Bring in new screenshots
+	TODO: Overpass mono
+	Fontawesome Font
+-->
+
 <div class="reveal">
 <div class="slides">
 
 	<section>
-		<h2>Self-sustaining Agile<br><strong>in your project</strong></h2>
+		<h2>Self-sustaining Agile<br>in <strong>your project</strong></h2>
+		<table class="names">
+			<tr>
+			<td>
+				<strong>Jen Krieger</strong><br>
+				/msg jkrieger<br>
+				jkrieger@redhat.com<br>
+				@mrry550
+			</td>
+			<td>
+				<strong>Stef Walter</strong><br>
+				/msg stefw<br>
+				stefw@redhat.com<br>
+				@stefthewalter
+			</td>
+			</tr>
+		</table>
+	</section>
+
+	<section data-background="bosscat.png">
+		<h1 class="stroke" style="margin-top: 3.5em;"><strong>What is Agile?</strong></h1>
 	</section>
 
 	<section>
-		1
+		<h2>But what is Agile?<br>... really</h2>
 	</section>
 
 	<section>
-		2
+		<h2>Two things</h2>
 	</section>
 
 	<section>
-		3
+		<h2>1. Not Easy</h2>
 	</section>
 
 	<section>
-		4
+		<h2>2. Focus on people</h2>
 	</section>
 
 	<section>
-		5
+		<img src="ghosthug.gif">
 	</section>
 
 	<section>
-		6
+		<img src="iinteam.png">
 	</section>
 
 	<section>
-		7
-	</section>
-
-	<section>
-		8
-	</section>
-
-	<section>
-		9
-	</section>
-
-	<section>
-		10
-	</section>
-
-	<section>
-		11
+		<img src="likeadults.png">
 	</section>
 
 	<section>
 		<img src="feedback-loop.png">
 		<h3>The Feedback Loop is King</h3>
-	</section>
-
-	<section>
-		<h3><strong>Fundamental</strong> Feedback Loops</h3>
 	</section>
 
 	<section>
@@ -104,16 +113,6 @@
 		<h2 style="font-weight: 700"><strong>Continuous Integration</strong></h2>
 		&nbsp;<br>
 		&nbsp;
-		<!--
-		<aside class="notes">
-			<ul>
-				<li>In order for "release early, release often" to actually work at
-					its this pace, the software actually needs to work.</li>
-				<li>Open source has typically taken the hit on delivery, when testing
-					and integration wasn't advanced enough.</li>
-			</ul>
-		</aside>
-		-->
 	</section>
 
 	<section data-transition="fade-in fade-out">
@@ -158,16 +157,6 @@
 				<li>Goal: Make Linux and RHEL discoverable by broader admin audience.</li>
 				<li>Goal: Make complex Linux tasks discoverable.</li>
 				<li>Can't look at all the features today, but check it out.</li>
-			</ul>
-		</aside>
-	</section>
-
-	<section>
-		<h2>Cockpit is a<br>
-			<strong>remote interactive</strong><br>
-			Linux admin interface</h2>
-		<aside class="notes">
-			<ul>
 				<li>Cockpit is a *remote interactive* admin interface</li>
 				<li>Cockpit runs in a browser.</li>
 				<li>It's zero footprint.</li>
@@ -176,13 +165,28 @@
 		</aside>
 	</section>
 
-	<section data-background="typingman.gif">
-		<h2 style="color: white; padding-top: 7em;">Hackfest Room C236</h2>
+	<section data-background-video="spawn-process.webm">
 	</section>
 
-	<section>
-		<h2>Cockpit calls<br>
-		    <strong>System APIs directly</strong></h2>
+	<section data-background-video="dbus-proxy.webm">
+		<aside class="notes">
+			<ul>
+				<li>Let's look at some examples, here's the hostnamed call we made earlier. We are typing javascript code directly in the interactive console in a
+				browser. If you have Cockpit running on your system try this.</li>
+
+				<li>It's trivial to interact with the DBUS API, easier even than if you
+				were on the system itself issueing gdbus commands... but that's the point ... we are on
+				the system ... logged into the system ... and the javascript code
+				here is running as part of the login session.</li>
+
+				<li>This is what got me excited about Cockpit. The very idea
+				that there was code in the browser interacting directly with the system
+				cutting through the usual layers of crap ... really makes building
+				admin tools fun again.</li>
+
+				<li>And of course it works both ways, changes made via the command line tools update the api and those changes are picked up by the cockpit UI in the browser.</li>
+	    </ul>
+		</aside>
 	</section>
 
 	<section data-transition="none">
@@ -265,25 +269,8 @@
 		</aside>
 	</section>
 
-	<section data-background-video="dbus-proxy.webm">
-		<aside class="notes">
-			<ul>
-				<li>Let's look at some examples, here's the hostnamed call we made earlier. We are typing javascript code directly in the interactive console in a
-				browser. If you have Cockpit running on your system try this.</li>
-
-				<li>It's trivial to interact with the DBUS API, easier even than if you
-				were on the system itself issueing gdbus commands... but that's the point ... we are on
-				the system ... logged into the system ... and the javascript code
-				here is running as part of the login session.</li>
-
-				<li>This is what got me excited about Cockpit. The very idea
-				that there was code in the browser interacting directly with the system
-				cutting through the usual layers of crap ... really makes building
-				admin tools fun again.</li>
-
-				<li>And of course it works both ways, changes made via the command line tools update the api and those changes are picked up by the cockpit UI in the browser.</li>
-	    </ul>
-		</aside>
+	<section data-background="typingman.gif">
+		<h2 style="color: white; padding-top: 7em;">Hackfest Room C236</h2>
 	</section>
 
 	<section data-background-color="black" data-background="explosion-422301_1920.jpg">
@@ -468,10 +455,10 @@
 
 	<section style="text-align: left; color: white"
 		data-background="seedling-kmdoncaster-flickr-26122812592_8e999a3520_o.jpg">
-		<h4 style="padding-top: 10em; margin-left: -3em; margin-right: -3em;">
+		<h4 style="padding-top: 10em;">
 		<ol>
-			<li><strong style="color: white">Tests changeable by those who make software changes</strong></li>
-			<li><strong style="color: white">Post rapid feedback on each change</strong></li>
+			<li><strong style="color: white">Tests changeable by those who make<br>software changes</strong></li>
+			<li style="margin-top: 0.5em;"><strong style="color: white">Post rapid feedback on each change</strong></li>
 		</ol>
 	</section>
 
@@ -506,8 +493,8 @@
 		data-background="seedling-kmdoncaster-flickr-26122812592_8e999a3520_o.jpg">
 		<h4 style="padding-top: 10em">
 		<ol>
-			<li><strong style="color: white">Tests changeable by those making software changes</strong></li>
-			<li><strong style="color: white">Post rapid feedback on each change.</strong></li>
+			<li><strong style="color: white">Tests changeable by those who make<br>software changes</strong></li>
+			<li style="margin-top: 0.5em;"><strong style="color: white">Post rapid feedback on each change</strong></li>
 		</ol>
 	</section>
 
@@ -517,13 +504,12 @@
 
 	<section style="text-align: left; color: white"
 		data-background="flickr-dvids-2807636139_04df907345_o.jpg">
-		<ol style="font-size: 1.6em">
-			<li>Hidden tests</li>
-			<li>Nightly tests</li>
+		<ul style="font-size: 1.6em; margin-left: -1em">
+			<li>Hide your tests</li>
+			<li>Schedule your tests</li>
 			<li>Hide the results</li>
-			<li>Test after merge</li>
-		</ol>
-		...
+			<li>Test after you merge</li>
+		</ul>
 	</section>
 
 	<!--
@@ -544,34 +530,88 @@
 	</section>
 
 	<section>
-		TODO: A verify container
+		<h2>Stage a userland<br>
+			in Semaphore CI</h2>
 	</section>
 
 	<section>
-		Semaphore CI with Docker
+		<img src="semaphore-example.png">
 	</section>
 
 	<section>
-		https://github.com/cockpit-project/cockpituous/tree/master/sink
-		log-data | ssh fedorapeople.org -- python sink log-identifier
-		{ json data }
+		<img src="semaphore-run.png">
 	</section>
 
 	<section>
-		https://github.com/cockpit-project/cockpituous/tree/master/release
-		release-source
+		<img src="semaphore-status.png">
+	</section>
+
+	<section data-state="code">
+<pre>
+$ <span>cat log-data</span>
+Running test...
+This is my test result output
+{ "github": { "token": "abcdef", "requests": [ { "method": "POST", "resource": "statuses/abcdef123", "data": { "state": "failure", "context": "my-test-suite" } } ] } }
+
+$ <span>log-data | </span><strong>ssh fedorapeople.org -- python sink log-identifier</strong>
+</pre>
+	</section>
+
+	<section data-state="code">
+<pre>
+$ <span>git status</span>
+$ <strong>release-source -t 0.2 -f source</strong>
+$ <span>ls source</span>
+my-project-0.2.tar.xz
+0001-My-project-extra-commit.patch
+0002-A-second-backported.patch
+</pre>
+	</section>
+
+	<section data-state="code">
+<pre>
+$ <strong>release-srpm -s tools/my-project.spec -f source</strong>
+$ <span>ls *.srpm</span>
+$ my-project-0.2-1.srpm
+$ <span>cat output/spec</span>
+Version: 0.2
+Revision: 1
+...
+Patch1: 0001-My-project-extra-commit.patch
+Patch2: 0002-A-second-backported.patch
+...
+%changelog
+* Tue Nov 01 2016 Stef Walter <stefw@redhat.com> - 0.2-1
+- Tag message from release
+- Second line from release tag
+- My project extra commit
+- A second backported patch
+</pre>
+</section>
+
+	<section data-state="code">
+<pre>
+$ <strong>release-koji -p my-project-0.2-1.srpm f25</strong>
+Created task: 17432690
+Task info: https://koji.fedoraproject.org/koji/taskinfo?taskID=17432690
+Watching tasks (this may be safely interrupted)...
+17432690 build (f25, my-project-0.2-1.fc25.src.rpm): free
+17432690 build (f25, my-project-0.2-1.fc25.src.rpm): free -> open (buildvm-13.phx2.fedoraproject.org)
+  17432693 buildArch (my-project-0.2-1.fc25.src.rpm, x86_64): open (buildvm-31.phx2.fedoraproject.org)
+  17432694 buildArch (my-project-0.2-1.fc25.src.rpm, i686): open (buildvm-03.phx2.fedoraproject.org)
+  17432691 buildArch (my-project-0.2-1.fc25.src.rpm, armv7hl): open (arm04-builder11.arm.fedoraproject.org)
+</pre>
+	</section>
+
+	<section data-state="code">
+<pre>
+$ <strong>release-bodhi -p my-project-0.2-1.srpm F25</strong>
+...
+</pre>
 	</section>
 
 	<section>
-		release-source
-	</section>
-
-	<section>
-		release-srpm
-	</section>
-
-	<section>
-		release-koji
+		<h4><strong>"cockpituous"</strong></h4>
 	</section>
 
 <!--
@@ -705,12 +745,28 @@
 	</section>
 -->
 
+	<section data-transition="slide-in fade-out">
+		<h2 style="font-weight: 700"><strong>Continuous Integration</strong></h2>
+		&nbsp;<br>
+		&nbsp;
+	</section>
+
+	<section data-transition="fade-in fade-out">
+		<h2 style="font-weight: 700; color: #999;">Continuous <strong>Integration</strong></h2>
+		Assemble everything together like in production,<br>and then drive it like a user.
+	</section>
+
+	<section data-transition="fade-in fade-out">
+		<h2 style="font-weight: 700; color: #999;"><strong>Continuous</strong> Integration</h2>
+		Do that integration for every single "change".<br>&nbsp;
+	</section>
+
 	<section style="text-align: left;"
 		data-background="seedling-kmdoncaster-flickr-26122812592_8e999a3520_o.jpg">
 		<h4 style="padding-top: 10em">
 		<ol style="color: white">
-			<li><strong style="color: white">Tests changeable by those making software changes</strong></li>
-			<li><strong style="color: white">Post rapid feedback on each change.</strong></li>
+			<li><strong style="color: white">Tests changeable by those who make<br>software changes</strong></li>
+			<li style="margin-top: 0.5em;"><strong style="color: white">Post rapid feedback on each change</strong></li>
 		</ol>
 	</section>
 
@@ -721,7 +777,15 @@
 		<p><strong>github.com/cockpit-project/cockpituous</strong></p>
 
 		<p>&nbsp;</p>
-		<p>Credits: <strong>striatic</strong> on Flicker, <strong>Aquilae</strong> on Wikipedia</p>
+
+		<p class="credits">Credits: <strong>striatic</strong> on Flickr,
+		<strong>Alex Bader</strong> on Flickr,
+		<strong>kmdoncaster</strong> on Flickr,
+		<strong>masked-builder</strong> on Flickr,
+		<strong>dvids</strong> on Flickr,
+		<strong>valkyrieh116</strong> on Flickr,
+		<strong>Aquilae</strong> on Wikipedia,
+		Memegenerator</p>
 		<aside class="notes">
 			<ul>
 			</ul>

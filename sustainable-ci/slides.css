@@ -160,3 +160,50 @@ html.head .reveal section {
 html.head .reveal section strong {
 	color: #fff;
 }
+
+html.code body {
+	background-color: #262626;
+}
+
+html.code .reveal section {
+	color: #eee;
+	margin-left: -4em;
+	text-align: left;
+	min-height: 100%;
+}
+
+html.code .reveal pre {
+	color: #ffdead;
+}
+
+html.code .reveal pre strong {
+	color: white;
+}
+
+html.code .reveal pre span {
+	color: #6495ed;
+}
+
+html .reveal p.credits {
+	font-size: 0.7em;
+}
+
+html .reveal table.names {
+	position: relative;
+	top: 2em;
+	left: 2em;
+}
+
+html .reveal table.names strong {
+	font-size: 1.5em;
+}
+
+html .reveal h1.stroke {
+	color: white;
+	-webkit-text-stroke: 1px black;
+	text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+}
+
+html .reveal h1.stroke strong {
+	color: white;
+}
