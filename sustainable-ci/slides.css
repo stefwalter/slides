@@ -3,7 +3,7 @@
 @import url('../reveal/lib/css/zenburn.css');
 
 body {
-	/* background-image: url('light-background-summit.svg'); */
+	background-image: url('light-background-summit.svg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 50% 50%;
@@ -162,6 +162,7 @@ html.head .reveal section strong {
 }
 
 html.code body {
+	background-image: none;
 	background-color: #262626;
 }
 
@@ -182,6 +183,30 @@ html.code .reveal pre strong {
 
 html.code .reveal pre span {
 	color: #6495ed;
+}
+
+html.title body {
+	background-image: url('title-background.svg');
+}
+
+html.title .reveal {
+	background-image: url('redhat.png');
+	background-repeat: no-repeat;
+	background-position: 90% 90%;
+}
+
+html.title h2,
+html.title h4 {
+	color: #ccc;
+}
+
+html.title h2 strong {
+	color: white;
+}
+
+html.title p,
+html.title table {
+	color: #222;
 }
 
 html .reveal p.credits {
