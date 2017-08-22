@@ -5,7 +5,7 @@ dir=$(mktemp -d dist.XXXXXX)
 base=$(basename $1)
 
 tar -cvf - --exclude='*.ogv' --exclude='*.webm' reveal $1 | tar -C $dir -xf -
-sed -i "s|data-background-video=.|\0https://rawgit.com/stefwalter/cockpit-slides/master/$base/|" $dir/$1/index.html
+sed -i "s|data-background-video=.|\0https://rawgit.com/stefwalter/slides/master/$base/|" $dir/$1/index.html
 
 cat > $dir/README.txt <<EOF
 These are slides in HTML format.
@@ -17,7 +17,7 @@ command in a terminal:
 
 You can also access these slides at:
 
-https://rawgit.com/stefwalter/cockpit-slides/master/$base/
+https://rawgit.com/stefwalter/slides/master/$base/
 
 EOF
 
