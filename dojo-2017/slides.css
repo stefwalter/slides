@@ -1,0 +1,199 @@
+@import url('../reveal/css/reveal.css');
+@import url('../reveal/lib/css/zenburn.css');
+
+body {
+	background-image: url('light-background-summit.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	font-family: Overpass;
+	font-size: 38px;
+	font-weight: normal;
+}
+
+::selection {
+	color: #fff;
+	background: #bee4fd;
+	text-shadow: none;
+}
+
+.reveal section {
+	color: #354045;
+}
+
+.reveal section,
+.reveal section > section {
+	line-height: 1.3;
+	font-weight: inherit;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	margin: 0 0 20px 0;
+	font-weight: normal;
+	line-height: 1.4;
+	letter-spacing: normal;
+	text-shadow: none;
+	word-wrap: break-word;
+}
+
+.reveal h1 {
+	font-size: 3.5em;
+}
+
+.reveal h2 {
+	font-size: 2.1em;
+}
+
+.reveal h3 {
+	font-size: 1.6em;
+}
+
+.reveal h4 {
+	font-size: 1.2em;
+}
+
+.reveal p {
+	margin: 20px 0;
+	line-height: 1.3;
+}
+
+.reveal tt {
+	font-family: monospace;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+	max-width: 100%;
+	max-height: 100%;
+	/* image-rendering: -moz-crisp-edges; */
+}
+
+.reveal strong {
+	color: black;
+	font-weight: bold;
+}
+
+.reveal em {
+	color: black;
+	font-style: none;
+}
+
+.reveal small {
+	font-size: 70% !important;
+}
+
+.reveal pre {
+	font-family: Monospace !important;
+	font-size: 90% !important;
+}
+
+.reveal .fa {
+	font-family: FontAwesome !important;
+}
+
+.reveal table {
+	width: 100%;
+}
+
+.reveal table td {
+	width: 33%;
+	text-align: left;
+	white-space: nowrap;
+	font-size: 28px;
+}
+
+.reveal ul {
+	margin-left: 2em;
+}
+
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-left.enabled {
+  border-right-color: #42affa; }
+
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-right.enabled {
+  border-left-color: #42affa; }
+
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-up.enabled {
+  border-bottom-color: #42affa; }
+
+.reveal .controls .navigate-down,
+.reveal .controls .navigate-down.enabled {
+  border-top-color: #42affa; }
+
+.reveal .controls .navigate-left.enabled:hover {
+  border-right-color: #8dcffc; }
+
+.reveal .controls .navigate-right.enabled:hover {
+  border-left-color: #8dcffc; }
+
+.reveal .controls .navigate-up.enabled:hover {
+  border-bottom-color: #8dcffc; }
+
+.reveal .controls .navigate-down.enabled:hover {
+  border-top-color: #8dcffc; }
+
+.reveal .follow-footer {
+	position: absolute;
+	display: block;
+	width: 60%;
+	bottom: 0px;
+	border-top: 2px solid #aaa;
+	padding: 22px 50px 22px 20px;
+	font-size: 20px;
+	color: black;
+	display: block;
+	z-index: 1;
+	margin-left: 20%;
+	margin-right: 20%;
+	text-align: center;
+}
+
+html.head .reveal .follow-footer {
+	color: white;
+}
+
+.reveal .logo-footer {
+	position: absolute;
+	display: block;
+	bottom: 0px;
+	left: 30px;
+	height: 130px;
+	width: 150px;
+	background-image: url('redhat-black.png');
+	background-position: 50% 50%;
+	background-size: cover;
+	z-index: 2;
+}
+
+html.no-footer .reveal .follow-footer,
+html.no-footer .reveal .logo-footer {
+	display: none;
+}
+
+html.head body {
+	background-image: url('demo-background.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+html.head .reveal .logo-footer {
+	background-image: url('redhat-logo.png');
+}
+
+html.head .reveal section {
+	color: #aaa;
+}
+
+html.head .reveal section strong {
+	color: #fff;
+}
