@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+    name="viewport">
+<link rel="stylesheet" href="slides.css">
+<script src="../reveal/lib/js/head.min.js"></script>
+
+<title>How to write dist-git tests in Fedora with Ansible</title>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+    <!-- INTRO -->
+
+    <section data-state="title" class="title">
+        <h3>How to write dist-git tests<br>
+            in Fedora with Ansible</h3>
+        <br>
+        <br>
+        <p><strong>Stef Walter</strong><br>
+        Red Hat</p>
+    </section>
+
+    <section data-background-image="open-source.png">
+        <h3><strong>Goal:</strong> Curate tests<br> like we curate source code</h3>
+    </section>
+
+    <section>
+        <h3><strong>Goal:</strong> Tests validate a complete system</h3>
+        <aside class="notes">
+            Eg: A composed deliverable like Atomic Host
+        </aside>
+    </section>
+
+    <section>
+        <img src="2735596261_e78f1bf26e_b-flickr-stichlily.jpg">
+    </section>
+
+    <section data-background-image="merge.png">
+        <h3><strong>Goal:</strong> Make the tests as easy<br>
+            to update as the package</h3>
+        <aside class="notes">
+            Pagure
+        </aside>
+    </section>
+
+    <section data-background-image="open-source.png">
+        <h3><strong>Goal:</strong> Curate tests<br> like we curate source code</h3>
+    </section>
+
+    <section data-background-image="gate.png">
+        <h3>Goal: We find and <strong>fix bugs while the code is fresh</strong><br>
+        in our mind rather than months or years later.</h3>
+    </section>
+
+    <section>
+        <img src="How-Meme.jpg">
+        <aside class="notes">
+            How?
+        </aside>
+    </section>
+
+    <section>
+        <h3>We're storing our tests in dist-git</h3>
+        <aside class="notes">
+            Tests get updated with package
+        </aside>
+    </section>
+
+    <section data-background-image="manifesto.png">
+        <h3>We share responsibility for the tests</h3>
+    </section>
+
+    <section data-background-image="manifesto.png">
+        <h3>Tests are updated together with source</h3>
+    </section>
+
+    <section>
+        <h3>Tests are distinct from the testing system</h3>
+        <aside class="notes">
+            Tests need to outlive the testing system.
+        </aside>
+    </section>
+
+    <section>
+        <h2>Le spec</h2>
+        <img src="Invoking-tests-standard-interface.png" style="padding: 2em 0 2em 0;">
+        <a href="https://fedoraproject.org/wiki/Changes/InvokingTests">fedoraproject.org/wiki/Changes/InvokingTests</a>
+    </section>
+
+    <section>
+        <h3>Testing system is responsible to:</h3>
+
+        <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
+            <li>Build test subject (package, container, image, tree)</li>
+            <li>Decide which test suites</li>
+            <li>Schedule job(s)</li>
+            <li>Stage the test suites</li>
+            <li>Invoke the test suites in a standard way</li>
+            <li>Gather the test results and test artifacts</li>
+            <li>Relay test results</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Standard interface describes how to:</h3>
+
+        <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
+            <li>Uniquely identify a test suite</li>
+            <li>Stage a test suite and its dependencies</li>
+            <li>Provide test subject to test suite</li>
+            <li>Invoke a test suite in a consistent way</li>
+            <li>Gather test results and test artifacts</li>
+        </ul>
+    </section>
+
+    <section style="text-align: left; padding-left: 2em;">
+        <h3>Test suite is responsible to:</h3>
+
+        <ul style="line-height: 180%; padding-left: 2em;">
+            <li>Install dependencies such as a test framework</li>
+            <li>Execute the test framework as necessary</li>
+            <li>Provision (usually locally) any containers or virtual machines</li>
+            <li>Provide test results and test artifacts</li>
+        </ul>
+    </section>
+
+    <section>
+        <img src="ansible-1.png">
+        <h1>Ansiballz!</h1>
+    </section>
+
+    <section>
+<pre style="text-align: left; padding-left: 10em;">
+ ________________________
+< TASK [Gathering Facts] >
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+</pre>
+    </section>
+
+    <section>
+        <pre>$ sudo dnf install standard-test-roles</pre>
+    </section>
+
+    <section>
+        <h3>Workshop</h3>
+        <a href="https://fedoraproject.org/wiki/Changes/InvokingTests">fedoraproject.org/wiki/Changes/InvokingTests</a>
+    </section>
+
+    <section>
+        <h3>Tutorial</h3>
+        <a href="https://fedoraproject.org/wiki/CI/Tests">fedoraproject.org/wiki/CI/Tests</a>
+    </section>
+
+    <section>
+        <h3>Upstreaming Tests</h3>
+        <a href="https://upstreamfirst.fedorainfracloud.org">upstreamfirst.fedorainfracloud.org</a>
+    </section>
+
+    <section>
+        <h3>Hackfest:</h3> Adding inventory
+    </section>
+
+    <section>
+        <h3>Hackfest:</h3> Non-Ansible stuff
+    </section>
+
+    <section>
+        <h3>Hackfest:</h3> Executing upstream Tests
+    </section>
+
+    <section>
+        <h2><strong>Questions?
+            <br><br>
+            </strong></h2>
+        <p><tt>#fedora-ci on Freenode</tt></p>
+        <p><tt>fedora-ci@lists.fedoraproject.org</tt></p>
+        <p><tt></tt></p>
+        <p>Credits: stichlily on Flicker, memegenerator.net, Cowsay</p>
+    </section>
+</div>
+</div>
+
+<script src="../reveal/js/reveal.js"></script>
+<script src="slides.js"></script>
+
+</body>
+</html>

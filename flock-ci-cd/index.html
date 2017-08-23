@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<link rel="stylesheet" href="slides.css">
+<script src="../reveal/lib/js/head.min.js"></script>
+<title>Continuous Integration and Delivery of our Operating System</title>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+    <section data-state="title" class="title">
+        <h3><br>Continuous Integration and Delivery<br>
+            of our Operating System</h3>
+        <br>
+        <p><strong>Stef Walter</strong><br>
+        Red Hat</p>
+    </section>
+
+    <section class="left">
+        <ul style="padding-left: 7em; list-style: none; line-height: 250%;">
+            <li><strong>What?</strong> <span>The objective</span></li>
+            <li><strong>Why?</strong> <span>Complexity and stagnation</span></li>
+            <li><strong>How?</strong> <span>Machines as team members</span></li>
+            <li><strong>Where</strong> <span>are we?</span></li>
+            <li><strong>When?</strong> <span>Next steps</span></li>
+        </ul>
+    </section>
+
+    <section data-transition="slide-in fade-out">
+        <h2 style="font-weight: 700"><strong>Continuous Integration</strong></h2>
+        &nbsp;<br>
+        &nbsp;
+    </section>
+
+    <section data-transition="fade-in fade-out">
+        <h2 style="font-weight: 700; color: #999;">Continuous <strong>Integration</strong></h2>
+        Assemble everything together like in production,<br>and then drive it like a user.
+    </section>
+
+    <section data-transition="fade-in fade-out">
+        <img src="2735596261_e78f1bf26e_b-flickr-stichlily.jpg">
+    </section>
+
+    <section data-transition="fade-in fade-out">
+        <h2 style="font-weight: 700; color: #999;"><strong>Continuous</strong> Integration</h2>
+        Do that integration for every single "change".<br>&nbsp;
+    </section>
+
+    <section data-background="#000">
+        <img src="flickr-striatic-robots-1276095_b1bdc29d42_o.jpg">
+    </section>
+
+    <section data-transition="fade-in slide-out">
+        <h2 style="font-weight: 700; color: #999;">Continuous <strong>Delivery</strong></h2>
+        Take that integration and deliver it.<br>&nbsp;
+    </section>
+
+    <section data-background-color="#000">
+        <img src="wikipedia-ArnoldReinhold-Punched_card_program_deck.agr.jpg">
+    </section>
+
+    <section>
+        <img src="fedora-atomic-945x400.png">
+        <h3>Deliver Atomic Host</h3>
+    </section>
+
+    <section>
+        <h2><span>But</span> <strong>why?</strong></h2>
+    </section>
+
+    <section>
+        The effort of a solely human team <strong>does not scale</strong><br>
+        past a certain complexity point
+    </section>
+
+    <section>
+        <img src="Carte_heuristique_relations_Comte_de_Monte-Christo_de_Dumas.jpeg">
+    </section>
+
+    <section data-background-image="flickr_ideonexus_3321384816_12a15ffb07_o.jpg">
+    </section>
+
+    <section data-background-image="typingman.gif">
+        <div style="height: 12em;">&nbsp;</div>
+        <div class="caption white" >Modularity Hacker<br>
+        Professional on closed course. Do not attempt</div>
+    </section>
+
+    <section>
+        <h3>We <span>(</span>have reached<span>|</span>will reach<span>)</span><br>
+            <strong>maintenance stagnation</strong></h3>
+    </section>
+
+    <section>
+        <h2><span>So</span> <strong>how?</strong></h2>
+    </section>
+
+    <section data-background-color="#000"
+        data-background-image="flickr_tt2times_2568645910_5a0704ee8e_o.jpg">
+        <h1 class="white">MACHINES!</h1>
+    </section>
+
+    <section>
+        <h3>"But we use machines!"</h3>
+    </section>
+
+    <section>
+        <strong>You see the computer age everywhere<br>but in the productivity statistics<br></strong>
+        <div style="text-align: right; padding-right: 5em;"><span>&mdash; Robert Solow</span></div>
+    </section>
+
+    <section data-background-image="549455_81_58982_VVxCIx9m5.jpg-core77.png">
+    </section>
+
+    <section>
+        <h3><span>Goal:</span> <strong>Machines as team members</strong></h3>
+    </section>
+
+    <section>
+	<img src="logo.png" style="width: 800px">
+    </section>
+
+    <section style="text-align: left;">
+        <h3><strong><span>Laws of Cyborg Teams</span></strong></h3>
+        <ol class="listing">
+            <li>Teaching a machine must be as easy as teaching a human</li>
+            <li>Machines must produce feedback into the team's workflow</li>
+            <li>A human should be able to impersonate a machine, and a machine impersonate a human</li>
+        </ol>
+    </section>
+
+    <section>
+        <h3><strong>Tests: The Soul of a Robot</strong></h3>
+        Teaching machines right and wrong, good and evil
+    </section>
+
+    <section>
+        <h3><span>Example:</span> The new hotness</h3>
+    </section>
+
+    <section>
+        <h2><strong>Where</strong> <span>are we?</span></h2>
+    </section>
+
+    <section>
+        <img src="fedora-atomic-945x400.png" style="margin: 3em 0;"><br>
+        <div class="caption">Scoped to Fedora Atomic Host</div>
+    </section>
+
+    <section data-background="#000">
+        <img src="ls-rpm-ostree-dist-git.png" style="margin: 5em 0;">
+        <div class="caption">Step: The tests are stored in dist-git</div>
+    </section>
+
+    <section>
+        <img src="pagure-screenshot.png">
+        <div class="caption">Step: Lets update a package</div>
+    </section>
+
+    <section>
+        Step: A git push triggers the pipeline<br>
+    </section>
+
+    <section>
+        Step: A Fedmsg is generated when this happens<br>
+    </section>
+
+    <section>
+        <img src="pipeline-openshift-services.png" style="margin: 5em 0;">
+        <div class='caption'>Step: Pipeline runs in Openshift in CentOS CI</div>
+    </section>
+
+    <section>
+        <img src="pipeline-jenkins-screenshot.png">
+        <div class='caption'>Step: Jenkins schedules the pipeline</div>
+    </section>
+
+    <section>
+        <img src="pipeline-jenkins-build.png" style="margin: 2.5em 0;">
+        <div class='caption'>Step: The packages are built</div>
+    </section>
+
+    <section>
+        Step: Basic unit tests are run
+    </section>
+
+    <section>
+        <img src="pipeline-jenkins-compose.png" style="margin: 2.5em 0;">
+        <div class='caption'>Step: An Atomic Host is composed</div>
+    </section>
+
+    <section>
+        <img src="Invoking-tests-standard-interface.png" style="padding: 2em 0 2em 0;">
+        <a href="https://fedoraproject.org/wiki/Changes/InvokingTests">fedoraproject.org/wiki/Changes/InvokingTests</a>
+    </section>
+
+    <section>
+        <img src="pipeline-fedmsg-integration-complete.png" style="margin: 0 0 2em 0;">
+        <div class='caption'>Step: Fedmsg is generated when the job is done</div>
+    </section>
+
+    <section>
+        Step: Results are stored in resultsdb
+    </section>
+
+    <section>
+        Step: Greenwave is used to read resultsdb
+    </section>
+
+    <section>
+        <img src="pipeline-bodhi-gating.png">
+        <div class='caption'>Step: Results are displayed in Bodhi</div>
+    </section>
+
+    <section>
+        <img src="pipeline-bodhi-failed.png">
+        <div class='caption'>Step: Bodhi gates on the results</div>
+    </section>
+
+    <section class="left">
+        <ul style="padding-left: 5em; list-style: none; line-height: 250%;">
+            <li><span><strong>Broken packages gated</strong> close to the change</span></li>
+            <li><span><strong>Curate tests</strong> in a standard way</span></li>
+            <li><span>Grow <strong>responsibility for tests</strong></span></li>
+            <li><span><strong>Curate tests</strong> in a standard way</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><strong>When?</strong> <span>Next steps</span></h2>
+    </section>
+
+    <section>
+        <img src="diagram.png">
+    </section>
+
+    <section class="left">
+        <h3>Wheeeee!</h3>
+        <ul style="padding-left: 3em; list-style: none; line-height: 250%;">
+            <li>Atomic Host development stream</li>
+            <li>Integration with Koji and MBS</li>
+            <li>Testing other branches</li>
+            <li>Pull request testing in Pagure</li>
+            <li>Non Atomic Host packages</li>
+            <li>Basic kernel tests</li>
+        </ul>
+    </section>
+
+    <section data-background-image="flickr_krupptastic_4738992473_030d0421fb_o.jpg">
+        <aside class="notes">
+            Effect: A chain reaction to start freeing up humans to work on progress rather than maintenance
+        </aside>
+    </section>
+
+
+    <section>
+        <h2><strong>Questions?
+            <br><br>
+            fedoraproject.org/wiki/CI</strong></h2>
+        <p><tt>#fedora-ci on Freenode</tt></p>
+        <p><tt>fedora-ci@lists.fedoraproject.org</tt></p>
+        <p><tt></tt></p>
+        <p style="font-size: 0.75em"><span>Credits: stichlily on Flickr, ideonexus on Flickr, tt2times on Flickr, krupptastic on Flickr, striatic on Flickr, ArnoldReinhold on Wikipedia</span></p>
+    </section>
+
+</div>
+</div>
+
+<script src="../reveal/js/reveal.js"></script>
+<script src="slides.js"></script>
+
+</body>
+</html>
