@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<link rel="stylesheet" href="slides.css">
+<script src="../reveal/lib/js/head.min.js"></script>
+<title>Training machines to be Open Source Contributors</title>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+    <section data-state="title" class="title">
+        <h3><br>Training Machines to be Open Source Contributors</h3>
+        <br>
+        <p><strong>Stef Walter</strong><br>
+        Red Hat</p>
+    </section>
+
+    <section>
+        Today we're going to talk about Cyborg Teams.
+        This isn't hyperbole or sci-fi.
+        I've seen it happen, I've been a part of it.
+    </section>
+
+    <section>
+        We've had a preview of that future in the Cockpit team?
+        What is Cockpit?
+        Cockpit is a Linux session in a web browser.
+        It interacts with XXX different APIs.
+        Do the math:
+            XXXX APIs
+            10 Linux Operating Systems
+            50 stable releases a year
+    </section>
+
+    <section>
+        The effort of a solely human team <strong>does not scale</strong><br>
+        past a certain complexity point
+    </section>
+
+    <section data-background-color="#000"
+        data-background-image="flickr_tt2times_2568645910_5a0704ee8e_o.jpg">
+        <h1 class="white">MACHINES!</h1>
+    </section>
+
+    <section>
+        <h3>"But we use machines!"</h3>
+    </section>
+
+    <section>
+        <strong>You see the computer age everywhere<br>but in the productivity statistics<br></strong>
+        <div style="text-align: right; padding-right: 5em;"><span>&mdash; Robert Solow</span></div>
+    </section>
+
+    <section>
+        <h3><span>Goal:</span> <strong>Machines as team members</strong></h3>
+    </section>
+
+    <section style="text-align: left;">
+        <h3><strong><span>Laws of Cyborg Teams</span></strong></h3>
+        <ol class="listing">
+            <li>Teaching a machine must be as easy as teaching a human</li>
+            <li>Machines must produce feedback into the team's workflow</li>
+            <li>A human should be able to impersonate a machine, and a machine impersonate a human</li>
+        </ol>
+    </section>
+
+    <section>
+        <h3><strong>Tests: The Soul of a Robot</strong></h3>
+        Teaching machines right and wrong, good and evil
+    </section>
+
+    <section>
+        <img src="pipeline-bodhi-gating.png">
+        <div class='caption'>Step: Results are displayed in Bodhi</div>
+    </section>
+
+    <section>
+        <img src="pipeline-bodhi-failed.png">
+        <div class='caption'>Step: Bodhi gates on the results</div>
+    </section>
+
+    <section class="left">
+        <ul style="padding-left: 5em; list-style: none; line-height: 250%;">
+            <li><span><strong>Broken packages gated</strong> close to the change</span></li>
+            <li><span><strong>Curate tests</strong> in a standard way</span></li>
+            <li><span>Grow <strong>responsibility for tests</strong></span></li>
+            <li><span><strong>Curate tests</strong> in a standard way</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><strong>When?</strong> <span>Next steps</span></h2>
+    </section>
+
+    <section>
+        <img src="diagram.png">
+    </section>
+
+    <section class="left">
+        <h3>Wheeeee!</h3>
+        <ul style="padding-left: 3em; list-style: none; line-height: 250%;">
+            <li>Atomic Host development stream</li>
+            <li>Integration with Koji and MBS</li>
+            <li>Testing other branches</li>
+            <li>Pull request testing in Pagure</li>
+            <li>Non Atomic Host packages</li>
+            <li>Basic kernel tests</li>
+        </ul>
+    </section>
+
+    <section data-background-image="flickr_krupptastic_4738992473_030d0421fb_o.jpg">
+        <aside class="notes">
+            Effect: A chain reaction to start freeing up humans to work on progress rather than maintenance
+        </aside>
+    </section>
+
+
+    <section>
+        <h2><strong>Questions?
+            <br><br>
+            fedoraproject.org/wiki/CI</strong></h2>
+        <p><tt>#fedora-ci on Freenode</tt></p>
+        <p><tt>fedora-ci@lists.fedoraproject.org</tt></p>
+        <p><tt></tt></p>
+        <p style="font-size: 0.75em"><span>Credits: stichlily on Flickr, ideonexus on Flickr, tt2times on Flickr, krupptastic on Flickr, striatic on Flickr, ArnoldReinhold on Wikipedia</span></p>
+    </section>
+
+</div>
+</div>
+
+<script src="../reveal/js/reveal.js"></script>
+<script src="slides.js"></script>
+
+</body>
+</html>
