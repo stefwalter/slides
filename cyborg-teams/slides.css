@@ -1,3 +1,16 @@
+@import url('font-awesome.css');
+
+@font-face {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: 700;
+  src: url(fontawesome-webfont.woff2) format('woff2');
+}
+
+.reveal .fa-ul {
+    list-style-type: none;
+}
+
 /*
  * A nice listing
  */
@@ -27,6 +40,15 @@
 }
 
 /*
+ * Headings with black shadow
+ */
+
+.reveal h1.stand {
+    text-shadow: -6px 0 #000, 0 6px #000, 6px 0 #000, 0 -6px #000;
+    color: white;
+}
+
+/*
  * Clear white slides
  */
 
@@ -40,8 +62,32 @@ html.clear .reveal {
     background: white;
 }
 
-html.clear .reveal section img {
-    background: none;
-    border: none;
-    box-shadow: none;
+/*
+ * Reasons table
+ */
+
+table.reasons td {
+    max-width: 200px;
+    font-size: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
+
+ul.reasons li {
+    padding: 0.7em;
+}
+
+ul.reasons li i {
+    font-size: 2em;
+}
+
+ul.reasons li.fragment.visible {
+    padding: 0;
+}
+
+ul.reasons li.fragment.visible span {
+    font-weight: bold;
+    font-size: 2em;
+}
+
