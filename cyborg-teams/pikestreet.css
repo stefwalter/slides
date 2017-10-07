@@ -1,0 +1,24 @@
+@import url('../reveal/css/reveal.css');
+@import url('../pikestreet/css/theme/pikestreet.css');
+@import url('slides.css');
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(montserrat-bold.woff2) format('woff2');
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6
+{
+  font-family: "Montserrat", Impact, sans-serif;
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+

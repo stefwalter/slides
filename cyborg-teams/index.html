@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-<link rel="stylesheet" href="slides.css">
+<link rel="stylesheet" href="pikestreet.css">
 <script src="../reveal/lib/js/head.min.js"></script>
 <title>Training machines to be Open Source Contributors</title>
 </head>
@@ -13,37 +13,23 @@
 <div class="reveal">
 <div class="slides">
 
-    <section data-state="title" class="title">
-        <h3><br>Training Machines to be Open Source Contributors</h3>
+    <section data-state="title" class="title"
+        data-background="../pikestreet/assets/patternbg.png" data-background-size="700px"
+        data-background-repeat="repeat">
+        <h1>Training Machines</h1>
+        <p>to be Open Source Contributors</p>
         <br>
         <p><strong>Stef Walter</strong><br>
         Red Hat</p>
     </section>
 
     <section>
-        Today we're going to talk about Cyborg Teams.
-        This isn't hyperbole or sci-fi.
-        I've seen it happen, I've been a part of it.
-    </section>
-
-    <section>
-        We've had a preview of that future in the Cockpit team?
-        What is Cockpit?
-        Cockpit is a Linux session in a web browser.
-        It interacts with XXX different APIs.
-        Do the math:
-            XXXX APIs
-            10 Linux Operating Systems
-            50 stable releases a year
-    </section>
-
-    <section>
-        The effort of a solely human team <strong>does not scale</strong><br>
-        past a certain complexity point
-    </section>
-
-    <section>
-        <h3>"But we use machines!"</h3>
+        <h1>Cyborg Teams</h1>
+        <p>A team that is part human, part machine</p>
+        <aside class="notes">
+            Hi my name is Stef. I'm not a Cyborg but I work on a Cyborg Team.
+            This isn't hyperbole or sci-fi. This is a team that is part human and part machine.
+        </aside>
     </section>
 
     <section>
@@ -51,17 +37,104 @@
         <div style="text-align: right; padding-right: 5em;"><span>&mdash; Robert Solow</span></div>
     </section>
 
-    <section>
-        How do we know we have a Cyborg team?
-        The fish analogy
+    <section data-background-image="549455_81_58982_VVxCIx9m5.jpg-core77.png">
+    </section>
+
+    <section data-state="clear" data-transition="fade-in fade-out">
+	<img src="logo.png" style="width: 800px">
+        <aside class="notes">
+            Preview of the future
+        </aside>
     </section>
 
     <section>
-        * The git logs
+        A Linux session in a web browser
+    </section>
+
+    <section data-state="clear">
+        We've had a preview of that future in the Cockpit team
+        <aside class="notes">
+        What is Cockpit?
+        A Linux session in a web browser.
+        It interacts with XXX different APIs.
+        Do the math:
+            XXXX APIs
+            10 Linux Operating Systems
+            50 stable releases a year
+        </aside>
+    </section>
+
+    <section>
+        The effort of a solely human team <strong>does not scale</strong><br>
+        past a certain complexity point
+        <aside>
+        </aside>
+    </section>
+
+    <section data-background-image="photo-6170.jpg!d-public-domain.jpg">
+        <aside class="notes">
+            How do we know we have a Cyborg team?
+            <p>When you look closely at the inside guts of an organism like a fish,
+            all you see is goop. But when you take a step back you see it for what
+            it does, how it acts, and it's an amazing creature.</p>
+            <p>When you look at a bot's internal guts, all you see is shell scripts
+            REST calls, and various other tools, but when you take a step back, you
+            see it how it acts, a team member.</p>
+        </aside>
+    </section>
+
+    <section>
+        <ol>
+            <li>Commit history</li>
+            <li>Owning mundane work</li>
+            <li>Pair programming with bots</li>
+            <li>Bots learning from humans</li>
+            <li>The workflow</li>
+            <li>Team stops without them</li>
+        </ol>
+        <aside class="notes">
+            <p>How the machines act</p>
+        </aside>
+    </section>
+
+    <section>
+        Criteria: Commit history
+        TODO: Screenshot
+    </section>
+
+    <section>
+        Mundane work: Release process
+        TODO: Bring in example of all tasks
+    </section>
+
+    <section>
         * Testing the code tens of thousands of times a day.
-        * Releases completely handled by machines.
-        * Pair programming with machines.
-        * The team stops without the machines.
+    </section>
+
+    <section>
+        Criteria: Pair programming
+        TODO: Some image here
+    </section>
+
+    <section>
+        Criteria: Humans are teaching the bots
+    </section>
+
+    <section>
+        Criteria: Bots learning from humans
+    </section>
+
+    <section>
+        Criteria: Team stops without them
+    </section>
+
+    <section>
+        <h3>"But we use machines!"</h3>
+    </section>
+
+    <section data-background-color="#000"
+        data-background-image="flickr_tt2times_2568645910_5a0704ee8e_o.jpg">
+        <h1 class="white">MACHINES!</h1>
     </section>
 
     <section>
@@ -72,7 +145,7 @@
     </section>
 
     <section style="text-align: left;">
-        <h3><strong><span>Laws of Cyborg Teams</span></strong></h3>
+        <h1><strong><span>Laws of Cyborg Teams</span></strong></h1>
         <ol class="listing">
             <li>Teaching a machine must be as easy as teaching a human</li>
             <li>Machines must produce feedback into the team's workflow</li>
@@ -81,26 +154,44 @@
     </section>
 
     <section>
-        <h3><strong>Tests: The Soul of a Robot</strong></h3>
+        <h2><strong>Tests: The Soul of a Robot</strong></h2>
         Teaching machines right and wrong, good and evil
     </section>
 
     <section>
         Techniques
         * Organic and distributed
-        * Use container and kubernetes
-        * Bots share their view of the world
-        * Test flakes and fuzzing
-        * Machine learning, tests and fuzzing
-        * Don't assume what a bot can and cannot do
-        * Don't rework your process in order to automate
     </section>
 
-    <section data-background-color="#000"
-        data-background-image="flickr_tt2times_2568645910_5a0704ee8e_o.jpg">
-        <h1 class="white">MACHINES!</h1>
+    <section>
+        Technique: Each bot is self-empowered, self-aware and XXX self-decisive
     </section>
 
+    <section>
+        Technique: Run your bots in containers
+        Use kubernetes
+    </section>
+
+    <section>
+        Technique: Let the bots gossip and share their state
+    </section>
+
+    <section>
+        Technique: Don't assume it's hard for machines.
+        <aside class="notes">
+            It is comparatively easy to make computers exhibit adult level performance on intelligence tests or playing checkers, and difficult or impossible to give them the skills of a one-year-old when it comes to perception and mobility.
+        </aside>
+    </section>
+
+    <section>
+        Technique: Don't rework your broken process, automate it
+    </section>
+
+    <section>
+        Technique: Test Flakes are Food not Poison
+    </section>
+
+    <!--
     <section>
         <h3><span>Goal:</span> <strong>Machines as team members</strong></h3>
     </section>
@@ -110,6 +201,7 @@
             Effect: A chain reaction to start freeing up humans to work on progress rather than maintenance
         </aside>
     </section>
+    -->
 
     <section>
         <h2><strong>Questions?
